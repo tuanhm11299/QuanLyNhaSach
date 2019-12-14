@@ -1,9 +1,0 @@
-C:\Users\SpartaKook7012_Tu\source\repos\QLTV\QLTV\bin\Debug\QLTV.exe.config
-C:\Users\SpartaKook7012_Tu\source\repos\QLTV\QLTV\bin\Debug\QLTV.exe
-C:\Users\SpartaKook7012_Tu\source\repos\QLTV\QLTV\bin\Debug\QLTV.pdb
-C:\Users\SpartaKook7012_Tu\source\repos\QLTV\QLTV\obj\Debug\QLTVGUI.csprojAssemblyReference.cache
-C:\Users\SpartaKook7012_Tu\source\repos\QLTV\QLTV\obj\Debug\QLTV.Form1.resources
-C:\Users\SpartaKook7012_Tu\source\repos\QLTV\QLTV\obj\Debug\QLTV.Properties.Resources.resources
-C:\Users\SpartaKook7012_Tu\source\repos\QLTV\QLTV\obj\Debug\QLTVGUI.csproj.GenerateResource.cache
-C:\Users\SpartaKook7012_Tu\source\repos\QLTV\QLTV\obj\Debug\QLTV.exe
-C:\Users\SpartaKook7012_Tu\source\repos\QLTV\QLTV\obj\Debug\QLTV.pdb
