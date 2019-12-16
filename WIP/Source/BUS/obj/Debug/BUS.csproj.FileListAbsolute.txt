@@ -1,0 +1,15 @@
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\BUS\bin\Debug\BUS.exe.config
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\BUS\bin\Debug\BUS.exe
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\BUS\bin\Debug\BUS.pdb
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\BUS\bin\Debug\DAL.exe
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\BUS\bin\Debug\DTO.exe
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\BUS\bin\Debug\DAL.pdb
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\BUS\bin\Debug\DAL.exe.config
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\BUS\bin\Debug\DTO.pdb
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\BUS\bin\Debug\DTO.exe.config
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\BUS\obj\Debug\BUS.Properties.Resources.resources
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\BUS\obj\Debug\BUS.csproj.GenerateResource.cache
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\BUS\obj\Debug\BUS.csproj.CopyComplete
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\BUS\obj\Debug\BUS.exe
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\BUS\obj\Debug\BUS.pdb

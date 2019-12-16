@@ -1,0 +1,16 @@
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe.config
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.exe
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\QuanLyNhaSach.pdb
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\BUS.exe
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\BUS.pdb
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\bin\Debug\BUS.exe.config
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csprojAssemblyReference.cache
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.BaoCaoThang.resources
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form1.resources
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.HoaDonBanSach.resources
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.LapPhieuThuTien.resources
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Properties.Resources.resources
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.GenerateResource.cache
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.csproj.CopyComplete
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
