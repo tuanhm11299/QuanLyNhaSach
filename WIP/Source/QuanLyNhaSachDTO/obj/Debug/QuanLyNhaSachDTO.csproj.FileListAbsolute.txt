@@ -1,0 +1,5 @@
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDTO\bin\Debug\QuanLyNhaSachDTO.dll
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDTO\bin\Debug\QuanLyNhaSachDTO.pdb
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSachDTO.csprojAssemblyReference.cache
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSachDTO.dll
+C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSachDTO.pdb
