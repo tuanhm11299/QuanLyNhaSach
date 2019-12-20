@@ -8,5 +8,11 @@ namespace QuanLyNhaSachDAL
 {
     class PhieuNhapSachDAL
     {
+        private string connectionString = null;
+
+        public PhieuNhapSachDAL()
+        {
+
+        }
     }
 }

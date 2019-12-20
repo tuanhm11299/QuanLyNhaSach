@@ -1,8 +1,0 @@
-C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDAL\bin\Debug\QuanLyNhaSachDAL.dll
-C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDAL\bin\Debug\QuanLyNhaSachDAL.pdb
-C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDAL\bin\Debug\QuanLyNhaSachDTO.dll
-C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDAL\bin\Debug\QuanLyNhaSachDTO.pdb
-C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.csprojAssemblyReference.cache
-C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.csproj.CopyComplete
-C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.dll
-C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.pdb

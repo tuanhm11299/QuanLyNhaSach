@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29411.108
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyNhaSach", "QuanLyNhaSach\QuanLyNhaSach.csproj", "{E201228A-4CE7-4344-8F8B-DF0FD194ADC0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyNhaSachGUI", "QuanLyNhaSach\QuanLyNhaSachGUI.csproj", "{E201228A-4CE7-4344-8F8B-DF0FD194ADC0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuanLyNhaSachBUS", "QuanLyNhaSachBUS\QuanLyNhaSachBUS.csproj", "{CC1F1345-8896-41A0-9214-4D7D91A8BF42}"
 EndProject

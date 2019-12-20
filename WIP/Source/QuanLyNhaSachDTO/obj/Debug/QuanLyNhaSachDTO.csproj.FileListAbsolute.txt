@@ -3,3 +3,8 @@ C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDTO\bin\Debug
 C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSachDTO.csprojAssemblyReference.cache
 C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSachDTO.dll
 C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSachDTO.pdb
+E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDTO\bin\Debug\QuanLyNhaSachDTO.dll
+E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDTO\bin\Debug\QuanLyNhaSachDTO.pdb
+E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSachDTO.csproj.CoreCompileInputs.cache
+E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSachDTO.dll
+E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSachDTO.pdb
