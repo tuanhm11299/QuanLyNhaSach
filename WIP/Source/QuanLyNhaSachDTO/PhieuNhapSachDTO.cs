@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyNhaSachDTO
 {
-    class PhieuNhapSachDTO
+    public class PhieuNhapSachDTO
     {
         private string maPN;
         private DateTime ngNhap;
