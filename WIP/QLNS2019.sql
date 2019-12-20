@@ -10,6 +10,7 @@ CREATE TABLE SACH
 	TheLoai		nchar(50),
 	TacGia		nchar(100),
 	SoLuongTon	int,
+	DonGiaNhap int,
 )
 
 
@@ -25,7 +26,6 @@ CREATE TABLE CHITIETPHIEUNHAP
 	MaPhieuNhap	nchar(10)FOREIGN KEY REFERENCES PHIEUNHAP(MaPhieuNhap),
 	MaSach	nchar(10)FOREIGN KEY REFERENCES SACH(MaSach),
 	SoLuongNhap	int,
-	DonGiaNhap int,
 )
 
 CREATE TABLE KHACHHANG
@@ -97,9 +97,9 @@ CREATE TABLE THAMSO
 
 insert into THAMSO values(150,300,20,20000,1)
 
-insert into SACH values('ma_1','Tieng Viet 1','SGK','BGDDT',15)
-insert into SACH values('ma_2','Tieng Anh 1','SGK','BGDDT',20)
-insert into SACH values('ma_3','Ngu Van 1','SGK','BGDDT',10)
+insert into SACH values('ma_1','Tieng Viet 1','SGK','BGDDT',15,65000)
+insert into SACH values('ma_2','Tieng Anh 1','SGK','BGDDT',20,70000)
+insert into SACH values('ma_3','Ngu Van 1','SGK','BGDDT',10,50000)
 
 insert into PHIEUNHAP values ('maPN_1','2019/1/24 00:00:00')
 insert into PHIEUNHAP values ('maPN_2','2019/1/24 00:00:00')
