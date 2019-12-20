@@ -25,6 +25,7 @@ CREATE TABLE CHITIETPHIEUNHAP
 	MaPhieuNhap	nchar(10)FOREIGN KEY REFERENCES PHIEUNHAP(MaPhieuNhap),
 	MaSach	nchar(10)FOREIGN KEY REFERENCES SACH(MaSach),
 	SoLuongNhap	int,
+	DonGiaNhap int,
 )
 
 CREATE TABLE KHACHHANG
@@ -104,9 +105,9 @@ insert into PHIEUNHAP values ('maPN_1','2019/1/24 00:00:00')
 insert into PHIEUNHAP values ('maPN_2','2019/1/24 00:00:00')
 insert into PHIEUNHAP values ('maPN_3','2019/1/24 00:00:00')
 
-insert into CHITIETPHIEUNHAP values ('maCT_1','maPN_1','ma_1',15)
-insert into CHITIETPHIEUNHAP values ('maCT_2','maPN_2','ma_2',10)
-insert into CHITIETPHIEUNHAP values ('maCT_3','maPN_3','ma_3',5)
+insert into CHITIETPHIEUNHAP values ('maCT_1','maPN_1','ma_1',15,100000)
+insert into CHITIETPHIEUNHAP values ('maCT_2','maPN_2','ma_2',10,120000)
+insert into CHITIETPHIEUNHAP values ('maCT_3','maPN_3','ma_3',5,90000)
 
 insert into KHACHHANG values('maKH_1','Le Thi Rieng','Da Nang','123456789','a@gmail',1000000)
 insert into KHACHHANG values('maKH_2','Bui Tien Dung','Lang Son','123456789','b@gmail',500000)
