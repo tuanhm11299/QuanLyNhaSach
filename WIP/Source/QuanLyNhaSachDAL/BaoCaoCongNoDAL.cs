@@ -12,6 +12,6 @@ namespace QuanLyNhaSachDAL
 {
     public class BaoCaoCongNoDAL
     {
-        private string 
+        //private string 
     }
 }
