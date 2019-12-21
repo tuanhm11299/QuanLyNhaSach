@@ -10,7 +10,7 @@ using QuanLyNhaSachDTO;
 
 namespace QuanLyNhaSachDAL
 {
-    class PhieuNhapSachDAL
+    public class PhieuNhapSachDAL
     {
         private string connectionString = null;
 
