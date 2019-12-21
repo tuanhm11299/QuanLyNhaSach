@@ -9,7 +9,7 @@ namespace QuanLyNhaSachDTO
     public class PhieuNhapSachDTO
     {
         private string maPN;
-        private DateTime ngNhap;
+        private string ngNhap;
 
         public string MaPN
         {
@@ -17,7 +17,7 @@ namespace QuanLyNhaSachDTO
             set => maPN = value;
         }
 
-        public DateTime NgayNhap
+        public string NgayNhap
         {
             get => ngNhap;
             set => ngNhap = value;

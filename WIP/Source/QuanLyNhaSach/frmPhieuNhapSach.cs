@@ -19,12 +19,13 @@ namespace QuanLyNhaSach
         {
             InitializeComponent();
         }
+        
 
         private void btnLapPhieu_Click(object sender, EventArgs e)
         {
             PhieuNhapSachDTO obj = new PhieuNhapSachDTO();
             obj.MaPN = this.textBoxMaPhieuNhap.Text;
-            obj.NgayNhap = Convert.ToDateTime(this.textBoxNgayNhap.Text);
+            obj.NgayNhap = this.textBoxNgayNhap.Text;
 
             string result = this.bus.insert(obj);
             if(result == "0")
@@ -37,6 +38,11 @@ namespace QuanLyNhaSach
                 MessageBox.Show("Thêm mới phiếu nhập thất bại.\n" + result);
                 return;
             }
+        }
+
+        private void frmPhieuNhapSach_Load(object sender, EventArgs e)
+        {
+            bus = new PhieuNhapSachBUS();
         }
     }
 }
