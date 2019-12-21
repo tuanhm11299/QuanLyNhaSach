@@ -8,14 +8,3 @@ C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachBUS\obj\Debug
 C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachBUS\obj\Debug\QuanLyNhaSachBUS.csproj.CopyComplete
 C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachBUS\obj\Debug\QuanLyNhaSachBUS.dll
 C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachBUS\obj\Debug\QuanLyNhaSachBUS.pdb
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\obj\Debug\QuanLyNhaSachBUS.csprojAssemblyReference.cache
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\obj\Debug\QuanLyNhaSachBUS.csproj.CoreCompileInputs.cache
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\obj\Debug\QuanLyNhaSachBUS.dll
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\obj\Debug\QuanLyNhaSachBUS.pdb
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\bin\Debug\QuanLyNhaSachBUS.dll
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\bin\Debug\QuanLyNhaSachBUS.pdb
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\bin\Debug\QuanLyNhaSachDAL.dll
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\bin\Debug\QuanLyNhaSachDTO.dll
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\bin\Debug\QuanLyNhaSachDAL.pdb
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\bin\Debug\QuanLyNhaSachDTO.pdb
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\obj\Debug\QuanLyNhaSachBUS.csproj.CopyComplete

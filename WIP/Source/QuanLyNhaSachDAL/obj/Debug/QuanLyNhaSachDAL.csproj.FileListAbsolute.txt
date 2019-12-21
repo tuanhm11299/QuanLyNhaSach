@@ -6,12 +6,3 @@ C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDAL\obj\Debug
 C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.csproj.CopyComplete
 C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.dll
 C:\Users\SpartaKook7012_Tu\source\repos\QuanLyNhaSach\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.pdb
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.csprojAssemblyReference.cache
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.csproj.CoreCompileInputs.cache
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.dll
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.pdb
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\bin\Debug\QuanLyNhaSachDAL.dll
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\bin\Debug\QuanLyNhaSachDAL.pdb
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\bin\Debug\QuanLyNhaSachDTO.dll
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\bin\Debug\QuanLyNhaSachDTO.pdb
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.csproj.CopyComplete

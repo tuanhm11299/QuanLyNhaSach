@@ -16,9 +16,9 @@ namespace QuanLyNhaSachBUS
             CongNoDal = new BaoCaoCongNoDAL();
         }
 
-        //public string LapBaoCao( )
-        //{
+        public string LapBaoCao( )
+        {
 
-        //}
+        }
     }
 }
