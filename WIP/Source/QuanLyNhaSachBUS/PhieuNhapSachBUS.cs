@@ -26,5 +26,9 @@ namespace QuanLyNhaSachBUS
         {
             return dal.selectAll(lsObj);
         }
+        public string update(PhieuNhapSachDTO obj)
+        {
+            return dal.update(obj);
+        }
     }
 }

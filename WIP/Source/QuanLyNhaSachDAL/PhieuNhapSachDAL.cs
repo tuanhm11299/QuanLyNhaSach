@@ -74,7 +74,7 @@ namespace QuanLyNhaSachDAL
                             {
                                 PhieuNhapSachDTO obj = new PhieuNhapSachDTO(); 
                                 obj.MaPN = reader["MaPhieuNhap"].ToString();
-                                obj.NgayNhap = reader["NgayNhap"].ToString();
+                                obj.NgayNhap = reader["NgayNhap"].ToString(); ////xem cách get ngày nhập trong c# .net nha bây
                                 lsObj.Add(obj);
                             }
                         }
@@ -84,6 +84,38 @@ namespace QuanLyNhaSachDAL
                         conn.Close();
                         //' lấy that bai!!!
                         return "Lấy phiếu nhập thất bại\n" + ex.Message + "\n" + ex.StackTrace;
+                    }
+                }
+            }
+            return "0";
+        }
+        public string update(PhieuNhapSachDTO obj)
+        {
+            string query = string.Empty;
+            query += " UPDATE [PHIEUNHAP] SET";
+            query += " [MaPhieuNhap] = @MaPhieuNhap ";
+            query += " WHERE ";
+            query += " [NgayNhap] = @NgayNhap ";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = conn;
+                    comm.CommandType = CommandType.Text;
+                    comm.CommandText = query;
+                    comm.Parameters.AddWithValue("@NgayNhap", obj.MaPN);
+                    comm.Parameters.AddWithValue("@MaPhieuNhap", obj.NgayNhap);
+                    try
+                    {
+                        conn.Open();
+                        comm.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        //' Cập nhật that bai!!!
+                        return "Cập nhật phiếu nhập thất bại\n" + ex.Message + "\n" + ex.StackTrace;
                     }
                 }
             }

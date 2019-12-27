@@ -9,7 +9,7 @@ namespace QuanLyNhaSachDTO
     public class PhieuNhapSachDTO
     {
         private string maPN;
-        private string ngNhap;
+        private string ngNhap; //xem cách get ngày nhập trong c# .net nha bây
 
         public string MaPN
         {

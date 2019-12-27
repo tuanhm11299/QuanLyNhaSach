@@ -136,6 +136,7 @@
             this.btnSuaPhieu.TabIndex = 4;
             this.btnSuaPhieu.Text = "Sửa Phiếu";
             this.btnSuaPhieu.UseVisualStyleBackColor = true;
+            this.btnSuaPhieu.Click += new System.EventHandler(this.btnSuaPhieu_Click);
             // 
             // btnXemPhieu
             // 
@@ -195,6 +196,7 @@
             this.btnCapNhat.TabIndex = 7;
             this.btnCapNhat.Text = "Cập Nhật";
             this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // txtNgayNhap
             // 
