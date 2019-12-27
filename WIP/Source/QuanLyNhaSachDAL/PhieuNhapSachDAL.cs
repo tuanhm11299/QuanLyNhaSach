@@ -41,8 +41,49 @@ namespace QuanLyNhaSachDAL
                     catch (Exception ex)
                     {
                         conn.Close();
-                        //' them that bai!!!
+                        // them that bai!!!
                         return "Thêm ngày nhập phiếu thất bại\n" + ex.Message + "\n" + ex.StackTrace;
+                    }
+                }
+            }
+            return "0";
+        }
+        public string selectAll(List<PhieuNhapSachDTO> lsObj)
+        {
+
+            string query = string.Empty;
+            query += " SELECT [MaPhieuNhap], [NgayNhap]";
+            query += " FROM [PHIEUNHAP]";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = conn;
+                    comm.CommandType = CommandType.Text;
+                    comm.CommandText = query;
+
+                    try
+                    {
+                        conn.Open();
+                        SqlDataReader reader = comm.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            lsObj.Clear();
+                            while (reader.Read())
+                            {
+                                PhieuNhapSachDTO obj = new PhieuNhapSachDTO(); 
+                                obj.MaPN = reader["MaPhieuNhap"].ToString();
+                                obj.NgayNhap = reader["NgayNhap"].ToString();
+                                lsObj.Add(obj);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        //' lấy that bai!!!
+                        return "Lấy phiếu nhập thất bại\n" + ex.Message + "\n" + ex.StackTrace;
                     }
                 }
             }

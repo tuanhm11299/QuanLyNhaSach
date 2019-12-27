@@ -31,13 +31,13 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvDanhSachPhieuNhap = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnSuaPhieu = new System.Windows.Forms.Button();
             this.btnXemPhieu = new System.Windows.Forms.Button();
             this.btnXoaPhieu = new System.Windows.Forms.Button();
             this.btnNhapChiTiet = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCapNhat = new System.Windows.Forms.Button();
             this.txtNgayNhap = new System.Windows.Forms.TextBox();
             this.txtMaPhieuNhap = new System.Windows.Forms.TextBox();
             this.btnLapPhieu = new System.Windows.Forms.Button();
@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.btnXoaCT = new System.Windows.Forms.Button();
             this.btnXoaTrang = new System.Windows.Forms.Button();
             this.btnThemCT = new System.Windows.Forms.Button();
@@ -61,9 +62,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhieuNhap)).BeginInit();
@@ -105,9 +103,6 @@
             this.dgvDanhSachPhieuNhap.AllowUserToDeleteRows = false;
             this.dgvDanhSachPhieuNhap.BackgroundColor = System.Drawing.Color.DarkGray;
             this.dgvDanhSachPhieuNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSachPhieuNhap.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
             this.dgvDanhSachPhieuNhap.GridColor = System.Drawing.Color.White;
             this.dgvDanhSachPhieuNhap.Location = new System.Drawing.Point(39, 345);
             this.dgvDanhSachPhieuNhap.Margin = new System.Windows.Forms.Padding(4);
@@ -116,25 +111,9 @@
             this.dgvDanhSachPhieuNhap.Size = new System.Drawing.Size(684, 252);
             this.dgvDanhSachPhieuNhap.TabIndex = 47;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Maphieunhap";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Mã phiếu nhập";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Ngaynhap";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Ngày nhập";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.btnSuaPhieu);
             this.groupBox3.Controls.Add(this.btnXemPhieu);
             this.groupBox3.Controls.Add(this.btnXoaPhieu);
             this.groupBox3.Controls.Add(this.btnNhapChiTiet);
@@ -148,6 +127,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chức Năng";
             // 
+            // btnSuaPhieu
+            // 
+            this.btnSuaPhieu.Location = new System.Drawing.Point(184, 40);
+            this.btnSuaPhieu.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSuaPhieu.Name = "btnSuaPhieu";
+            this.btnSuaPhieu.Size = new System.Drawing.Size(140, 54);
+            this.btnSuaPhieu.TabIndex = 4;
+            this.btnSuaPhieu.Text = "Sửa Phiếu";
+            this.btnSuaPhieu.UseVisualStyleBackColor = true;
+            // 
             // btnXemPhieu
             // 
             this.btnXemPhieu.Location = new System.Drawing.Point(21, 40);
@@ -157,6 +146,7 @@
             this.btnXemPhieu.TabIndex = 3;
             this.btnXemPhieu.Text = "Xem Phiếu";
             this.btnXemPhieu.UseVisualStyleBackColor = true;
+            this.btnXemPhieu.Click += new System.EventHandler(this.btnXemPhieu_Click);
             // 
             // btnXoaPhieu
             // 
@@ -180,7 +170,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnCapNhat);
             this.groupBox1.Controls.Add(this.txtNgayNhap);
             this.groupBox1.Controls.Add(this.txtMaPhieuNhap);
             this.groupBox1.Controls.Add(this.btnLapPhieu);
@@ -195,6 +185,16 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin phiếu nhập";
+            // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.Location = new System.Drawing.Point(525, 71);
+            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(126, 36);
+            this.btnCapNhat.TabIndex = 7;
+            this.btnCapNhat.Text = "Cập Nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = true;
             // 
             // txtNgayNhap
             // 
@@ -221,6 +221,7 @@
             this.btnLapPhieu.TabIndex = 0;
             this.btnLapPhieu.Text = "Tạo Phiếu";
             this.btnLapPhieu.UseVisualStyleBackColor = true;
+            this.btnLapPhieu.Click += new System.EventHandler(this.btnLapPhieu_Click);
             // 
             // label4
             // 
@@ -282,6 +283,16 @@
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Chức Năng";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(189, 31);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(139, 54);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "Cập Nhật";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // btnXoaCT
             // 
@@ -436,36 +447,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Chi Tiết Phiếu Nhập";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(184, 40);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 54);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Sửa Phiếu";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(525, 71);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(126, 36);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Cập Nhật";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(189, 31);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(139, 54);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Cập Nhật";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // frmPhieuNhapSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -474,6 +455,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "frmPhieuNhapSach";
             this.Text = "Phiếu Nhập Sách";
+            this.Load += new System.EventHandler(this.frmPhieuNhapSach_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -496,8 +478,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         internal System.Windows.Forms.DataGridView dgvDanhSachPhieuNhap;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnXemPhieu;
         private System.Windows.Forms.Button btnXoaPhieu;
@@ -526,8 +506,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnSuaPhieu;
+        private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button button3;
     }
 }

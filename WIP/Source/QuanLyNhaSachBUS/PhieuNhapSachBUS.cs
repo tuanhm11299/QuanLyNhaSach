@@ -22,5 +22,9 @@ namespace QuanLyNhaSachBUS
 
             return dal.insert(obj);
         }
+        public string selectAll(List<PhieuNhapSachDTO> lsObj)
+        {
+            return dal.selectAll(lsObj);
+        }
     }
 }
