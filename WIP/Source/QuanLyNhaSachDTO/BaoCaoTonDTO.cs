@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyNhaSachDTO
 {
-    class BaoCaoTonDTO
+    public class BaoCaoTonDTO
     {
         private string maCTton;
         private int month;

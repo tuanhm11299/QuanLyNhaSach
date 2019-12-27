@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyNhaSachBUS
 {
-    class BaoCaoTonBUS
+    public class BaoCaoTonBUS
     {
     }
 }

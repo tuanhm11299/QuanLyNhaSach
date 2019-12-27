@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyNhaSachDTO
 {
-    class DangNhapDTO
+    public class DangNhapDTO
     {
         private string tenDN;
         private string mk;

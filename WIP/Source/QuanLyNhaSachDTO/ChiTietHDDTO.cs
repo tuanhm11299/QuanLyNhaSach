@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyNhaSachDTO
 {
-    class ChiTietHDDTO
+    public class ChiTietHDDTO
     {
         private string maHD;
         private string maSach;

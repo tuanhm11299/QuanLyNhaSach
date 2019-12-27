@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyNhaSachDTO
 {
-    class ThamSoDTO
+    public class ThamSoDTO
     {
         private int mathamso;
         private int slnmin;

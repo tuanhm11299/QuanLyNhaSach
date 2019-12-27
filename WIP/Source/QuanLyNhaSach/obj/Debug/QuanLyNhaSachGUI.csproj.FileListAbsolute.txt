@@ -10,7 +10,6 @@ E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\bin\Debug\QuanLyNhaSachDA
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSachGUI.csprojAssemblyReference.cache
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmBaoCaoCongNo.resources
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmBaoCaoThang.resources
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Form1.resources
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmDangNhap.resources
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmHoaDonBanSach.resources
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmLapPhieuThuTien.resources
@@ -28,3 +27,4 @@ E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSachGU
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSachGUI.csproj.CopyComplete
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.exe
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.pdb
+E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmMain.resources
