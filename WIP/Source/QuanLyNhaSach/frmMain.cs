@@ -96,7 +96,7 @@ namespace QuanLyNhaSach
 
         private void báoCáoTồnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmBaoCaoThang frm = new frmBaoCaoThang();
+            frmBaoCaoTon frm = new frmBaoCaoTon();
             frm.MdiParent = this;
             frm.Show();
         }

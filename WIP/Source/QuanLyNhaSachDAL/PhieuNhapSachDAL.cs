@@ -91,7 +91,7 @@ namespace QuanLyNhaSachDAL
             return "0";
         }
 
-        public string update(PhieuNhapSachDTO obj)
+        public string update(PhieuNhapSachDTO obj) // Work in Progress
         {
             string query = string.Empty;
             query += " UPDATE [PHIEUNHAP] SET";
@@ -230,6 +230,40 @@ namespace QuanLyNhaSachDAL
                         conn.Close();
                         //' lấy that bai!!!
                         return "Lấy chi tiết phiếu nhập thất bại\n" + ex.Message + "\n" + ex.StackTrace;
+                    }
+                }
+            }
+            return "0";
+        }
+
+        public string updateChiTiet(CTPhieuNhapSachDTO obj) // Work in Progress
+        {
+            string query = string.Empty;
+            query += " UPDATE [CHITIETPHIEUNHAP] SET";
+            query += " [MaPhieuNhap] = @MaPhieuNhap ";
+
+            //query += " WHERE ";
+            //query += " [NgayNhap] = @NgayNhap ";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = conn;
+                    comm.CommandType = CommandType.Text;
+                    comm.CommandText = query;
+                    //comm.Parameters.AddWithValue("@NgayNhap", obj.MaPN);
+                    comm.Parameters.AddWithValue("@MaPhieuNhap", obj.MaPN);
+                    try
+                    {
+                        conn.Open();
+                        comm.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        //' Cập nhật that bai!!!
+                        return "Cập nhật phiếu nhập thất bại\n" + ex.Message + "\n" + ex.StackTrace;
                     }
                 }
             }

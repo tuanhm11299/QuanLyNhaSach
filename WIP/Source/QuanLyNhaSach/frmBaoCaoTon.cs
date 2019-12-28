@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace QuanLyNhaSach
 {
-    public partial class frmQuanLyKhachHang : Form
+    public partial class frmBaoCaoTon : Form
     {
-        public frmQuanLyKhachHang()
+        public frmBaoCaoTon()
         {
             InitializeComponent();
-        }
-
-        private void btnKetThuc_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
