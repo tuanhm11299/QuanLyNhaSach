@@ -32,8 +32,8 @@ namespace QuanLyNhaSach
         {
             PhieuNhapSachDTO obj = new PhieuNhapSachDTO();
             obj.MaPN = this.txtMaPhieuNhap.Text;
-            obj.NgayNhap = this.txtNgayNhap.Text; //xem cách get ngày nhập trong c# .net nha bây
-
+            //obj.NgayNhap = this.dtpNgayNhap.Text; //xem cách get ngày nhập trong c# .net nha bây
+            obj.NgayNhap = this.dtpNgayNhap.Text;
             string result = this.bus.insert(obj);
             if (result == "0")
             {
@@ -58,7 +58,7 @@ namespace QuanLyNhaSach
             string result = this.bus.selectAll(lsObj);
             if (result != "0")
             {
-                MessageBox.Show("Lỗi khi lấy danh sách năm học.\n" + result);
+                MessageBox.Show("Lỗi khi lấy danh sách phiếu nhập.\n" + result);
                 return;
             }
             dgvDanhSachPhieuNhap.Columns.Clear();
@@ -92,7 +92,7 @@ namespace QuanLyNhaSach
             {
                 PhieuNhapSachDTO obj = (PhieuNhapSachDTO)dgvDanhSachPhieuNhap.Rows[currentRowIndex].DataBoundItem;
                 this.txtMaPhieuNhap.Text = obj.MaPN;
-                this.txtNgayNhap.Text = obj.NgayNhap;
+                //this.dtpNgayNhap.Text = obj.NgayNhap;
             }
             else
             {
@@ -104,13 +104,13 @@ namespace QuanLyNhaSach
         {
             PhieuNhapSachDTO obj = new PhieuNhapSachDTO();
             obj.MaPN = this.txtMaPhieuNhap.Text;
-            obj.NgayNhap = this.txtNgayNhap.Text;
+            //obj.NgayNhap = this.dtpNgayNhap.Text;
            
             string result = this.bus.update(obj);
             if (result == "0")
             {
                 MessageBox.Show("Cập nhật phiếu nhập thành công");
-                this.buildDanhSach();
+                //this.buildDanhSach();
                 return;
             }
             else
@@ -129,7 +129,7 @@ namespace QuanLyNhaSach
             {
                 PhieuNhapSachDTO obj = (PhieuNhapSachDTO)dgvDanhSachPhieuNhap.Rows[currentRowIndex].DataBoundItem;
                 this.txtMaPhieuNhap.Text = obj.MaPN;
-                this.txtNgayNhap.Text = obj.NgayNhap;
+                this.dtpNgayNhap.Text = obj.NgayNhap;
                 string result = this.bus.delete(obj);
                 if (result == "0")
                 {
@@ -164,6 +164,77 @@ namespace QuanLyNhaSach
             {
                 MessageBox.Show("Chưa chọn phiếu nhập trên lưới.");
             }
+        }
+
+        private void btnThemCT_Click(object sender, EventArgs e)
+        {
+            CTPhieuNhapSachDTO obj = new CTPhieuNhapSachDTO();
+
+            obj.MaCT = this.txtMaCTPN.Text;
+            obj.MaPN = this.txtMaPN.Text;
+            //obj.MaSach = this.txtMaSach.Text;
+            obj.SLN = this.txtSoLuongNhap.Text;
+            string result = this.bus.insertChiTiet(obj);
+            if (result == "0")
+            {
+                MessageBox.Show("Thêm mới chi tiết phiếu nhập thành công");
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Thêm mới chi tiết phiếu nhập thất bại.\n" + result);
+                return;
+            }
+        }
+
+
+        private void buildDanhSachCT()
+        {
+            List<CTPhieuNhapSachDTO> lsObj = new List<CTPhieuNhapSachDTO>();
+            string result = this.bus.selectAllCT(lsObj);
+            if (result != "0")
+            {
+                MessageBox.Show("Lỗi khi lấy danh sách chi tiết phiếu nhập.\n" + result);
+                return;
+            }
+            dgvDanhSachCTPN.Columns.Clear();
+            dgvDanhSachCTPN.DataSource = null;
+
+            dgvDanhSachCTPN.AutoGenerateColumns = false;
+            dgvDanhSachCTPN.AllowUserToAddRows = false;
+            dgvDanhSachCTPN.DataSource = lsObj;
+
+            DataGridViewTextBoxColumn clMaCT = new DataGridViewTextBoxColumn();
+            clMaCT.Name = "MaCT";
+            clMaCT.HeaderText = "Mã Chi Tiết Phiếu Nhập";
+            clMaCT.DataPropertyName = "MaCT";
+            dgvDanhSachCTPN.Columns.Add(clMaCT);
+
+            DataGridViewTextBoxColumn clMaPN = new DataGridViewTextBoxColumn();
+            clMaPN.Name = "MaPN";
+            clMaPN.HeaderText = "Mã Phiếu Nhập";
+            clMaPN.DataPropertyName = "MaPN";
+            dgvDanhSachCTPN.Columns.Add(clMaPN);
+
+            /*DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+            clMaSach.Name = "MaSach";
+            clMaSach.HeaderText = "Mã Sách";
+            clMaSach.DataPropertyName = "MaSach";
+            dgvDanhSachCTPN.Columns.Add(clMaSach);*/
+
+            DataGridViewTextBoxColumn clSLN = new DataGridViewTextBoxColumn();
+            clSLN.Name = "SLN";
+            clSLN.HeaderText = "Số Lượng Nhập";
+            clSLN.DataPropertyName = "SLN";
+            dgvDanhSachCTPN.Columns.Add(clSLN);
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachCTPN.DataSource];
+            myCurrencyManager.Refresh();
+        }
+
+        private void btnXemChiTiet_Click(object sender, EventArgs e)
+        {
+            buildDanhSachCT();
         }
     }
 }

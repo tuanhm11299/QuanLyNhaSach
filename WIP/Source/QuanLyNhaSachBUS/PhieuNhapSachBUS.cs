@@ -18,7 +18,7 @@ namespace QuanLyNhaSachBUS
         public string insert(PhieuNhapSachDTO obj)
         {
             if (obj.NgayNhap == null || obj.MaPN == string.Empty)
-                return "Tên Năm Học không hợp lệ";
+                return "Ngày nhập hoặc mã phiếu nhập không hợp lệ";
 
             return dal.insert(obj);
         }
@@ -33,6 +33,17 @@ namespace QuanLyNhaSachBUS
         public string delete(PhieuNhapSachDTO obj)
         {
             return dal.delete(obj);
+        }
+        public string insertChiTiet(CTPhieuNhapSachDTO obj)
+        {
+            if (obj.MaCT == null || obj.MaPN == string.Empty || obj.MaSach == string.Empty || obj.SLN == null)
+                return "Thêm mã chi tiết hoặc mã phiếu nhập hoặc mã sách hoặc số lượng nhập không hợp lệ";
+
+            return dal.insertChiTiet(obj);
+        }
+        public string selectAllCT(List<CTPhieuNhapSachDTO> lsObj)
+        {
+            return dal.selectAllCT(lsObj);
         }
     }
 }
