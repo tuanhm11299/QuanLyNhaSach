@@ -62,6 +62,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tcPhieuNhapSach.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhieuNhap)).BeginInit();
@@ -80,19 +81,20 @@
             this.tcPhieuNhapSach.Location = new System.Drawing.Point(13, 12);
             this.tcPhieuNhapSach.Name = "tcPhieuNhapSach";
             this.tcPhieuNhapSach.SelectedIndex = 0;
-            this.tcPhieuNhapSach.Size = new System.Drawing.Size(775, 659);
+            this.tcPhieuNhapSach.Size = new System.Drawing.Size(775, 730);
             this.tcPhieuNhapSach.TabIndex = 1;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dgvDanhSachPhieuNhap);
+            this.tabPage1.Controls.Add(this.btnXemPhieu);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(767, 630);
+            this.tabPage1.Size = new System.Drawing.Size(767, 701);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Phiếu Nhập ";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -114,7 +116,6 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnSuaPhieu);
-            this.groupBox3.Controls.Add(this.btnXemPhieu);
             this.groupBox3.Controls.Add(this.btnXoaPhieu);
             this.groupBox3.Controls.Add(this.btnNhapChiTiet);
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F);
@@ -129,7 +130,7 @@
             // 
             // btnSuaPhieu
             // 
-            this.btnSuaPhieu.Location = new System.Drawing.Point(184, 40);
+            this.btnSuaPhieu.Location = new System.Drawing.Point(97, 40);
             this.btnSuaPhieu.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuaPhieu.Name = "btnSuaPhieu";
             this.btnSuaPhieu.Size = new System.Drawing.Size(140, 54);
@@ -140,7 +141,8 @@
             // 
             // btnXemPhieu
             // 
-            this.btnXemPhieu.Location = new System.Drawing.Point(21, 40);
+            this.btnXemPhieu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXemPhieu.Location = new System.Drawing.Point(564, 614);
             this.btnXemPhieu.Margin = new System.Windows.Forms.Padding(4);
             this.btnXemPhieu.Name = "btnXemPhieu";
             this.btnXemPhieu.Size = new System.Drawing.Size(140, 54);
@@ -151,7 +153,7 @@
             // 
             // btnXoaPhieu
             // 
-            this.btnXoaPhieu.Location = new System.Drawing.Point(356, 40);
+            this.btnXoaPhieu.Location = new System.Drawing.Point(274, 40);
             this.btnXoaPhieu.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaPhieu.Name = "btnXoaPhieu";
             this.btnXoaPhieu.Size = new System.Drawing.Size(144, 54);
@@ -162,7 +164,7 @@
             // 
             // btnNhapChiTiet
             // 
-            this.btnNhapChiTiet.Location = new System.Drawing.Point(525, 40);
+            this.btnNhapChiTiet.Location = new System.Drawing.Point(458, 40);
             this.btnNhapChiTiet.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapChiTiet.Name = "btnNhapChiTiet";
             this.btnNhapChiTiet.Size = new System.Drawing.Size(140, 54);
@@ -260,6 +262,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Controls.Add(this.dgvDanhSachNamHoc);
             this.tabPage2.Controls.Add(this.groupBox2);
@@ -267,7 +270,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(767, 630);
+            this.tabPage2.Size = new System.Drawing.Size(767, 701);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Chi Tiết Phiếu Nhập";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -313,7 +316,7 @@
             this.btnXoaTrang.Location = new System.Drawing.Point(516, 31);
             this.btnXoaTrang.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaTrang.Name = "btnXoaTrang";
-            this.btnXoaTrang.Size = new System.Drawing.Size(138, 54);
+            this.btnXoaTrang.Size = new System.Drawing.Size(140, 54);
             this.btnXoaTrang.TabIndex = 1;
             this.btnXoaTrang.Text = "Xóa Tất Cả";
             this.btnXoaTrang.UseVisualStyleBackColor = true;
@@ -451,11 +454,22 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Chi Tiết Phiếu Nhập";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(556, 617);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(140, 54);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Xem Chi Tiết";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmPhieuNhapSach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 679);
+            this.ClientSize = new System.Drawing.Size(800, 750);
             this.Controls.Add(this.tcPhieuNhapSach);
             this.Name = "frmPhieuNhapSach";
             this.Text = "Phiếu Nhập Sách";
@@ -513,5 +527,6 @@
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button button3;
         internal System.Windows.Forms.DataGridView dgvDanhSachPhieuNhap;
+        private System.Windows.Forms.Button button1;
     }
 }
