@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tcPhieuNhapSach = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dgvDanhSachPhieuNhap = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -52,17 +52,17 @@
             this.btnThemCT = new System.Windows.Forms.Button();
             this.dgvDanhSachNamHoc = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMaPN = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnChon = new System.Windows.Forms.Button();
-            this.textBoxMaSach = new System.Windows.Forms.TextBox();
-            this.textBoxSoLuong = new System.Windows.Forms.TextBox();
-            this.textBoxMaPhieuNhap1 = new System.Windows.Forms.TextBox();
+            this.txtMaSach = new System.Windows.Forms.TextBox();
+            this.txtSoLuongNhap = new System.Windows.Forms.TextBox();
+            this.txtMaCTPN = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
+            this.tcPhieuNhapSach.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhieuNhap)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -73,15 +73,15 @@
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tcPhieuNhapSach
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(13, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(775, 659);
-            this.tabControl1.TabIndex = 1;
+            this.tcPhieuNhapSach.Controls.Add(this.tabPage1);
+            this.tcPhieuNhapSach.Controls.Add(this.tabPage2);
+            this.tcPhieuNhapSach.Location = new System.Drawing.Point(13, 12);
+            this.tcPhieuNhapSach.Name = "tcPhieuNhapSach";
+            this.tcPhieuNhapSach.SelectedIndex = 0;
+            this.tcPhieuNhapSach.Size = new System.Drawing.Size(775, 659);
+            this.tcPhieuNhapSach.TabIndex = 1;
             // 
             // tabPage1
             // 
@@ -158,6 +158,7 @@
             this.btnXoaPhieu.TabIndex = 2;
             this.btnXoaPhieu.Text = "Xóa Phiếu";
             this.btnXoaPhieu.UseVisualStyleBackColor = true;
+            this.btnXoaPhieu.Click += new System.EventHandler(this.btnXoaPhieu_Click);
             // 
             // btnNhapChiTiet
             // 
@@ -168,6 +169,7 @@
             this.btnNhapChiTiet.TabIndex = 1;
             this.btnNhapChiTiet.Text = "Nhập Chi Tiết";
             this.btnNhapChiTiet.UseVisualStyleBackColor = true;
+            this.btnNhapChiTiet.Click += new System.EventHandler(this.btnNhapChiTiet_Click);
             // 
             // groupBox1
             // 
@@ -318,10 +320,10 @@
             // 
             // btnThemCT
             // 
-            this.btnThemCT.Location = new System.Drawing.Point(31, 31);
+            this.btnThemCT.Location = new System.Drawing.Point(26, 31);
             this.btnThemCT.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemCT.Name = "btnThemCT";
-            this.btnThemCT.Size = new System.Drawing.Size(132, 54);
+            this.btnThemCT.Size = new System.Drawing.Size(137, 54);
             this.btnThemCT.TabIndex = 0;
             this.btnThemCT.Text = "Thêm Chi Tiết";
             this.btnThemCT.UseVisualStyleBackColor = true;
@@ -337,12 +339,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtMaPN);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.btnChon);
-            this.groupBox2.Controls.Add(this.textBoxMaSach);
-            this.groupBox2.Controls.Add(this.textBoxSoLuong);
-            this.groupBox2.Controls.Add(this.textBoxMaPhieuNhap1);
+            this.groupBox2.Controls.Add(this.txtMaSach);
+            this.groupBox2.Controls.Add(this.txtSoLuongNhap);
+            this.groupBox2.Controls.Add(this.txtMaCTPN);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
@@ -356,13 +358,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin phiếu nhập";
             // 
-            // textBox1
+            // txtMaPN
             // 
-            this.textBox1.Location = new System.Drawing.Point(172, 79);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(156, 30);
-            this.textBox1.TabIndex = 9;
+            this.txtMaPN.Location = new System.Drawing.Point(172, 79);
+            this.txtMaPN.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaPN.Name = "txtMaPN";
+            this.txtMaPN.Size = new System.Drawing.Size(156, 30);
+            this.txtMaPN.TabIndex = 9;
             // 
             // label5
             // 
@@ -384,29 +386,29 @@
             this.btnChon.Text = "Tìm";
             this.btnChon.UseVisualStyleBackColor = true;
             // 
-            // textBoxMaSach
+            // txtMaSach
             // 
-            this.textBoxMaSach.Location = new System.Drawing.Point(439, 82);
-            this.textBoxMaSach.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxMaSach.Name = "textBoxMaSach";
-            this.textBoxMaSach.Size = new System.Drawing.Size(155, 30);
-            this.textBoxMaSach.TabIndex = 6;
+            this.txtMaSach.Location = new System.Drawing.Point(439, 82);
+            this.txtMaSach.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaSach.Name = "txtMaSach";
+            this.txtMaSach.Size = new System.Drawing.Size(155, 30);
+            this.txtMaSach.TabIndex = 6;
             // 
-            // textBoxSoLuong
+            // txtSoLuongNhap
             // 
-            this.textBoxSoLuong.Location = new System.Drawing.Point(506, 33);
-            this.textBoxSoLuong.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxSoLuong.Name = "textBoxSoLuong";
-            this.textBoxSoLuong.Size = new System.Drawing.Size(169, 30);
-            this.textBoxSoLuong.TabIndex = 5;
+            this.txtSoLuongNhap.Location = new System.Drawing.Point(506, 33);
+            this.txtSoLuongNhap.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSoLuongNhap.Name = "txtSoLuongNhap";
+            this.txtSoLuongNhap.Size = new System.Drawing.Size(169, 30);
+            this.txtSoLuongNhap.TabIndex = 5;
             // 
-            // textBoxMaPhieuNhap1
+            // txtMaCTPN
             // 
-            this.textBoxMaPhieuNhap1.Location = new System.Drawing.Point(172, 30);
-            this.textBoxMaPhieuNhap1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxMaPhieuNhap1.Name = "textBoxMaPhieuNhap1";
-            this.textBoxMaPhieuNhap1.Size = new System.Drawing.Size(156, 30);
-            this.textBoxMaPhieuNhap1.TabIndex = 4;
+            this.txtMaCTPN.Location = new System.Drawing.Point(172, 30);
+            this.txtMaCTPN.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaCTPN.Name = "txtMaCTPN";
+            this.txtMaCTPN.Size = new System.Drawing.Size(156, 30);
+            this.txtMaCTPN.TabIndex = 4;
             // 
             // label10
             // 
@@ -454,11 +456,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 679);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tcPhieuNhapSach);
             this.Name = "frmPhieuNhapSach";
             this.Text = "Phiếu Nhập Sách";
             this.Load += new System.EventHandler(this.frmPhieuNhapSach_Load);
-            this.tabControl1.ResumeLayout(false);
+            this.tcPhieuNhapSach.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachPhieuNhap)).EndInit();
@@ -477,9 +479,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tcPhieuNhapSach;
         private System.Windows.Forms.TabPage tabPage1;
-        internal System.Windows.Forms.DataGridView dgvDanhSachPhieuNhap;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnXemPhieu;
         private System.Windows.Forms.Button btnXoaPhieu;
@@ -499,17 +500,18 @@
         private System.Windows.Forms.DataGridView dgvDanhSachNamHoc;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnChon;
-        private System.Windows.Forms.TextBox textBoxMaSach;
-        private System.Windows.Forms.TextBox textBoxSoLuong;
-        private System.Windows.Forms.TextBox textBoxMaPhieuNhap1;
+        private System.Windows.Forms.TextBox txtMaSach;
+        private System.Windows.Forms.TextBox txtSoLuongNhap;
+        private System.Windows.Forms.TextBox txtMaCTPN;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMaPN;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSuaPhieu;
         private System.Windows.Forms.Button btnCapNhat;
         private System.Windows.Forms.Button button3;
+        internal System.Windows.Forms.DataGridView dgvDanhSachPhieuNhap;
     }
 }

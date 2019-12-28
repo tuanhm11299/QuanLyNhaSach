@@ -10,6 +10,10 @@ namespace QuanLyNhaSachDTO
     {
         private string maPN;
         private string ngNhap; //xem cách get ngày nhập trong c# .net nha bây
+        private string maCT;
+        private string maSach;
+        private int soluongNhap;
+        
 
         public string MaPN
         {
@@ -21,6 +25,24 @@ namespace QuanLyNhaSachDTO
         {
             get => ngNhap;
             set => ngNhap = value;
+        }
+
+        public string MaSach
+        {
+            get => maSach;
+            set => maSach = value;
+        }
+
+        public string MaCT
+        {
+            get => maCT;
+            set => maCT = value;
+        }
+
+        public int SLN
+        {
+            get => soluongNhap;
+            set => soluongNhap = value;
         }
     }
 }

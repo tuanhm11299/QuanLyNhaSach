@@ -121,5 +121,35 @@ namespace QuanLyNhaSachDAL
             }
             return "0";
         }
+        public string delete(PhieuNhapSachDTO obj)
+        {
+            string query = string.Empty;
+            query += " DELETE FROM [PHIEUNHAP] ";
+            query += " WHERE ";
+            query += " [MaPhieuNhap] = @MaPhieuNhap ";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = conn;
+                    comm.CommandType = CommandType.Text;
+                    comm.CommandText = query;
+                    comm.Parameters.AddWithValue("@MaPhieuNhap", obj.MaPN);
+                    try
+                    {
+                        conn.Open();
+                        comm.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        //' xóa that bai!!!
+                        return "Xóa phiếu nhập thất bại\n" + ex.Message + "\n" + ex.StackTrace;
+                    }
+                }
+            }
+            return "0";
+        }
     }
 }

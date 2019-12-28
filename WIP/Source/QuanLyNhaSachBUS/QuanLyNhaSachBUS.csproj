@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="BaoCaoCongNoBUS.cs" />
     <Compile Include="BaoCaoTonBUS.cs" />
+    <Compile Include="CTPhieuNhapSachBUS.cs" />
     <Compile Include="DangNhapBUS.cs" />
     <Compile Include="HoaDonBUS.cs" />
     <Compile Include="PhieuNhapSachBUS.cs" />

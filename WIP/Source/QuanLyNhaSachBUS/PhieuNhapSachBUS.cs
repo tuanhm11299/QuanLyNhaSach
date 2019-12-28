@@ -30,5 +30,9 @@ namespace QuanLyNhaSachBUS
         {
             return dal.update(obj);
         }
+        public string delete(PhieuNhapSachDTO obj)
+        {
+            return dal.delete(obj);
+        }
     }
 }

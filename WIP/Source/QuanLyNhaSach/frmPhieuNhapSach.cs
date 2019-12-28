@@ -14,7 +14,9 @@ namespace QuanLyNhaSach
 {
     public partial class frmPhieuNhapSach : Form
     {
+        private int isThemMoi = 0;
         private PhieuNhapSachBUS bus;
+        //private CTPhieuNhapSachBUS busCTPN;
         public frmPhieuNhapSach()
         {
             InitializeComponent();
@@ -23,6 +25,7 @@ namespace QuanLyNhaSach
         private void frmPhieuNhapSach_Load(object sender, EventArgs e)
         {
             bus = new PhieuNhapSachBUS();
+           // busCTPN = new CTPhieuNhapSachBUS();
         }
 
         private void btnLapPhieu_Click(object sender, EventArgs e)
@@ -115,6 +118,51 @@ namespace QuanLyNhaSach
                 MessageBox.Show("Cập nhật phiếu nhập thất bại.\n" + result);
 
                 return;
+            }
+        }
+
+        private void btnXoaPhieu_Click(object sender, EventArgs e)
+        {
+            int currentRowIndex = this.dgvDanhSachPhieuNhap.CurrentCellAddress.Y; //'current row selected
+            //Verify that indexing OK
+            if (-1 < currentRowIndex && currentRowIndex < dgvDanhSachPhieuNhap.RowCount)
+            {
+                PhieuNhapSachDTO obj = (PhieuNhapSachDTO)dgvDanhSachPhieuNhap.Rows[currentRowIndex].DataBoundItem;
+                this.txtMaPhieuNhap.Text = obj.MaPN;
+                this.txtNgayNhap.Text = obj.NgayNhap;
+                string result = this.bus.delete(obj);
+                if (result == "0")
+                {
+                    MessageBox.Show("Xóa phiếu nhập thành công");
+                    this.buildDanhSach();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Xóa phiếu nhập thất bại.\n" + result);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn phiếu nhập trên lưới.");
+            }
+        }
+
+        private void btnNhapChiTiet_Click(object sender, EventArgs e)
+        {
+            int currentRowIndex = this.dgvDanhSachPhieuNhap.CurrentCellAddress.Y; //'current row selected
+            //Verify that indexing OK
+            if (-1 < currentRowIndex && currentRowIndex < dgvDanhSachPhieuNhap.RowCount)
+            {
+                PhieuNhapSachDTO obj = (PhieuNhapSachDTO)dgvDanhSachPhieuNhap.Rows[currentRowIndex].DataBoundItem;
+                this.txtMaPN.Text = obj.MaPN;
+                this.isThemMoi = 1;
+                this.tcPhieuNhapSach.SelectedIndex = 1;
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn phiếu nhập trên lưới.");
             }
         }
     }
