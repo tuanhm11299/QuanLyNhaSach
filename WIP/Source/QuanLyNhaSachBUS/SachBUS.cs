@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuanLyNhaSachDAL
+namespace QuanLyNhaSachBUS
 {
-    class ChiTietHDDAL
+    class SachBUS
     {
     }
 }

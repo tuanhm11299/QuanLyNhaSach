@@ -155,7 +155,7 @@ namespace QuanLyNhaSachDAL
             return "0";
         }
 
-        public string insertChiTiet(CTPhieuNhapSachDTO obj)
+        /*public string insertChiTiet(CTPhieuNhapSachDTO obj)
         {
             string query = string.Empty;
             //query += "INSERT INTO [CHITIETPHIEUNHAP] ([MaChiTietPhieuNHap], [MaPhieuNhap], [MaSach], [SoLuongNhap])";
@@ -268,6 +268,6 @@ namespace QuanLyNhaSachDAL
                 }
             }
             return "0";
-        }
+        }*/
     }
 }
