@@ -236,10 +236,5 @@ namespace QuanLyNhaSach
         {
             buildDanhSachCT();
         }
-
-        private void btnSuaCT_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
