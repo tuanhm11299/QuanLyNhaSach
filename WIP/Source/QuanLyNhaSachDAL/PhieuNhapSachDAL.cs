@@ -235,5 +235,42 @@ namespace QuanLyNhaSachDAL
             }
             return "0";
         }
+
+        public string deleteChiTiet(CTPhieuNhapSachDTO obj)
+        {
+            string query = string.Empty;
+            query += " DELETE FROM [CHITIETPHIEUNHAP]  ";
+            query += " WHERE ";
+            query += " [MaPhieuNhap] = @MaPhieuNhap ";
+            //query += " [MaChiTietPhieuNhap] = @MaChiTietPhieuNhap ";
+            //query += " [MaSach] = @MaSach ";
+            //query += " [SoLuongNhap] = @SoLuongNhap ";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = conn;
+                    comm.CommandType = CommandType.Text;
+                    comm.CommandText = query;
+                    comm.Parameters.AddWithValue("@MaPhieuNhap", obj.MaPN);
+                    //comm.Parameters.AddWithValue("@MaChiTietPhieuNhap", obj.MaCT);
+                    //comm.Parameters.AddWithValue("@MaSach", obj.MaSach);
+                    //comm.Parameters.AddWithValue("@SoLuongNhap", obj.SLN);
+                    try
+                    {
+                        conn.Open();
+                        comm.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        //' xóa that bai!!!
+                        return "Xóa chi tiết phiếu nhập thất bại\n" + ex.Message + "\n" + ex.StackTrace;
+                    }
+                }
+            }
+            return "0";
+        }
     }
 }

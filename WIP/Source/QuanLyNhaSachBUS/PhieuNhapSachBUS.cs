@@ -11,6 +11,8 @@ namespace QuanLyNhaSachBUS
     public class PhieuNhapSachBUS
     {
         private PhieuNhapSachDAL dal;
+
+        
         public PhieuNhapSachBUS()
         {
             dal = new PhieuNhapSachDAL();
@@ -41,9 +43,17 @@ namespace QuanLyNhaSachBUS
 
             return dal.insertChiTiet(obj);
         }
+
+
         public string selectAllCT(List<CTPhieuNhapSachDTO> lsObj)
         {
             return dal.selectAllCT(lsObj);
         }
+
+        public string deleteChiTiet(CTPhieuNhapSachDTO obj)
+        {
+            return dal.deleteChiTiet(obj);
+        }
+
     }
 }

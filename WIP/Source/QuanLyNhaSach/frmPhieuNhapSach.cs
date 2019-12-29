@@ -172,7 +172,7 @@ namespace QuanLyNhaSach
 
             obj.MaCT = this.txtMaCTPN.Text;
             obj.MaPN = this.txtMaPN.Text;
-            //obj.MaSach = this.txtMaSach.Text;
+            obj.MaSach = this.txtMaSach.Text;
             obj.SLN = this.txtSoLuongNhap.Text;
             string result = this.bus.insertChiTiet(obj);
             if (result == "0")
@@ -234,6 +234,41 @@ namespace QuanLyNhaSach
         private void btnXemChiTiet_Click(object sender, EventArgs e)
         {
             buildDanhSachCT();
+        }
+
+        private void btnXoaCT_Click(object sender, EventArgs e)
+        {
+            int currentRowIndex = this.dgvDanhSachCTPN.CurrentCellAddress.Y; //'current row selected
+            //Verify that indexing OK
+            if (-1 < currentRowIndex && currentRowIndex < dgvDanhSachCTPN.RowCount)
+            {
+                CTPhieuNhapSachDTO obj = (CTPhieuNhapSachDTO)dgvDanhSachCTPN.Rows[currentRowIndex].DataBoundItem;
+                //this.txtMaCTPN.Text = obj.MaCT;
+                this.txtMaPhieuNhap.Text = obj.MaPN;
+                //this.txtMaSach.Text = obj.MaSach;
+                //this.txtSoLuongNhap.Text = obj.SLN;
+                string result = this.bus.deleteChiTiet(obj);
+                if (result == "0")
+                {
+                    MessageBox.Show("Xóa phiếu nhập thành công");
+                    this.buildDanhSach();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Xóa phiếu nhập thất bại.\n" + result);
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Chưa chọn phiếu nhập trên lưới.");
+            }
+        }
+
+        private void btnXoaTrang_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

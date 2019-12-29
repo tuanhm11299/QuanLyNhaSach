@@ -19,3 +19,13 @@ E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\bin\Debug\QuanLyNhaSac
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\bin\Debug\QuanLyNhaSachDAL.pdb
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\bin\Debug\QuanLyNhaSachDTO.pdb
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\obj\Debug\QuanLyNhaSachBUS.csproj.CopyComplete
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\bin\Debug\QuanLyNhaSachBUS.dll
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\bin\Debug\QuanLyNhaSachBUS.pdb
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\bin\Debug\QuanLyNhaSachDAL.dll
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\bin\Debug\QuanLyNhaSachDTO.dll
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\bin\Debug\QuanLyNhaSachDAL.pdb
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\bin\Debug\QuanLyNhaSachDTO.pdb
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\obj\Debug\QuanLyNhaSachBUS.csprojAssemblyReference.cache
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\obj\Debug\QuanLyNhaSachBUS.csproj.CopyComplete
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\obj\Debug\QuanLyNhaSachBUS.dll
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachBUS\obj\Debug\QuanLyNhaSachBUS.pdb

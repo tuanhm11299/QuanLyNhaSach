@@ -15,3 +15,11 @@ E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\bin\Debug\QuanLyNhaSac
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\bin\Debug\QuanLyNhaSachDTO.dll
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\bin\Debug\QuanLyNhaSachDTO.pdb
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.csproj.CopyComplete
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\bin\Debug\QuanLyNhaSachDAL.dll
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\bin\Debug\QuanLyNhaSachDAL.pdb
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\bin\Debug\QuanLyNhaSachDTO.dll
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\bin\Debug\QuanLyNhaSachDTO.pdb
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.csprojAssemblyReference.cache
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.csproj.CopyComplete
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.dll
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDAL\obj\Debug\QuanLyNhaSachDAL.pdb
