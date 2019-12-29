@@ -14,7 +14,7 @@ namespace QuanLyNhaSach
 {
     public partial class frmPhieuNhapSach : Form
     {
-        private int isThemMoi = 0;
+        //private int isThemMoi = 0;
         private PhieuNhapSachBUS bus;
         //private CTPhieuNhapSachBUS busCTPN;
         public frmPhieuNhapSach()
@@ -84,7 +84,7 @@ namespace QuanLyNhaSach
             myCurrencyManager.Refresh();
         }
 
-        private void btnSuaPhieu_Click(object sender, EventArgs e)
+        /*private void btnSuaPhieu_Click(object sender, EventArgs e)
         {
             int currentRowIndex = this.dgvDanhSachPhieuNhap.CurrentCellAddress.Y; //'current row selected
             //Verify that indexing OK
@@ -98,9 +98,9 @@ namespace QuanLyNhaSach
             {
                 MessageBox.Show("Chưa chọn phiếu nhập trên lưới.");
             }
-        }
+        }*/
 
-        private void btnCapNhat_Click(object sender, EventArgs e)
+        /*private void btnCapNhat_Click(object sender, EventArgs e)
         {
             PhieuNhapSachDTO obj = new PhieuNhapSachDTO();
             obj.MaPN = this.txtMaPhieuNhap.Text;
@@ -119,7 +119,7 @@ namespace QuanLyNhaSach
 
                 return;
             }
-        }
+        }*/
 
         private void btnXoaPhieu_Click(object sender, EventArgs e)
         {
@@ -157,7 +157,7 @@ namespace QuanLyNhaSach
             {
                 PhieuNhapSachDTO obj = (PhieuNhapSachDTO)dgvDanhSachPhieuNhap.Rows[currentRowIndex].DataBoundItem;
                 this.txtMaPN.Text = obj.MaPN;
-                this.isThemMoi = 1;
+                //this.isThemMoi = 1;
                 this.tcPhieuNhapSach.SelectedIndex = 1;
             }
             else
@@ -215,8 +215,7 @@ namespace QuanLyNhaSach
             clMaPN.HeaderText = "Mã Phiếu Nhập";
             clMaPN.DataPropertyName = "MaPN";
             dgvDanhSachCTPN.Columns.Add(clMaPN);
-
-            /*DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+      /*DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
             clMaSach.Name = "MaSach";
             clMaSach.HeaderText = "Mã Sách";
             clMaSach.DataPropertyName = "MaSach";

@@ -26,10 +26,10 @@ namespace QuanLyNhaSachBUS
         {
             return dal.selectAll(lsObj);
         }
-        public string update(PhieuNhapSachDTO obj)
+        /*public string update(PhieuNhapSachDTO obj)
         {
             return dal.update(obj);
-        }
+        }*/
         public string delete(PhieuNhapSachDTO obj)
         {
             return dal.delete(obj);

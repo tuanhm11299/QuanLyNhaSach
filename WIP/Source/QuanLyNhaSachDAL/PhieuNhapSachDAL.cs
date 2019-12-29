@@ -91,7 +91,7 @@ namespace QuanLyNhaSachDAL
             return "0";
         }
 
-        public string update(PhieuNhapSachDTO obj)
+        /*public string update(PhieuNhapSachDTO obj)
         {
             string query = string.Empty;
             query += " UPDATE [PHIEUNHAP] SET";
@@ -122,7 +122,7 @@ namespace QuanLyNhaSachDAL
                 }
             }
             return "0";
-        }
+        }*/
 
         public string delete(PhieuNhapSachDTO obj)
         {
