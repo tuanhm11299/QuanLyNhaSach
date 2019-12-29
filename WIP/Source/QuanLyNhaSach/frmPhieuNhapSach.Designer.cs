@@ -280,7 +280,7 @@
             // 
             // btnXoaCT
             // 
-            this.btnXoaCT.Location = new System.Drawing.Point(433, 31);
+            this.btnXoaCT.Location = new System.Drawing.Point(449, 31);
             this.btnXoaCT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnXoaCT.Name = "btnXoaCT";
             this.btnXoaCT.Size = new System.Drawing.Size(139, 54);
@@ -291,7 +291,7 @@
             // 
             // btnThemCT
             // 
-            this.btnThemCT.Location = new System.Drawing.Point(247, 31);
+            this.btnThemCT.Location = new System.Drawing.Point(263, 31);
             this.btnThemCT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThemCT.Name = "btnThemCT";
             this.btnThemCT.Size = new System.Drawing.Size(137, 54);
@@ -350,13 +350,15 @@
             // 
             // btnChon
             // 
+            this.btnChon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChon.Location = new System.Drawing.Point(673, 90);
             this.btnChon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChon.Name = "btnChon";
             this.btnChon.Size = new System.Drawing.Size(73, 32);
             this.btnChon.TabIndex = 7;
-            this.btnChon.Text = "Tìm";
+            this.btnChon.Text = ">";
             this.btnChon.UseVisualStyleBackColor = true;
+            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
             // txtMaSach
             // 

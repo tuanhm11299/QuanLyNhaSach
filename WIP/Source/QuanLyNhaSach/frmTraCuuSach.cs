@@ -83,7 +83,7 @@ namespace QuanLyNhaSach
         private void buildDanhSach()
         {
             List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
-            string result = this.bus.search(lsObj);
+            string result = this.bus.searchTuKhoa(this.txtMaSach.Text,lsObj);
             if (result != "0")
             {
                 MessageBox.Show("Lỗi khi lấy danh sách năm học.\n" + result);

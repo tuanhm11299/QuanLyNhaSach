@@ -14,9 +14,11 @@ namespace QuanLyNhaSach
 {
     public partial class frmPhieuNhapSach : Form
     {
+        frmQuanLySach frmQLS; 
         //private int isThemMoi = 0;
         private PhieuNhapSachBUS bus;
         //private CTPhieuNhapSachBUS busCTPN;
+        
         public frmPhieuNhapSach()
         {
             InitializeComponent();
@@ -266,6 +268,10 @@ namespace QuanLyNhaSach
             }
         }
 
-        
+        private void btnChon_Click(object sender, EventArgs e)
+        {
+            frmQLS = new frmQuanLySach();
+            DialogResult dr = frmQLS.ShowDialog(this);
+        }
     }
 }
