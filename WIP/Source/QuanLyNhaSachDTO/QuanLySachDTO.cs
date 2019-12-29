@@ -13,6 +13,7 @@ namespace QuanLyNhaSachDTO
         private string tacGia;
         private string theLoai;
         private int soluongTon;
+        private int donGiaNhap;
 
         public string TenSach
         {
@@ -42,6 +43,12 @@ namespace QuanLyNhaSachDTO
         {
             get => soluongTon;
             set => soluongTon = value;
+        }
+
+        public int DonGiaNhap
+        {
+            get => donGiaNhap;
+            set => donGiaNhap = value;
         }
     }
 }

@@ -266,9 +266,6 @@ namespace QuanLyNhaSach
             }
         }
 
-        private void btnXoaTrang_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
