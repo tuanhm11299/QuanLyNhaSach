@@ -19,7 +19,7 @@ namespace QuanLyNhaSachDAL
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
 
-        public DataTable loadThamSo(List<ThamSoDTO> lsObj) // fix data table
+        /*public DataTable loadThamSo(List<ThamSoDTO> lsObj) // fix data table
         {
             string query = string.Empty;
             query += "SELECT [MaThamSo], [SoLuongNhapItNhat], [SoLuongTonToiDaTruocNhap], [SoLuongTonSauToiThieu], [SoTienNoToiDa], [SuDungQuyDinh4] FROM [THAMSO]";
@@ -60,6 +60,6 @@ namespace QuanLyNhaSachDAL
                 }
             }
             //return "0";
-        }
+        }*/
     }
 }

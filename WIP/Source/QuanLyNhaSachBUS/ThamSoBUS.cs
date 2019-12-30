@@ -17,9 +17,9 @@ namespace QuanLyNhaSachBUS
             dal = new ThamSoDAL();
         }
 
-        public string loadThamSo(List<ThamSoDTO> lsObj) //load tham số quy định mặc định
+        /*public string loadThamSo(List<ThamSoDTO> lsObj) //load tham số quy định mặc định
         {
             return dal.loadThamSo(lsObj);
-        }
+        }*/
     }
 }

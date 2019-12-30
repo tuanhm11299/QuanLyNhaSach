@@ -143,9 +143,10 @@ namespace QuanLyNhaSach
             obj.MaSach = this.txtMaSach.Text;
             obj.SLN = Convert.ToInt32(this.txtSoLuongNhap.Text);
             string result = this.bus.insertChiTiet(obj);
-            string loadThamSo = this.busThamSo.loadThamSo(lsObjThamSo);
-            int nhapItNhat;
-            bool isItNhat = int.TryParse(txtSoLuongNhap.Text.Trim(), out nhapItNhat);
+            ////string loadThamSo = this.busThamSo.loadThamSo(lsObjThamSo);
+            ////int nhapItNhat = int.Parse(loadThamSo.Rows(0).Item(1).ToString());
+            //int nhapItNhat;
+            //bool isItNhat = int.TryParse(txtSoLuongNhap.Text.Trim(), out nhapItNhat);
             if (result == "0")
             {
                 MessageBox.Show("Thêm mới chi tiết phiếu nhập thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
