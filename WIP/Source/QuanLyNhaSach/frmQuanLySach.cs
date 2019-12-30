@@ -17,7 +17,7 @@ namespace QuanLyNhaSach
             InitializeComponent();
         }
 
-        private void frmQuanLySach_Load(object sender, EventArgs e)
+        public void frmQuanLySach_Load(object sender, EventArgs e)
         {
 
         }

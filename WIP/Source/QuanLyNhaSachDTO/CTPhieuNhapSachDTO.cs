@@ -10,7 +10,7 @@ namespace QuanLyNhaSachDTO
     {
         private string maPN;
         private string maSach;
-        private string soluongNhap;
+        private int soluongNhap;
         private string maCT;
 
         public string MaPN
@@ -31,7 +31,7 @@ namespace QuanLyNhaSachDTO
             set => maCT = value;
         }
 
-        public string SLN
+        public int SLN
         {
             get => soluongNhap;
             set => soluongNhap = value;
