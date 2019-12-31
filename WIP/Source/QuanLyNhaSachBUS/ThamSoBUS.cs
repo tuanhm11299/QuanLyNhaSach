@@ -21,5 +21,15 @@ namespace QuanLyNhaSachBUS
         {
             return dal.loadThamSo(lsObj);
         }*/
+
+        public ThamSoDTO QuyDinh()
+        {
+            return dal.QuyDinh();
+        }
+
+        public bool chinhsuaQuyDinh(ThamSoDTO qd)
+        {
+            return dal.chinhsuaQuyDinh(qd);
+        }
     }
 }

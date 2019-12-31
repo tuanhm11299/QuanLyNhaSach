@@ -14,7 +14,7 @@ namespace QuanLyNhaSach
 {
     public partial class frmPhieuNhapSach : Form
     {
-        int nhapItNhat, luongtonMax;
+        int nhapItNhat, luongtonMax, luongtonTam, luongton, luongtonMoi;
         frmQuanLySach frmQLS; 
         //private int isThemMoi = 0;
         private PhieuNhapSachBUS bus;
@@ -136,15 +136,20 @@ namespace QuanLyNhaSach
         private void btnThemCT_Click(object sender, EventArgs e)
         {
             CTPhieuNhapSachDTO obj = new CTPhieuNhapSachDTO();
-            List<ThamSoDTO> lsObjThamSo = new List<ThamSoDTO>();
+            //List<ThamSoDTO> lsObjThamSo = new List<ThamSoDTO>();
+            ThamSoDTO ThamSo = busThamSo.QuyDinh();
+            nhapItNhat = ThamSo.SoLuongNhapItNhat; //quy định số lượng nhập ít nhất
+            luongtonMax = ThamSo.SoLuongTonToiDaTruocNhap; // quy định số lượng tồn tối đa trước khi nhập
 
             obj.MaCT = this.txtMaCTPN.Text;
             obj.MaPN = this.txtMaPN.Text;
             obj.MaSach = this.txtMaSach.Text;
             obj.SLN = Convert.ToInt32(this.txtSoLuongNhap.Text);
+            
             string result = this.bus.insertChiTiet(obj);
-            ////string loadThamSo = this.busThamSo.loadThamSo(lsObjThamSo);
-            ////int nhapItNhat = int.Parse(loadThamSo.Rows(0).Item(1).ToString());
+            
+            ////string loadThamSo = this.busThamSo.loadThamSo(lsObjThamSo); fix later
+            ////int nhapItNhat = int.Parse(loadThamSo.Rows(0).Item(1).ToString()); fix later
             //int nhapItNhat;
             //bool isItNhat = int.TryParse(txtSoLuongNhap.Text.Trim(), out nhapItNhat);
             if (result == "0")
