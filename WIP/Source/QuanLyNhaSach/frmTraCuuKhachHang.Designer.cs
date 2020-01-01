@@ -286,7 +286,7 @@
             this.Label3.Text = "TRA CỨU KHÁCH HÀNG";
             this.Label3.Click += new System.EventHandler(this.Label3_Click);
             // 
-            // TraCuuKhachHang
+            // frmTraCuuKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -298,8 +298,9 @@
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.Label3);
-            this.Name = "TraCuuKhachHang";
+            this.Name = "frmTraCuuKhachHang";
             this.Text = "TraCuuKhachHang";
+            this.Load += new System.EventHandler(this.frmTraCuuKhachHang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Luoi)).EndInit();
             this.GroupBox2.ResumeLayout(false);
             this.GroupBox2.PerformLayout();

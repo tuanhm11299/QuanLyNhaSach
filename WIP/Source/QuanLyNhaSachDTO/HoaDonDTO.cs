@@ -10,8 +10,7 @@ namespace QuanLyNhaSachDTO
     {
         private string maKH;
         private string maHD;
-        private string maNV;
-        private DateTime ngayLap;
+        private string ngayLap;
         private int tongthanhTien;
 
         public string MaHD
@@ -26,13 +25,7 @@ namespace QuanLyNhaSachDTO
             set => maKH = value;
         }
 
-        public string MaNV
-        {
-            get => maNV;
-            set => maNV = value;
-        }
-
-        public DateTime NgayLap
+        public string NgayLap
         {
             get => ngayLap;
             set => ngayLap = value;

@@ -31,6 +31,11 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTraCuuSach = new System.Windows.Forms.Button();
             this.textBoxTraCuuTenSach = new System.Windows.Forms.TextBox();
@@ -56,11 +61,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnKetThuc = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDonGia = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -100,6 +102,34 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(777, 379);
             this.dataGridView1.TabIndex = 21;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã Sách";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên Sách";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 180;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Tác Giả";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 180;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Thể Loại";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 180;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Số Lượng Tồn";
+            this.Column5.Name = "Column5";
             // 
             // groupBox2
             // 
@@ -229,6 +259,7 @@
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // textBoxTenSach
             // 
@@ -311,6 +342,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtDonGia);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.textBoxSoLuongTon);
             this.groupBox1.Controls.Add(this.textBoxTheLoai);
             this.groupBox1.Controls.Add(this.textBoxTacGia);
@@ -339,35 +372,23 @@
             this.btnKetThuc.Text = "Kết Thúc";
             this.btnKetThuc.UseVisualStyleBackColor = true;
             // 
-            // Column1
+            // label7
             // 
-            this.Column1.HeaderText = "Mã Sách";
-            this.Column1.Name = "Column1";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(450, 124);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 19);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Đơn Giá Nhập";
             // 
-            // Column2
+            // txtDonGia
             // 
-            this.Column2.HeaderText = "Tên Sách";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 180;
+            this.txtDonGia.Location = new System.Drawing.Point(560, 121);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Size = new System.Drawing.Size(194, 26);
+            this.txtDonGia.TabIndex = 12;
             // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Tác Giả";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 180;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Thể Loại";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 180;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Số Lượng Tồn";
-            this.Column5.Name = "Column5";
-            // 
-            // QuanLySach
+            // frmQuanLySach
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -381,7 +402,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnKetThuc);
-            this.Name = "QuanLySach";
+            this.Name = "frmQuanLySach";
             this.Text = "QuanLySach";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -429,5 +450,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtDonGia;
     }
 }

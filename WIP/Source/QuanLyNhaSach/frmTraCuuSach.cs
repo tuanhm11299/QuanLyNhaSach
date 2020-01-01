@@ -15,6 +15,9 @@ namespace QuanLyNhaSach
     public partial class frmTraCuuSach : Form
     {
         private QuanLySachBUS bus;
+        //int typesearch = 0;
+
+
         public frmTraCuuSach()
         {
             InitializeComponent();
@@ -22,13 +25,69 @@ namespace QuanLyNhaSach
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            buildDanhSachMaSach();
+            if (chkMaSach.Checked == true)
+            { 
+                buildDanhSachMaSach(); 
+            }
+            else if(chkTenSach.Checked == true)
+            {
+                buildDanhSachTenSach();
+            }
+            else if (chkTheLoai.Checked == true) 
+            {
+                buildDanhSachTheLoai();
+            }
+            else if (chkTacGia.Checked == true)
+            {
+                buildDanhSachTacGia();
+            }
+            /*
+            else if(chkMaSach.Checked == true && chkTenSach.Checked == true)
+            {
+                buildDanhSachMaSachandTenSach();
+            }
+            else if(chkMaSach.Checked == true && chkTheLoai.Checked == true)
+            {
+                buildDanhSachMaSachandTheLoai();
+            }
+            else if(chkMaSach.Checked == true && chkTacGia.Checked == true)
+            {
+                buildDanhSachMaSachandTacGia();
+            }
+            else if(chkTenSach.Checked == true && chkTheLoai.Checked == true)
+            {
+                buildDanhSachTenSachandTheLoai();
+            }
+            else if(chkTenSach.Checked == true && chkTacGia.Checked == true)
+            {
+                buildDanhSachTenSachandTacGia();
+            }
+            else if(chkTheLoai.Checked == true && chkTacGia.Checked == true)
+            {
+                buildDanhSachTacGiaandTheLoai();
+            }
+            else if(chkMaSach.Checked == true && chkTenSach.Checked == true && chkTheLoai.Checked == true)
+            {
+                buildDanhSachMaSachandTenSachandTheLoai();
+            }
+            else if(chkMaSach.Checked == true && chkTenSach.Checked == true && chkTacGia.Checked == true)
+            {
+                buildDanhSachMaSachandTenSachandTacGia();
+            }
+            else if(chkMaSach.Checked == true && chkTheLoai.Checked == true && chkTacGia.Checked == true)
+            {
+                buildDanhSachMaSachandTheLoaiandTacGia();
+            }
+            else if(chkTenSach.Checked == true && chkTheLoai.Checked == true && chkTacGia.Checked == true)
+            {
+                buildDanhSachTenSachandTheLoaiandTacGia();
+            }*/
         }
 
         private void buildDanhSachMaSach()
         {
             List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
-            string result = this.bus.searchTuKhoa(this.txtMaSach.Text, lsObj);
+            string result = this.bus.searchMaSach(this.txtMaSach.Text, lsObj);
             if (result != "0")
             {
                 MessageBox.Show("Lỗi khi lấy danh sách sách.\n" + result);
@@ -75,15 +134,669 @@ namespace QuanLyNhaSach
             myCurrencyManager.Refresh();
         }
 
+        private void buildDanhSachTheLoai()
+        {
+            List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
+            string result = this.bus.searchTheLoai(this.txtTheLoai.Text, lsObj);
+            if (result != "0")
+            {
+                MessageBox.Show("Lỗi khi lấy danh sách sách.\n" + result);
+                return;
+            }
+            dgvDanhSachSach.Columns.Clear();
+            dgvDanhSachSach.DataSource = null;
+
+            dgvDanhSachSach.AutoGenerateColumns = false;
+            dgvDanhSachSach.AllowUserToAddRows = false;
+            dgvDanhSachSach.DataSource = lsObj;
+
+            DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+            clMaSach.Name = "MaSach";
+            clMaSach.HeaderText = "Mã Sách";
+            clMaSach.DataPropertyName = "MaSach";
+            dgvDanhSachSach.Columns.Add(clMaSach);
+
+            DataGridViewTextBoxColumn clTenSach = new DataGridViewTextBoxColumn();
+            clTenSach.Name = "TenSach";
+            clTenSach.HeaderText = "Tên Sách";
+            clTenSach.DataPropertyName = "TenSach";
+            dgvDanhSachSach.Columns.Add(clTenSach);
+
+            DataGridViewTextBoxColumn clTheLoai = new DataGridViewTextBoxColumn();
+            clTheLoai.Name = "TheLoai";
+            clTheLoai.HeaderText = "Thể Loại";
+            clTheLoai.DataPropertyName = "TheLoai";
+            dgvDanhSachSach.Columns.Add(clTheLoai);
+
+            DataGridViewTextBoxColumn clTacGia = new DataGridViewTextBoxColumn();
+            clTacGia.Name = "TacGia";
+            clTacGia.HeaderText = "Tác Giả";
+            clTacGia.DataPropertyName = "TacGia";
+            dgvDanhSachSach.Columns.Add(clTacGia);
+
+            DataGridViewTextBoxColumn clSoLuong = new DataGridViewTextBoxColumn();
+            clSoLuong.Name = "SoLuong";
+            clSoLuong.HeaderText = "Số Lượng Tồn";
+            clSoLuong.DataPropertyName = "SoLuong";
+            dgvDanhSachSach.Columns.Add(clSoLuong);
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
+            myCurrencyManager.Refresh();
+        }
+
+        private void buildDanhSachTenSach()
+        {
+            List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
+            string result = this.bus.searchTenSach(this.txtTenSach.Text, lsObj);
+            if (result != "0")
+            {
+                MessageBox.Show("Lỗi khi lấy danh sách sách.\n" + result);
+                return;
+            }
+            dgvDanhSachSach.Columns.Clear();
+            dgvDanhSachSach.DataSource = null;
+
+            dgvDanhSachSach.AutoGenerateColumns = false;
+            dgvDanhSachSach.AllowUserToAddRows = false;
+            dgvDanhSachSach.DataSource = lsObj;
+
+            DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+            clMaSach.Name = "MaSach";
+            clMaSach.HeaderText = "Mã Sách";
+            clMaSach.DataPropertyName = "MaSach";
+            dgvDanhSachSach.Columns.Add(clMaSach);
+
+            DataGridViewTextBoxColumn clTenSach = new DataGridViewTextBoxColumn();
+            clTenSach.Name = "TenSach";
+            clTenSach.HeaderText = "Tên Sách";
+            clTenSach.DataPropertyName = "TenSach";
+            dgvDanhSachSach.Columns.Add(clTenSach);
+
+            DataGridViewTextBoxColumn clTheLoai = new DataGridViewTextBoxColumn();
+            clTheLoai.Name = "TheLoai";
+            clTheLoai.HeaderText = "Thể Loại";
+            clTheLoai.DataPropertyName = "TheLoai";
+            dgvDanhSachSach.Columns.Add(clTheLoai);
+
+            DataGridViewTextBoxColumn clTacGia = new DataGridViewTextBoxColumn();
+            clTacGia.Name = "TacGia";
+            clTacGia.HeaderText = "Tác Giả";
+            clTacGia.DataPropertyName = "TacGia";
+            dgvDanhSachSach.Columns.Add(clTacGia);
+
+            DataGridViewTextBoxColumn clSoLuong = new DataGridViewTextBoxColumn();
+            clSoLuong.Name = "SoLuong";
+            clSoLuong.HeaderText = "Số Lượng Tồn";
+            clSoLuong.DataPropertyName = "SoLuong";
+            dgvDanhSachSach.Columns.Add(clSoLuong);
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
+            myCurrencyManager.Refresh();
+        }
+
+        private void buildDanhSachTacGia()
+        {
+            List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
+            string result = this.bus.searchTacGia(this.txtTacGia.Text, lsObj);
+            if (result != "0")
+            {
+                MessageBox.Show("Lỗi khi lấy danh sách sách.\n" + result);
+                return;
+            }
+            dgvDanhSachSach.Columns.Clear();
+            dgvDanhSachSach.DataSource = null;
+
+            dgvDanhSachSach.AutoGenerateColumns = false;
+            dgvDanhSachSach.AllowUserToAddRows = false;
+            dgvDanhSachSach.DataSource = lsObj;
+
+            DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+            clMaSach.Name = "MaSach";
+            clMaSach.HeaderText = "Mã Sách";
+            clMaSach.DataPropertyName = "MaSach";
+            dgvDanhSachSach.Columns.Add(clMaSach);
+
+            DataGridViewTextBoxColumn clTenSach = new DataGridViewTextBoxColumn();
+            clTenSach.Name = "TenSach";
+            clTenSach.HeaderText = "Tên Sách";
+            clTenSach.DataPropertyName = "TenSach";
+            dgvDanhSachSach.Columns.Add(clTenSach);
+
+            DataGridViewTextBoxColumn clTheLoai = new DataGridViewTextBoxColumn();
+            clTheLoai.Name = "TheLoai";
+            clTheLoai.HeaderText = "Thể Loại";
+            clTheLoai.DataPropertyName = "TheLoai";
+            dgvDanhSachSach.Columns.Add(clTheLoai);
+
+            DataGridViewTextBoxColumn clTacGia = new DataGridViewTextBoxColumn();
+            clTacGia.Name = "TacGia";
+            clTacGia.HeaderText = "Tác Giả";
+            clTacGia.DataPropertyName = "TacGia";
+            dgvDanhSachSach.Columns.Add(clTacGia);
+
+            DataGridViewTextBoxColumn clSoLuong = new DataGridViewTextBoxColumn();
+            clSoLuong.Name = "SoLuong";
+            clSoLuong.HeaderText = "Số Lượng Tồn";
+            clSoLuong.DataPropertyName = "SoLuong";
+            dgvDanhSachSach.Columns.Add(clSoLuong);
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
+            myCurrencyManager.Refresh();
+        }
+        /*
+        private void buildDanhSachMaSachandTheLoai()
+        {
+            List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
+            string result = this.bus.searchMaSachandTheLoai(this.txtMaSach.Text, this.txtTheLoai.Text, lsObj);
+            if (result != "0")
+            {
+                MessageBox.Show("Lỗi khi lấy danh sách sách.\n" + result);
+                return;
+            }
+            dgvDanhSachSach.Columns.Clear();
+            dgvDanhSachSach.DataSource = null;
+
+            dgvDanhSachSach.AutoGenerateColumns = false;
+            dgvDanhSachSach.AllowUserToAddRows = false;
+            dgvDanhSachSach.DataSource = lsObj;
+
+            DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+            clMaSach.Name = "MaSach";
+            clMaSach.HeaderText = "Mã Sách";
+            clMaSach.DataPropertyName = "MaSach";
+            dgvDanhSachSach.Columns.Add(clMaSach);
+
+            DataGridViewTextBoxColumn clTenSach = new DataGridViewTextBoxColumn();
+            clTenSach.Name = "TenSach";
+            clTenSach.HeaderText = "Tên Sách";
+            clTenSach.DataPropertyName = "TenSach";
+            dgvDanhSachSach.Columns.Add(clTenSach);
+
+            DataGridViewTextBoxColumn clTheLoai = new DataGridViewTextBoxColumn();
+            clTheLoai.Name = "TheLoai";
+            clTheLoai.HeaderText = "Thể Loại";
+            clTheLoai.DataPropertyName = "TheLoai";
+            dgvDanhSachSach.Columns.Add(clTheLoai);
+
+            DataGridViewTextBoxColumn clTacGia = new DataGridViewTextBoxColumn();
+            clTacGia.Name = "TacGia";
+            clTacGia.HeaderText = "Tác Giả";
+            clTacGia.DataPropertyName = "TacGia";
+            dgvDanhSachSach.Columns.Add(clTacGia);
+
+            DataGridViewTextBoxColumn clSoLuong = new DataGridViewTextBoxColumn();
+            clSoLuong.Name = "SoLuong";
+            clSoLuong.HeaderText = "Số Lượng Tồn";
+            clSoLuong.DataPropertyName = "SoLuong";
+            dgvDanhSachSach.Columns.Add(clSoLuong);
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
+            myCurrencyManager.Refresh();
+        }
+
+        private void buildDanhSachMaSachandTenSach()
+        {
+            List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
+            string result = this.bus.searchMaSachandTenSach(this.txtMaSach.Text, this.txtTenSach.Text, lsObj);
+            if (result != "0")
+            {
+                MessageBox.Show("Lỗi khi lấy danh sách sách.\n" + result);
+                return;
+            }
+            dgvDanhSachSach.Columns.Clear();
+            dgvDanhSachSach.DataSource = null;
+
+            dgvDanhSachSach.AutoGenerateColumns = false;
+            dgvDanhSachSach.AllowUserToAddRows = false;
+            dgvDanhSachSach.DataSource = lsObj;
+
+            DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+            clMaSach.Name = "MaSach";
+            clMaSach.HeaderText = "Mã Sách";
+            clMaSach.DataPropertyName = "MaSach";
+            dgvDanhSachSach.Columns.Add(clMaSach);
+
+            DataGridViewTextBoxColumn clTenSach = new DataGridViewTextBoxColumn();
+            clTenSach.Name = "TenSach";
+            clTenSach.HeaderText = "Tên Sách";
+            clTenSach.DataPropertyName = "TenSach";
+            dgvDanhSachSach.Columns.Add(clTenSach);
+
+            DataGridViewTextBoxColumn clTheLoai = new DataGridViewTextBoxColumn();
+            clTheLoai.Name = "TheLoai";
+            clTheLoai.HeaderText = "Thể Loại";
+            clTheLoai.DataPropertyName = "TheLoai";
+            dgvDanhSachSach.Columns.Add(clTheLoai);
+
+            DataGridViewTextBoxColumn clTacGia = new DataGridViewTextBoxColumn();
+            clTacGia.Name = "TacGia";
+            clTacGia.HeaderText = "Tác Giả";
+            clTacGia.DataPropertyName = "TacGia";
+            dgvDanhSachSach.Columns.Add(clTacGia);
+
+            DataGridViewTextBoxColumn clSoLuong = new DataGridViewTextBoxColumn();
+            clSoLuong.Name = "SoLuong";
+            clSoLuong.HeaderText = "Số Lượng Tồn";
+            clSoLuong.DataPropertyName = "SoLuong";
+            dgvDanhSachSach.Columns.Add(clSoLuong);
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
+            myCurrencyManager.Refresh();
+        }
+
+        private void buildDanhSachMaSachandTacGia()
+        {
+            List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
+            string result = this.bus.searchMaSachandTacGia(this.txtMaSach.Text, this.txtTacGia.Text, lsObj);
+            if (result != "0")
+            {
+                MessageBox.Show("Lỗi khi lấy danh sách sách.\n" + result);
+                return;
+            }
+            dgvDanhSachSach.Columns.Clear();
+            dgvDanhSachSach.DataSource = null;
+
+            dgvDanhSachSach.AutoGenerateColumns = false;
+            dgvDanhSachSach.AllowUserToAddRows = false;
+            dgvDanhSachSach.DataSource = lsObj;
+
+            DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+            clMaSach.Name = "MaSach";
+            clMaSach.HeaderText = "Mã Sách";
+            clMaSach.DataPropertyName = "MaSach";
+            dgvDanhSachSach.Columns.Add(clMaSach);
+
+            DataGridViewTextBoxColumn clTenSach = new DataGridViewTextBoxColumn();
+            clTenSach.Name = "TenSach";
+            clTenSach.HeaderText = "Tên Sách";
+            clTenSach.DataPropertyName = "TenSach";
+            dgvDanhSachSach.Columns.Add(clTenSach);
+
+            DataGridViewTextBoxColumn clTheLoai = new DataGridViewTextBoxColumn();
+            clTheLoai.Name = "TheLoai";
+            clTheLoai.HeaderText = "Thể Loại";
+            clTheLoai.DataPropertyName = "TheLoai";
+            dgvDanhSachSach.Columns.Add(clTheLoai);
+
+            DataGridViewTextBoxColumn clTacGia = new DataGridViewTextBoxColumn();
+            clTacGia.Name = "TacGia";
+            clTacGia.HeaderText = "Tác Giả";
+            clTacGia.DataPropertyName = "TacGia";
+            dgvDanhSachSach.Columns.Add(clTacGia);
+
+            DataGridViewTextBoxColumn clSoLuong = new DataGridViewTextBoxColumn();
+            clSoLuong.Name = "SoLuong";
+            clSoLuong.HeaderText = "Số Lượng Tồn";
+            clSoLuong.DataPropertyName = "SoLuong";
+            dgvDanhSachSach.Columns.Add(clSoLuong);
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
+            myCurrencyManager.Refresh();
+        }
+
+        private void buildDanhSachTenSachandTheLoai()
+        {
+            List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
+            string result = this.bus.searchTenSachandTheLoai(this.txtTenSach.Text, this.txtTheLoai.Text ,lsObj);
+            if (result != "0")
+            {
+                MessageBox.Show("Lỗi khi lấy danh sách sách.\n" + result);
+                return;
+            }
+            dgvDanhSachSach.Columns.Clear();
+            dgvDanhSachSach.DataSource = null;
+
+            dgvDanhSachSach.AutoGenerateColumns = false;
+            dgvDanhSachSach.AllowUserToAddRows = false;
+            dgvDanhSachSach.DataSource = lsObj;
+
+            DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+            clMaSach.Name = "MaSach";
+            clMaSach.HeaderText = "Mã Sách";
+            clMaSach.DataPropertyName = "MaSach";
+            dgvDanhSachSach.Columns.Add(clMaSach);
+
+            DataGridViewTextBoxColumn clTenSach = new DataGridViewTextBoxColumn();
+            clTenSach.Name = "TenSach";
+            clTenSach.HeaderText = "Tên Sách";
+            clTenSach.DataPropertyName = "TenSach";
+            dgvDanhSachSach.Columns.Add(clTenSach);
+
+            DataGridViewTextBoxColumn clTheLoai = new DataGridViewTextBoxColumn();
+            clTheLoai.Name = "TheLoai";
+            clTheLoai.HeaderText = "Thể Loại";
+            clTheLoai.DataPropertyName = "TheLoai";
+            dgvDanhSachSach.Columns.Add(clTheLoai);
+
+            DataGridViewTextBoxColumn clTacGia = new DataGridViewTextBoxColumn();
+            clTacGia.Name = "TacGia";
+            clTacGia.HeaderText = "Tác Giả";
+            clTacGia.DataPropertyName = "TacGia";
+            dgvDanhSachSach.Columns.Add(clTacGia);
+
+            DataGridViewTextBoxColumn clSoLuong = new DataGridViewTextBoxColumn();
+            clSoLuong.Name = "SoLuong";
+            clSoLuong.HeaderText = "Số Lượng Tồn";
+            clSoLuong.DataPropertyName = "SoLuong";
+            dgvDanhSachSach.Columns.Add(clSoLuong);
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
+            myCurrencyManager.Refresh();
+        }
+
+        private void buildDanhSachTenSachandTacGia()
+        {
+            List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
+            string result = this.bus.searchTenSachandTacGia(this.txtTenSach.Text, this.txtTacGia.Text, lsObj);
+            if (result != "0")
+            {
+                MessageBox.Show("Lỗi khi lấy danh sách sách.\n" + result);
+                return;
+            }
+            dgvDanhSachSach.Columns.Clear();
+            dgvDanhSachSach.DataSource = null;
+
+            dgvDanhSachSach.AutoGenerateColumns = false;
+            dgvDanhSachSach.AllowUserToAddRows = false;
+            dgvDanhSachSach.DataSource = lsObj;
+
+            DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+            clMaSach.Name = "MaSach";
+            clMaSach.HeaderText = "Mã Sách";
+            clMaSach.DataPropertyName = "MaSach";
+            dgvDanhSachSach.Columns.Add(clMaSach);
+
+            DataGridViewTextBoxColumn clTenSach = new DataGridViewTextBoxColumn();
+            clTenSach.Name = "TenSach";
+            clTenSach.HeaderText = "Tên Sách";
+            clTenSach.DataPropertyName = "TenSach";
+            dgvDanhSachSach.Columns.Add(clTenSach);
+
+            DataGridViewTextBoxColumn clTheLoai = new DataGridViewTextBoxColumn();
+            clTheLoai.Name = "TheLoai";
+            clTheLoai.HeaderText = "Thể Loại";
+            clTheLoai.DataPropertyName = "TheLoai";
+            dgvDanhSachSach.Columns.Add(clTheLoai);
+
+            DataGridViewTextBoxColumn clTacGia = new DataGridViewTextBoxColumn();
+            clTacGia.Name = "TacGia";
+            clTacGia.HeaderText = "Tác Giả";
+            clTacGia.DataPropertyName = "TacGia";
+            dgvDanhSachSach.Columns.Add(clTacGia);
+
+            DataGridViewTextBoxColumn clSoLuong = new DataGridViewTextBoxColumn();
+            clSoLuong.Name = "SoLuong";
+            clSoLuong.HeaderText = "Số Lượng Tồn";
+            clSoLuong.DataPropertyName = "SoLuong";
+            dgvDanhSachSach.Columns.Add(clSoLuong);
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
+            myCurrencyManager.Refresh();
+        }
+
+        private void buildDanhSachTacGiaandTheLoai()
+        {
+            List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
+            string result = this.bus.searchTacGiaandTheLoai(this.txtTacGia.Text, this.txtTheLoai.Text ,lsObj);
+            if (result != "0")
+            {
+                MessageBox.Show("Lỗi khi lấy danh sách sách.\n" + result);
+                return;
+            }
+            dgvDanhSachSach.Columns.Clear();
+            dgvDanhSachSach.DataSource = null;
+
+            dgvDanhSachSach.AutoGenerateColumns = false;
+            dgvDanhSachSach.AllowUserToAddRows = false;
+            dgvDanhSachSach.DataSource = lsObj;
+
+            DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+            clMaSach.Name = "MaSach";
+            clMaSach.HeaderText = "Mã Sách";
+            clMaSach.DataPropertyName = "MaSach";
+            dgvDanhSachSach.Columns.Add(clMaSach);
+
+            DataGridViewTextBoxColumn clTenSach = new DataGridViewTextBoxColumn();
+            clTenSach.Name = "TenSach";
+            clTenSach.HeaderText = "Tên Sách";
+            clTenSach.DataPropertyName = "TenSach";
+            dgvDanhSachSach.Columns.Add(clTenSach);
+
+            DataGridViewTextBoxColumn clTheLoai = new DataGridViewTextBoxColumn();
+            clTheLoai.Name = "TheLoai";
+            clTheLoai.HeaderText = "Thể Loại";
+            clTheLoai.DataPropertyName = "TheLoai";
+            dgvDanhSachSach.Columns.Add(clTheLoai);
+
+            DataGridViewTextBoxColumn clTacGia = new DataGridViewTextBoxColumn();
+            clTacGia.Name = "TacGia";
+            clTacGia.HeaderText = "Tác Giả";
+            clTacGia.DataPropertyName = "TacGia";
+            dgvDanhSachSach.Columns.Add(clTacGia);
+
+            DataGridViewTextBoxColumn clSoLuong = new DataGridViewTextBoxColumn();
+            clSoLuong.Name = "SoLuong";
+            clSoLuong.HeaderText = "Số Lượng Tồn";
+            clSoLuong.DataPropertyName = "SoLuong";
+            dgvDanhSachSach.Columns.Add(clSoLuong);
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
+            myCurrencyManager.Refresh();
+        }
+
+        private void buildDanhSachMaSachandTenSachandTacGia()
+        {
+            List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
+            string result = this.bus.searchMaSachandTenSachandTacGia( this.txtMaSach.Text, this.txtTenSach.Text, this.txtTacGia.Text, lsObj);
+            if (result != "0")
+            {
+                MessageBox.Show("Lỗi khi lấy danh sách sách.\n" + result);
+                return;
+            }
+            dgvDanhSachSach.Columns.Clear();
+            dgvDanhSachSach.DataSource = null;
+
+            dgvDanhSachSach.AutoGenerateColumns = false;
+            dgvDanhSachSach.AllowUserToAddRows = false;
+            dgvDanhSachSach.DataSource = lsObj;
+
+            DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+            clMaSach.Name = "MaSach";
+            clMaSach.HeaderText = "Mã Sách";
+            clMaSach.DataPropertyName = "MaSach";
+            dgvDanhSachSach.Columns.Add(clMaSach);
+
+            DataGridViewTextBoxColumn clTenSach = new DataGridViewTextBoxColumn();
+            clTenSach.Name = "TenSach";
+            clTenSach.HeaderText = "Tên Sách";
+            clTenSach.DataPropertyName = "TenSach";
+            dgvDanhSachSach.Columns.Add(clTenSach);
+
+            DataGridViewTextBoxColumn clTheLoai = new DataGridViewTextBoxColumn();
+            clTheLoai.Name = "TheLoai";
+            clTheLoai.HeaderText = "Thể Loại";
+            clTheLoai.DataPropertyName = "TheLoai";
+            dgvDanhSachSach.Columns.Add(clTheLoai);
+
+            DataGridViewTextBoxColumn clTacGia = new DataGridViewTextBoxColumn();
+            clTacGia.Name = "TacGia";
+            clTacGia.HeaderText = "Tác Giả";
+            clTacGia.DataPropertyName = "TacGia";
+            dgvDanhSachSach.Columns.Add(clTacGia);
+
+            DataGridViewTextBoxColumn clSoLuong = new DataGridViewTextBoxColumn();
+            clSoLuong.Name = "SoLuong";
+            clSoLuong.HeaderText = "Số Lượng Tồn";
+            clSoLuong.DataPropertyName = "SoLuong";
+            dgvDanhSachSach.Columns.Add(clSoLuong);
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
+            myCurrencyManager.Refresh();
+        }
+
+        private void buildDanhSachMaSachandTenSachandTheLoai()
+        {
+            List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
+            string result = this.bus.searchMaSachandTenSachandTheLoai(this.txtMaSach.Text, this.txtTenSach.Text, this.txtTheLoai.Text, lsObj);
+            if (result != "0")
+            {
+                MessageBox.Show("Lỗi khi lấy danh sách sách.\n" + result);
+                return;
+            }
+            dgvDanhSachSach.Columns.Clear();
+            dgvDanhSachSach.DataSource = null;
+
+            dgvDanhSachSach.AutoGenerateColumns = false;
+            dgvDanhSachSach.AllowUserToAddRows = false;
+            dgvDanhSachSach.DataSource = lsObj;
+
+            DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+            clMaSach.Name = "MaSach";
+            clMaSach.HeaderText = "Mã Sách";
+            clMaSach.DataPropertyName = "MaSach";
+            dgvDanhSachSach.Columns.Add(clMaSach);
+
+            DataGridViewTextBoxColumn clTenSach = new DataGridViewTextBoxColumn();
+            clTenSach.Name = "TenSach";
+            clTenSach.HeaderText = "Tên Sách";
+            clTenSach.DataPropertyName = "TenSach";
+            dgvDanhSachSach.Columns.Add(clTenSach);
+
+            DataGridViewTextBoxColumn clTheLoai = new DataGridViewTextBoxColumn();
+            clTheLoai.Name = "TheLoai";
+            clTheLoai.HeaderText = "Thể Loại";
+            clTheLoai.DataPropertyName = "TheLoai";
+            dgvDanhSachSach.Columns.Add(clTheLoai);
+
+            DataGridViewTextBoxColumn clTacGia = new DataGridViewTextBoxColumn();
+            clTacGia.Name = "TacGia";
+            clTacGia.HeaderText = "Tác Giả";
+            clTacGia.DataPropertyName = "TacGia";
+            dgvDanhSachSach.Columns.Add(clTacGia);
+
+            DataGridViewTextBoxColumn clSoLuong = new DataGridViewTextBoxColumn();
+            clSoLuong.Name = "SoLuong";
+            clSoLuong.HeaderText = "Số Lượng Tồn";
+            clSoLuong.DataPropertyName = "SoLuong";
+            dgvDanhSachSach.Columns.Add(clSoLuong);
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
+            myCurrencyManager.Refresh();
+        }
+
+
+        private void buildDanhSachMaSachandTheLoaiandTacGia()
+        {
+            List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
+            string result = this.bus.searchMaSachandTheLoaiandTacGia(this.txtMaSach.Text, this.txtTheLoai.Text, this.txtTacGia.Text, lsObj);
+            if (result != "0")
+            {
+                MessageBox.Show("Lỗi khi lấy danh sách sách.\n" + result);
+                return;
+            }
+            dgvDanhSachSach.Columns.Clear();
+            dgvDanhSachSach.DataSource = null;
+
+            dgvDanhSachSach.AutoGenerateColumns = false;
+            dgvDanhSachSach.AllowUserToAddRows = false;
+            dgvDanhSachSach.DataSource = lsObj;
+
+            DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+            clMaSach.Name = "MaSach";
+            clMaSach.HeaderText = "Mã Sách";
+            clMaSach.DataPropertyName = "MaSach";
+            dgvDanhSachSach.Columns.Add(clMaSach);
+
+            DataGridViewTextBoxColumn clTenSach = new DataGridViewTextBoxColumn();
+            clTenSach.Name = "TenSach";
+            clTenSach.HeaderText = "Tên Sách";
+            clTenSach.DataPropertyName = "TenSach";
+            dgvDanhSachSach.Columns.Add(clTenSach);
+
+            DataGridViewTextBoxColumn clTheLoai = new DataGridViewTextBoxColumn();
+            clTheLoai.Name = "TheLoai";
+            clTheLoai.HeaderText = "Thể Loại";
+            clTheLoai.DataPropertyName = "TheLoai";
+            dgvDanhSachSach.Columns.Add(clTheLoai);
+
+            DataGridViewTextBoxColumn clTacGia = new DataGridViewTextBoxColumn();
+            clTacGia.Name = "TacGia";
+            clTacGia.HeaderText = "Tác Giả";
+            clTacGia.DataPropertyName = "TacGia";
+            dgvDanhSachSach.Columns.Add(clTacGia);
+
+            DataGridViewTextBoxColumn clSoLuong = new DataGridViewTextBoxColumn();
+            clSoLuong.Name = "SoLuong";
+            clSoLuong.HeaderText = "Số Lượng Tồn";
+            clSoLuong.DataPropertyName = "SoLuong";
+            dgvDanhSachSach.Columns.Add(clSoLuong);
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
+            myCurrencyManager.Refresh();
+        }
+
+
+        private void buildDanhSachTenSachandTheLoaiandTacGia()
+        {
+            List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
+            string result = this.bus.searchTenSachandTheLoaiandTacGia(this.txtTenSach.Text, this.txtTheLoai.Text ,this.txtTacGia.Text, lsObj);
+            if (result != "0")
+            {
+                MessageBox.Show("Lỗi khi lấy danh sách sách.\n" + result);
+                return;
+            }
+            dgvDanhSachSach.Columns.Clear();
+            dgvDanhSachSach.DataSource = null;
+
+            dgvDanhSachSach.AutoGenerateColumns = false;
+            dgvDanhSachSach.AllowUserToAddRows = false;
+            dgvDanhSachSach.DataSource = lsObj;
+
+            DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+            clMaSach.Name = "MaSach";
+            clMaSach.HeaderText = "Mã Sách";
+            clMaSach.DataPropertyName = "MaSach";
+            dgvDanhSachSach.Columns.Add(clMaSach);
+
+            DataGridViewTextBoxColumn clTenSach = new DataGridViewTextBoxColumn();
+            clTenSach.Name = "TenSach";
+            clTenSach.HeaderText = "Tên Sách";
+            clTenSach.DataPropertyName = "TenSach";
+            dgvDanhSachSach.Columns.Add(clTenSach);
+
+            DataGridViewTextBoxColumn clTheLoai = new DataGridViewTextBoxColumn();
+            clTheLoai.Name = "TheLoai";
+            clTheLoai.HeaderText = "Thể Loại";
+            clTheLoai.DataPropertyName = "TheLoai";
+            dgvDanhSachSach.Columns.Add(clTheLoai);
+
+            DataGridViewTextBoxColumn clTacGia = new DataGridViewTextBoxColumn();
+            clTacGia.Name = "TacGia";
+            clTacGia.HeaderText = "Tác Giả";
+            clTacGia.DataPropertyName = "TacGia";
+            dgvDanhSachSach.Columns.Add(clTacGia);
+
+            DataGridViewTextBoxColumn clSoLuong = new DataGridViewTextBoxColumn();
+            clSoLuong.Name = "SoLuong";
+            clSoLuong.HeaderText = "Số Lượng Tồn";
+            clSoLuong.DataPropertyName = "SoLuong";
+            dgvDanhSachSach.Columns.Add(clSoLuong);
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
+            myCurrencyManager.Refresh();
+        }*/
+
+
         private void frmTraCuuSach_Load(object sender, EventArgs e)
         {
             this.bus = new QuanLySachBUS();
+            chkMaSach.Checked = true;
         }
 
         private void buildDanhSach()
         {
             List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
-            string result = this.bus.searchTuKhoa(this.txtMaSach.Text,lsObj);
+            string result = this.bus.searchMaSach(this.txtMaSach.Text,lsObj);
             if (result != "0")
             {
                 MessageBox.Show("Lỗi khi lấy danh sách năm học.\n" + result);
@@ -128,6 +841,31 @@ namespace QuanLyNhaSach
 
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
             myCurrencyManager.Refresh();
+        }
+
+        private void txtTenSach_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chkMaSach_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void chkTenSach_CheckedChanged(object sender, EventArgs e)
+        {
+            //chkTenSach.Checked = false;
+        }
+
+        private void chkTacGia_CheckedChanged(object sender, EventArgs e)
+        {
+            //chkTacGia.Checked = false;
+        }
+
+        private void chkTheLoai_CheckedChanged(object sender, EventArgs e)
+        {
+            //chkTheLoai.Checked = false;
         }
     }
 }

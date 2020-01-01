@@ -50,7 +50,7 @@
     <Compile Include="PhieuNhapSachBUS.cs" />
     <Compile Include="PhieuThuTienBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyKhacHangBUS.cs" />
+    <Compile Include="QuanLyKhachHangBUS.cs" />
     <Compile Include="QuanLyNhanVienBUS.cs" />
     <Compile Include="QuanLySachBUS.cs" />
     <Compile Include="ThamSoBUS.cs" />

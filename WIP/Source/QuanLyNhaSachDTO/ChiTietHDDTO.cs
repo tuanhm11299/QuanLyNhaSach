@@ -8,11 +8,17 @@ namespace QuanLyNhaSachDTO
 {
     public class ChiTietHDDTO
     {
+        private string maCTHD;
         private string maHD;
         private string maSach;
         private int donGia;
         private int soLuong;
 
+        public string MaCTHD
+        {
+            get => maCTHD;
+            set => maCTHD = value;
+        }
         public string MaHD
         {
             get => maHD;

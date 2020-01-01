@@ -9,3 +9,8 @@ E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSac
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSachDTO.csproj.CoreCompileInputs.cache
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSachDTO.dll
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSachDTO.pdb
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDTO\bin\Debug\QuanLyNhaSachDTO.dll
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDTO\bin\Debug\QuanLyNhaSachDTO.pdb
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSachDTO.csprojAssemblyReference.cache
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSachDTO.dll
+C:\Users\SpartaKook7012_Tu\Documents\GitHub\QuanLyNhaSach\WIP\Source\QuanLyNhaSachDTO\obj\Debug\QuanLyNhaSachDTO.pdb

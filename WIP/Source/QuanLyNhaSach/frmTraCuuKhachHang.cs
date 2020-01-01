@@ -12,12 +12,18 @@ namespace QuanLyNhaSach
 {
     public partial class frmTraCuuKhachHang : Form
     {
+        //private frmQuanLyKhachHang frmQLKH;
         public frmTraCuuKhachHang()
         {
             InitializeComponent();
         }
 
         private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmTraCuuKhachHang_Load(object sender, EventArgs e)
         {
 
         }
