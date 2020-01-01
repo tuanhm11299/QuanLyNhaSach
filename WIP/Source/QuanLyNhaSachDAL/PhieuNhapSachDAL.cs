@@ -75,7 +75,7 @@ namespace QuanLyNhaSachDAL
                             {
                                 PhieuNhapSachDTO obj = new PhieuNhapSachDTO(); 
                                 obj.MaPN = reader["MaPhieuNhap"].ToString();
-                                obj.NgayNhap = reader["NgayNhap"].ToString(); ////xem cách get ngày nhập trong c# .net nha bây
+                                obj.NgayNhap = reader["NgayNhap"].ToString(); 
                                 lsObj.Add(obj);
                             }
                         }
@@ -128,8 +128,8 @@ namespace QuanLyNhaSachDAL
             //query += "INSERT INTO [CHITIETPHIEUNHAP] ([MaChiTietPhieuNHap], [MaPhieuNhap], [MaSach], [SoLuongNhap])";
             //query += "VALUES (@MaChiTietPhieuNHap,@MaPhieuNhap,@MaSach,@SoLuongNhap)";
 
-            query += "INSERT INTO [CHITIETPHIEUNHAP] ([MaChiTietPhieuNHap], [MaPhieuNhap], [SoLuongNhap])";
-            query += "VALUES (@MaChiTietPhieuNHap,@MaPhieuNhap,@SoLuongNhap)";
+            query += "INSERT INTO [CHITIETPHIEUNHAP] ([MaChiTietPhieuNHap], [MaPhieuNhap], [MaSach], [SoLuongNhap])";
+            query += "VALUES (@MaChiTietPhieuNHap,@MaPhieuNhap,@MaSach,@SoLuongNhap)";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 using (SqlCommand comm = new SqlCommand())
@@ -139,7 +139,7 @@ namespace QuanLyNhaSachDAL
                     comm.CommandText = query;
                     comm.Parameters.AddWithValue("@MaChiTietPhieuNHap", obj.MaCT);
                     comm.Parameters.AddWithValue("@MaPhieuNhap", obj.MaPN);
-                    //comm.Parameters.AddWithValue("@MaSach", obj.MaSach);
+                    comm.Parameters.AddWithValue("@MaSach", obj.MaSach);
                     comm.Parameters.AddWithValue("@SoLuongNhap", obj.SLN);
                     try
                     {
@@ -164,8 +164,9 @@ namespace QuanLyNhaSachDAL
             //query += " SELECT [MaChiTietPhieuNHap], [MaPhieuNhap], [MaSach], [SoLuongNhap]";
             //query += " FROM [CHITIETPHIEUNHAP]";
 
-            query += " SELECT [MaChiTietPhieuNHap], [MaPhieuNhap], [SoLuongNhap]";
-            query += " FROM [CHITIETPHIEUNHAP]";
+            query += " SELECT ct.MaChiTietPhieuNHap, ct.MaPhieuNhap, ct.MaSach, ct.SoLuongNhap";
+            query += " FROM CHITIETPHIEUNHAP ct, Sach s";
+            query += " WHERE ct.MaSach = s.MaSach";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 using (SqlCommand comm = new SqlCommand())
@@ -186,8 +187,8 @@ namespace QuanLyNhaSachDAL
                                 CTPhieuNhapSachDTO obj = new CTPhieuNhapSachDTO();
                                 obj.MaCT = reader["MaChiTietPhieuNHap"].ToString();
                                 obj.MaPN = reader["MaPhieuNhap"].ToString();
-                                //obj.MaSach = reader["MaSach"].ToString();
-                                obj.SLN = reader["SoLuongNhap"].ToString();
+                                obj.MaSach = reader["MaSach"].ToString();
+                                obj.SLN = Convert.ToInt32(reader["SoLuongNhap"].ToString());
                                 lsObj.Add(obj);
                             }
                         }

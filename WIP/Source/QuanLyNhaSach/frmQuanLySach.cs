@@ -28,13 +28,13 @@ namespace QuanLyNhaSach
         private void btnThem_Click(object sender, EventArgs e)
         {
             QuanLySachDTO obj = new QuanLySachDTO();
-            obj.MaSach = this.textBoxMaSach.Text;
+            obj.MaSach = this.txtMaSach.Text;
             //obj.NgayNhap = this.dtpNgayNhap.Text; //xem cách get ngày nhập trong c# .net nha bây
-            obj.TenSach = this.textBoxTenSach.Text;
-            obj.TheLoai = this.textBoxTheLoai.Text;
-            obj.TacGia = this.textBoxTacGia.Text;
-            obj.SoLuongTon = Convert.ToInt32(this.textBoxSoLuongTon.Text);
-            obj.SoLuongTon = Convert.ToInt32(this.txtDonGia.Text);
+            obj.TenSach = this.txtTenSach.Text;
+            obj.TheLoai = this.txtTheLoai.Text;
+            obj.TacGia = this.txtTacGia.Text;
+            obj.SoLuongTon = Convert.ToInt32(this.txtSoLuongTon.Text);
+            obj.DonGiaNhap = Convert.ToInt32(this.txtDonGia.Text);
             string result = this.bus.insert(obj);
             if (result == "0")
             {

@@ -14,9 +14,11 @@ namespace QuanLyNhaSach
 {
     public partial class frmPhieuNhapSach : Form
     {
+        int nhapItNhat, luongtonMax, luongtonTam, luongton, luongtonMoi;
         frmQuanLySach frmQLS; 
         //private int isThemMoi = 0;
         private PhieuNhapSachBUS bus;
+        private ThamSoBUS busThamSo;
         //private CTPhieuNhapSachBUS busCTPN;
         
         public frmPhieuNhapSach()
@@ -39,12 +41,12 @@ namespace QuanLyNhaSach
             string result = this.bus.insert(obj);
             if (result == "0")
             {
-                MessageBox.Show("Thêm mới phiếu nhập thành công");
+                MessageBox.Show("Thêm mới phiếu nhập thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
             else
             {
-                MessageBox.Show("Thêm mới phiếu nhập thất bại.\n" + result);
+                MessageBox.Show("Thêm mới phiếu nhập thất bại.\n" + result, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
@@ -86,43 +88,6 @@ namespace QuanLyNhaSach
             myCurrencyManager.Refresh();
         }
 
-        /*private void btnSuaPhieu_Click(object sender, EventArgs e)
-        {
-            int currentRowIndex = this.dgvDanhSachPhieuNhap.CurrentCellAddress.Y; //'current row selected
-            //Verify that indexing OK
-            if (-1 < currentRowIndex && currentRowIndex < dgvDanhSachPhieuNhap.RowCount)
-            {
-                PhieuNhapSachDTO obj = (PhieuNhapSachDTO)dgvDanhSachPhieuNhap.Rows[currentRowIndex].DataBoundItem;
-                this.txtMaPhieuNhap.Text = obj.MaPN;
-                //this.dtpNgayNhap.Text = obj.NgayNhap;
-            }
-            else
-            {
-                MessageBox.Show("Chưa chọn phiếu nhập trên lưới.");
-            }
-        }*/
-
-        /*private void btnCapNhat_Click(object sender, EventArgs e)
-        {
-            PhieuNhapSachDTO obj = new PhieuNhapSachDTO();
-            obj.MaPN = this.txtMaPhieuNhap.Text;
-            //obj.NgayNhap = this.dtpNgayNhap.Text;
-           
-            string result = this.bus.update(obj);
-            if (result == "0")
-            {
-                MessageBox.Show("Cập nhật phiếu nhập thành công");
-                //this.buildDanhSach();
-                return;
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật phiếu nhập thất bại.\n" + result);
-
-                return;
-            }
-        }*/
-
         private void btnXoaPhieu_Click(object sender, EventArgs e)
         {
             int currentRowIndex = this.dgvDanhSachPhieuNhap.CurrentCellAddress.Y; //'current row selected
@@ -135,19 +100,19 @@ namespace QuanLyNhaSach
                 string result = this.bus.delete(obj);
                 if (result == "0")
                 {
-                    MessageBox.Show("Xóa phiếu nhập thành công");
+                    MessageBox.Show("Xóa phiếu nhập thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.buildDanhSach();
                     return;
                 }
                 else
                 {
-                    MessageBox.Show("Xóa phiếu nhập thất bại.\n" + result);
+                    MessageBox.Show("Xóa phiếu nhập thất bại.\n" + result, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
             else
             {
-                MessageBox.Show("Chưa chọn phiếu nhập trên lưới.");
+                MessageBox.Show("Chưa chọn phiếu nhập trên lưới.", "THÔNG BÁO", MessageBoxButtons.OK);
             }
         }
 
@@ -164,27 +129,37 @@ namespace QuanLyNhaSach
             }
             else
             {
-                MessageBox.Show("Chưa chọn phiếu nhập trên lưới.");
+                MessageBox.Show("Chưa chọn phiếu nhập trên lưới.", "THÔNG BÁO", MessageBoxButtons.OK);
             }
         }
 
         private void btnThemCT_Click(object sender, EventArgs e)
         {
             CTPhieuNhapSachDTO obj = new CTPhieuNhapSachDTO();
+            //List<ThamSoDTO> lsObjThamSo = new List<ThamSoDTO>();
+            ThamSoDTO ThamSo = busThamSo.QuyDinh();
+            nhapItNhat = ThamSo.SoLuongNhapItNhat; //quy định số lượng nhập ít nhất
+            luongtonMax = ThamSo.SoLuongTonToiDaTruocNhap; // quy định số lượng tồn tối đa trước khi nhập
 
             obj.MaCT = this.txtMaCTPN.Text;
             obj.MaPN = this.txtMaPN.Text;
             obj.MaSach = this.txtMaSach.Text;
-            obj.SLN = this.txtSoLuongNhap.Text;
+            obj.SLN = Convert.ToInt32(this.txtSoLuongNhap.Text);
+            
             string result = this.bus.insertChiTiet(obj);
+            
+            ////string loadThamSo = this.busThamSo.loadThamSo(lsObjThamSo); fix later
+            ////int nhapItNhat = int.Parse(loadThamSo.Rows(0).Item(1).ToString()); fix later
+            //int nhapItNhat;
+            //bool isItNhat = int.TryParse(txtSoLuongNhap.Text.Trim(), out nhapItNhat);
             if (result == "0")
             {
-                MessageBox.Show("Thêm mới chi tiết phiếu nhập thành công");
+                MessageBox.Show("Thêm mới chi tiết phiếu nhập thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return;
             }
             else
             {
-                MessageBox.Show("Thêm mới chi tiết phiếu nhập thất bại.\n" + result);
+                MessageBox.Show("Thêm mới chi tiết phiếu nhập thất bại.\n" + result, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
@@ -196,7 +171,7 @@ namespace QuanLyNhaSach
             string result = this.bus.selectAllCT(lsObj);
             if (result != "0")
             {
-                MessageBox.Show("Lỗi khi lấy danh sách chi tiết phiếu nhập.\n" + result);
+                MessageBox.Show("Lỗi khi lấy danh sách chi tiết phiếu nhập.\n" + result, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             dgvDanhSachCTPN.Columns.Clear();
@@ -217,11 +192,12 @@ namespace QuanLyNhaSach
             clMaPN.HeaderText = "Mã Phiếu Nhập";
             clMaPN.DataPropertyName = "MaPN";
             dgvDanhSachCTPN.Columns.Add(clMaPN);
-      /*DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
+
+            DataGridViewTextBoxColumn clMaSach = new DataGridViewTextBoxColumn();
             clMaSach.Name = "MaSach";
             clMaSach.HeaderText = "Mã Sách";
             clMaSach.DataPropertyName = "MaSach";
-            dgvDanhSachCTPN.Columns.Add(clMaSach);*/
+            dgvDanhSachCTPN.Columns.Add(clMaSach);
 
             DataGridViewTextBoxColumn clSLN = new DataGridViewTextBoxColumn();
             clSLN.Name = "SLN";
@@ -252,19 +228,19 @@ namespace QuanLyNhaSach
                 string result = this.bus.deleteChiTiet(obj);
                 if (result == "0")
                 {
-                    MessageBox.Show("Xóa phiếu nhập thành công");
+                    MessageBox.Show("Xóa chi tiết phiếu nhập thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.buildDanhSach();
                     return;
                 }
                 else
                 {
-                    MessageBox.Show("Xóa phiếu nhập thất bại.\n" + result);
+                    MessageBox.Show("Xóa chi tiết phiếu nhập thất bại.\n" + result, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
             else
             {
-                MessageBox.Show("Chưa chọn phiếu nhập trên lưới.");
+                MessageBox.Show("Chưa chọn chi tiết phiếu nhập trên lưới.", "THÔNG BÁO", MessageBoxButtons.OK);
             }
         }
 
@@ -272,6 +248,10 @@ namespace QuanLyNhaSach
         {
             frmQLS = new frmQuanLySach();
             DialogResult dr = frmQLS.ShowDialog(this);
+            if (frmQLS.DialogResult == DialogResult.OK)
+            {
+                this.txtMaSach.Text = frmQLS.Text;
+            }
         }
     }
 }
