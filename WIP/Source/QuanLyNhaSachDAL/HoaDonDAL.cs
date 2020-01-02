@@ -80,7 +80,7 @@ namespace QuanLyNhaSachDAL
                                 HoaDonDTO obj = new HoaDonDTO();
                                 obj.MaHD = reader["MaHoaDon"].ToString();
                                 obj.MaKH = reader["MaKhachHang"].ToString(); ////xem cách get ngày nhập trong c# .net nha bây
-                                obj.NgayLap = reader["NgayLap"].ToString();
+                                obj.NgayLap = reader["NgayLapHoaDon"].ToString();
                                 obj.TongThanhTien = Convert.ToInt32(reader["TongThanhTien"].ToString());
                                 lsObj.Add(obj);
                             }
