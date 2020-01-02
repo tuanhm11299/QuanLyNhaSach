@@ -42,6 +42,8 @@
             this.btnXoaCT = new System.Windows.Forms.Button();
             this.btnThemCT = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtMaCTHD = new System.Windows.Forms.TextBox();
+            this.maCTHD = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.btnChon3 = new System.Windows.Forms.Button();
             this.txtMaSach = new System.Windows.Forms.TextBox();
@@ -53,12 +55,13 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tcHoaDon = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvDanhSachHoaDon = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnNhapChiTiet = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLapPhieu = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpNgayLap = new System.Windows.Forms.DateTimePicker();
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.btnChon = new System.Windows.Forms.Button();
             this.txtMaKH = new System.Windows.Forms.TextBox();
@@ -68,23 +71,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvDanhSachHoaDon = new System.Windows.Forms.DataGridView();
-            this.dtpNgLap = new System.Windows.Forms.DateTimePicker();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Column0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maCTHD = new System.Windows.Forms.Label();
-            this.txtMaCTHD = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachChiTietHoaDon)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tcHoaDon.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHoaDon)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHoaDon)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -239,6 +239,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin hóa đơn";
             // 
+            // txtMaCTHD
+            // 
+            this.txtMaCTHD.Location = new System.Drawing.Point(120, 94);
+            this.txtMaCTHD.Name = "txtMaCTHD";
+            this.txtMaCTHD.Size = new System.Drawing.Size(118, 26);
+            this.txtMaCTHD.TabIndex = 10;
+            // 
+            // maCTHD
+            // 
+            this.maCTHD.AutoSize = true;
+            this.maCTHD.Location = new System.Drawing.Point(2, 98);
+            this.maCTHD.Name = "maCTHD";
+            this.maCTHD.Size = new System.Drawing.Size(114, 19);
+            this.maCTHD.TabIndex = 9;
+            this.maCTHD.Text = "Mã CT Hóa Đơn";
+            // 
             // txtSoLuong
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(351, 63);
@@ -339,20 +355,23 @@
             this.tabPage1.Text = "Hóa Đơn";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // dgvDanhSachHoaDon
             // 
-            this.tabPage2.Controls.Add(this.btnXemCT);
-            this.tabPage2.Controls.Add(this.dgvDanhSachChiTietHoaDon);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Controls.Add(this.label2);
-            this.tabPage2.Controls.Add(this.groupBox4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(588, 518);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Chi Tiết Hóa Đơn";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.dgvDanhSachHoaDon.AllowUserToAddRows = false;
+            this.dgvDanhSachHoaDon.AllowUserToDeleteRows = false;
+            this.dgvDanhSachHoaDon.BackgroundColor = System.Drawing.Color.DarkGray;
+            this.dgvDanhSachHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDanhSachHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column0,
+            this.MaKH,
+            this.Column3,
+            this.Column4});
+            this.dgvDanhSachHoaDon.GridColor = System.Drawing.Color.White;
+            this.dgvDanhSachHoaDon.Location = new System.Drawing.Point(6, 261);
+            this.dgvDanhSachHoaDon.Name = "dgvDanhSachHoaDon";
+            this.dgvDanhSachHoaDon.ReadOnly = true;
+            this.dgvDanhSachHoaDon.Size = new System.Drawing.Size(572, 208);
+            this.dgvDanhSachHoaDon.TabIndex = 47;
             // 
             // groupBox3
             // 
@@ -399,7 +418,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dtpNgLap);
+            this.groupBox1.Controls.Add(this.dtpNgayLap);
             this.groupBox1.Controls.Add(this.txtTongTien);
             this.groupBox1.Controls.Add(this.btnChon);
             this.groupBox1.Controls.Add(this.txtMaKH);
@@ -415,6 +434,14 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin hóa đơn";
+            // 
+            // dtpNgayLap
+            // 
+            this.dtpNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayLap.Location = new System.Drawing.Point(102, 67);
+            this.dtpNgayLap.Name = "dtpNgayLap";
+            this.dtpNgayLap.Size = new System.Drawing.Size(155, 26);
+            this.dtpNgayLap.TabIndex = 48;
             // 
             // txtTongTien
             // 
@@ -492,36 +519,25 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Hóa Đơn Bán Sách";
             // 
-            // dgvDanhSachHoaDon
+            // tabPage2
             // 
-            this.dgvDanhSachHoaDon.AllowUserToAddRows = false;
-            this.dgvDanhSachHoaDon.AllowUserToDeleteRows = false;
-            this.dgvDanhSachHoaDon.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.dgvDanhSachHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhSachHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column0,
-            this.MaKH,
-            this.Column3,
-            this.Column4});
-            this.dgvDanhSachHoaDon.GridColor = System.Drawing.Color.White;
-            this.dgvDanhSachHoaDon.Location = new System.Drawing.Point(6, 261);
-            this.dgvDanhSachHoaDon.Name = "dgvDanhSachHoaDon";
-            this.dgvDanhSachHoaDon.ReadOnly = true;
-            this.dgvDanhSachHoaDon.Size = new System.Drawing.Size(572, 208);
-            this.dgvDanhSachHoaDon.TabIndex = 47;
-            // 
-            // dtpNgLap
-            // 
-            this.dtpNgLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgLap.Location = new System.Drawing.Point(102, 67);
-            this.dtpNgLap.Name = "dtpNgLap";
-            this.dtpNgLap.Size = new System.Drawing.Size(155, 26);
-            this.dtpNgLap.TabIndex = 48;
+            this.tabPage2.Controls.Add(this.btnXemCT);
+            this.tabPage2.Controls.Add(this.dgvDanhSachChiTietHoaDon);
+            this.tabPage2.Controls.Add(this.groupBox2);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.groupBox4);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(588, 518);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Chi Tiết Hóa Đơn";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // Column0
             // 
             this.Column0.DataPropertyName = "Mahoadon";
-            this.Column0.HeaderText = "Mã hóa đơn";
+            this.Column0.HeaderText = "Mã Hóa Đơn";
             this.Column0.Name = "Column0";
             this.Column0.ReadOnly = true;
             // 
@@ -535,7 +551,7 @@
             // 
             this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column3.DataPropertyName = "Ngaylaphoadon";
-            this.Column3.HeaderText = "Ngày lập hóa đơn";
+            this.Column3.HeaderText = "Ngày Lập Hóa Đơn";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
@@ -543,25 +559,9 @@
             // 
             this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column4.DataPropertyName = "Tongthanhtien";
-            this.Column4.HeaderText = "Tổng thành tiền";
+            this.Column4.HeaderText = "Tổng Thành Tiền";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            // 
-            // maCTHD
-            // 
-            this.maCTHD.AutoSize = true;
-            this.maCTHD.Location = new System.Drawing.Point(2, 98);
-            this.maCTHD.Name = "maCTHD";
-            this.maCTHD.Size = new System.Drawing.Size(114, 19);
-            this.maCTHD.TabIndex = 9;
-            this.maCTHD.Text = "Mã CT Hóa Đơn";
-            // 
-            // txtMaCTHD
-            // 
-            this.txtMaCTHD.Location = new System.Drawing.Point(120, 94);
-            this.txtMaCTHD.Name = "txtMaCTHD";
-            this.txtMaCTHD.Size = new System.Drawing.Size(118, 26);
-            this.txtMaCTHD.TabIndex = 10;
             // 
             // frmHoaDonBanSach
             // 
@@ -579,12 +579,12 @@
             this.tcHoaDon.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHoaDon)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHoaDon)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -631,12 +631,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.DateTimePicker dtpNgLap;
+        private System.Windows.Forms.DateTimePicker dtpNgayLap;
+        private System.Windows.Forms.Label maCTHD;
+        private System.Windows.Forms.TextBox txtMaCTHD;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column0;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.Label maCTHD;
-        private System.Windows.Forms.TextBox txtMaCTHD;
     }
 }

@@ -29,7 +29,7 @@ namespace QuanLyNhaSach
 
         private void frmHoaDonBanSach_Load(object sender, EventArgs e)
         {
-            bus = new HoaDonBUS();
+           bus = new HoaDonBUS();
         }
 
         private void btnLapPhieu_Click(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace QuanLyNhaSach
             obj.MaHD = this.txtMaHD.Text;
             //obj.NgayNhap = this.dtpNgayNhap.Text; //xem cách get ngày nhập trong c# .net nha bây
             obj.MaKH = this.txtMaKH.Text;
-            obj.NgayLap = this.dtpNgLap.Text;
+            obj.NgayLap = this.dtpNgayLap.Text;
             obj.TongThanhTien = Convert.ToInt32(this.txtTongTien.Text);
             string result = this.bus.insert(obj);
             if (result == "0")
@@ -62,7 +62,7 @@ namespace QuanLyNhaSach
         {
             List<HoaDonDTO> lsObj = new List<HoaDonDTO>();
             string result = this.bus.selectAll(lsObj);
-            if (result != "0")
+            if(result != "0")
             {
                 MessageBox.Show("Lỗi khi lấy danh sách hóa đơn.\n" + result);
                 return;
@@ -74,32 +74,29 @@ namespace QuanLyNhaSach
             dgvDanhSachHoaDon.AllowUserToAddRows = false;
             dgvDanhSachHoaDon.DataSource = lsObj;
 
-            DataGridViewTextBoxColumn clMaHD = new DataGridViewTextBoxColumn();
-            clMaHD.Name = "MaHD";
-            clMaHD.HeaderText = "Mã Hóa Đơn";
-            clMaHD.DataPropertyName = "MaHD";
-            dgvDanhSachHoaDon.Columns.Add(clMaHD);
+            DataGridViewTextBoxColumn clMaHoaDon = new DataGridViewTextBoxColumn();
+            clMaHoaDon.Name = "MaHD";
+            clMaHoaDon.HeaderText = "Mã Hóa Đơn";
+            clMaHoaDon.DataPropertyName = "MaHD";
+            dgvDanhSachHoaDon.Columns.Add(clMaHoaDon);
 
-            DataGridViewTextBoxColumn clMaKH = new DataGridViewTextBoxColumn();
-            clMaKH.Name = "MaKH";
-            clMaKH.HeaderText = "Mã Khách Hàng";
-            clMaKH.DataPropertyName = "MaKH";
-            dgvDanhSachHoaDon.Columns.Add(clMaKH);
+            DataGridViewTextBoxColumn clMaKhachHang = new DataGridViewTextBoxColumn();
+            clMaKhachHang.Name = "MaKH";
+            clMaKhachHang.HeaderText = "Mã Khách Hàng";
+            clMaKhachHang.DataPropertyName = "MaKH";
+            dgvDanhSachHoaDon.Columns.Add(clMaKhachHang);
 
-            DataGridViewTextBoxColumn clNgayLap = new DataGridViewTextBoxColumn();
-            clNgayLap.Name = "NgayLap";
-            clNgayLap.HeaderText = "Ngày Lập";
-            clNgayLap.DataPropertyName = "NgayLap";
-            dgvDanhSachHoaDon.Columns.Add(clNgayLap);
+            DataGridViewTextBoxColumn clNgayLapHoaDon = new DataGridViewTextBoxColumn();
+            clNgayLapHoaDon.Name = "NgayLap";
+            clNgayLapHoaDon.HeaderText = "Ngày Lập Hóa Đơn";
+            clNgayLapHoaDon.DataPropertyName = "NgayLap";
+            dgvDanhSachHoaDon.Columns.Add(clNgayLapHoaDon);
 
             DataGridViewTextBoxColumn clTongThanhTien = new DataGridViewTextBoxColumn();
             clTongThanhTien.Name = "TongThanhTien";
             clTongThanhTien.HeaderText = "Tổng Thành Tiền";
             clTongThanhTien.DataPropertyName = "TongThanhTien";
             dgvDanhSachHoaDon.Columns.Add(clTongThanhTien);
-
-            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachHoaDon.DataSource];
-            myCurrencyManager.Refresh();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -111,7 +108,7 @@ namespace QuanLyNhaSach
                 HoaDonDTO obj = (HoaDonDTO)dgvDanhSachHoaDon.Rows[currentRowIndex].DataBoundItem;
                 this.txtMaHD.Text = obj.MaHD;
                 this.txtMaKH.Text = obj.MaKH;
-                this.dtpNgLap.Text = obj.NgayLap;
+                this.dtpNgayLap.Text = obj.NgayLap;
                 this.txtTongTien.Text = obj.TongThanhTien.ToString();
                 string result = this.bus.delete(obj);
                 if (result == "0")

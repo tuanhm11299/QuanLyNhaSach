@@ -36,7 +36,6 @@ namespace QuanLyNhaSachDAL
                     comm.Parameters.AddWithValue("@MaKhachHang", obj.MaKH);
                     comm.Parameters.AddWithValue("@NgayLapHoaDon", obj.NgayLap);
                     comm.Parameters.AddWithValue("@TongThanhTien", obj.TongThanhTien);
-
                     try
                     {
                         conn.Open();
@@ -79,7 +78,7 @@ namespace QuanLyNhaSachDAL
                             {
                                 HoaDonDTO obj = new HoaDonDTO();
                                 obj.MaHD = reader["MaHoaDon"].ToString();
-                                obj.MaKH = reader["MaKhachHang"].ToString(); ////xem cách get ngày nhập trong c# .net nha bây
+                                obj.MaKH = reader["MaKhachHang"].ToString();
                                 obj.NgayLap = reader["NgayLapHoaDon"].ToString();
                                 obj.TongThanhTien = Convert.ToInt32(reader["TongThanhTien"].ToString());
                                 lsObj.Add(obj);
@@ -90,7 +89,7 @@ namespace QuanLyNhaSachDAL
                     {
                         conn.Close();
                         //' lấy that bai!!!
-                        return "Lấy phiếu nhập thất bại\n" + ex.Message + "\n" + ex.StackTrace;
+                        return "Lấy danh sách thất bại\n" + ex.Message + "\n" + ex.StackTrace;
                     }
                 }
             }
