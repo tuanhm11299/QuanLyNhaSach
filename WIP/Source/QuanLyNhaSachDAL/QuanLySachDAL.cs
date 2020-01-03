@@ -277,53 +277,6 @@ namespace QuanLyNhaSachDAL
             return obj;
         }
 
-        public QuanLySachDTO laySach()
-        {
-            string query = string.Empty;
-            query = "SELECT * FROM SACH";
-
-            QuanLySachDTO ls = new QuanLySachDTO();
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.Connection = conn;
-                    cmd.CommandType = System.Data.CommandType.Text;
-                    cmd.CommandText = query;
-
-                    try
-                    {
-                        conn.Open();
-                        SqlDataReader reader = cmd.ExecuteReader();
-                        if (reader.HasRows)
-                        {
-                            while (reader.Read())
-                            {
-                                ls.MaSach = reader["MaSach"].ToString();
-                                ls.TenSach = reader["SoLuongNhapItNhat"].ToString();
-                                ls.TheLoai = reader["SoLuongTonToiDaTruocNhap"].ToString();
-                                ls.TacGia = reader["SoLuongTonSauToiThieu"].ToString();
-                                ls.SoLuongTon = Convert.ToInt32(reader["SoLuongTon"]);
-                                ls.DonGiaNhap = Convert.ToInt32(reader["DonGiaNhap"]);
-                            }
-                            conn.Close();
-                            conn.Dispose();
-                            return ls;
-                        }
-
-                    }
-                    catch
-                    {
-                        conn.Close();
-                        return null;
-                    }
-
-                }
-            }
-            return ls;
-        }
-
         public string searchTenSach(string kw, List<QuanLySachDTO> lsObj)
         {
 

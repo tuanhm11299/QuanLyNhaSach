@@ -29,7 +29,7 @@ namespace QuanLyNhaSach
         {
             PhieuThuTienDTO obj = new PhieuThuTienDTO();
             obj.MaKH = this.textBoxMaKH.Text;
-            //obj.NgayNhap = this.dtpNgayNhap.Text; //xem cách get ngày nhập trong c# .net nha bây
+            
             obj.NgayThuTien = this.dtpNgayThuTien.Text;
             obj.MaPT = this.textBoxMaPhieuThu.Text;
             obj.STT = Convert.ToInt32(this.textBoxSoTienThu.Text);

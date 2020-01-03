@@ -151,7 +151,7 @@ namespace QuanLyNhaSach
             obj.SLN = Convert.ToInt32(this.txtSoLuongNhap.Text);
             if (obj.SLN < ThamSo.SoLuongNhapItNhat) // quy định 1.1
             {
-                MessageBox.Show(string.Format("Số lượng nhập phải lớn hơn số lượng quy định ({0} quyển) !", ThamSo.SoLuongNhapItNhat), "THÔNG BÁO", MessageBoxButtons.OK);
+                MessageBox.Show(string.Format("Số lượng nhập phải lớn hơn số lượng quy định ({0} quyển)", ThamSo.SoLuongNhapItNhat), "THÔNG BÁO", MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
 
             }
             else
@@ -172,6 +172,7 @@ namespace QuanLyNhaSach
                     if (result == "0")
                     {
                         Sach.SoLuongTon = luongtonMoi;
+                        busSach.capnhatLuongTon(Sach);
                         MessageBox.Show("Thêm mới chi tiết phiếu nhập thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         buildDanhSachCT();
                         return;
@@ -184,12 +185,11 @@ namespace QuanLyNhaSach
                 }
                 else
                 {
-                    MessageBox.Show("Chỉ nhập các đầu sách có lượng tồn ít hơn theo quy định", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show(string.Format("Chỉ nhập các đầu sách có lượng tồn ít hơn theo quy định ({0} quyển)",ThamSo.SoLuongTonToiDaTruocNhap), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 }
 
             }
         }
-
 
         private void buildDanhSachCT()
         {
@@ -242,16 +242,18 @@ namespace QuanLyNhaSach
 
         private void btnXoaCT_Click(object sender, EventArgs e)
         {
+            //CTPhieuNhapSachDTO obj = new CTPhieuNhapSachDTO();
+            string result;
+            QuanLySachDTO Sach = new QuanLySachDTO();
             int currentRowIndex = this.dgvDanhSachCTPN.CurrentCellAddress.Y; //'current row selected
             //Verify that indexing OK
             if (-1 < currentRowIndex && currentRowIndex < dgvDanhSachCTPN.RowCount)
             {
                 CTPhieuNhapSachDTO obj = (CTPhieuNhapSachDTO)dgvDanhSachCTPN.Rows[currentRowIndex].DataBoundItem;
-                //this.txtMaCTPN.Text = obj.MaCT;
                 this.txtMaPhieuNhap.Text = obj.MaPN;
-                //this.txtMaSach.Text = obj.MaSach;
-                //this.txtSoLuongNhap.Text = obj.SLN;
-                string result = this.bus.deleteChiTiet(obj);
+
+                //obj.MaSach = this.txtMaSach.Text;
+                result = this.bus.deleteChiTiet(obj);
                 if (result == "0")
                 {
                     MessageBox.Show("Xóa chi tiết phiếu nhập thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

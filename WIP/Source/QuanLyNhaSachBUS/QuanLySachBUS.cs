@@ -62,6 +62,10 @@ namespace QuanLyNhaSachBUS
         {
             return dal.searchTacGia(tacgia, lsObj);
         }
-        
+
+        public bool capnhatLuongTon(QuanLySachDTO sach)
+        {
+            return dal.capnhatLuongTon(sach);
+        }
     }
 }

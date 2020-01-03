@@ -252,14 +252,14 @@ namespace QuanLyNhaSachDAL
             return "0";
         }
 
-        public QuanLyKhachHangDTO searchTenKH(string maKH, QuanLyKhachHangDTO obj)
+        public QuanLyKhachHangDTO searchKH(string maKH, QuanLyKhachHangDTO obj)
         {
 
             string query = string.Empty;
             query += "SELECT *";
-            query += " FROM [KHACHHANG]";
-            query += " WHERE ";
-            query += " [MaKhachHang] like @MaKhachHang ";
+            query += "FROM [KHACHHANG]";
+            query += "WHERE";
+            query += "[MaKhachHang] like @MaKhachHang";
             obj = new QuanLyKhachHangDTO();
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -269,7 +269,7 @@ namespace QuanLyNhaSachDAL
                     comm.Connection = conn;
                     comm.CommandType = CommandType.Text;
                     comm.CommandText = query;
-                    comm.Parameters.AddWithValue("@HoTenKhachHang", "%" + maKH.ToString() + "%");
+                    comm.Parameters.AddWithValue("@MaKhachHang", "%" + maKH.ToString() + "%");
                     try
                     {
                         conn.Open();
@@ -287,6 +287,7 @@ namespace QuanLyNhaSachDAL
                                 obj.Email = reader["Email"].ToString();
                                 obj.SoTienNo = Convert.ToInt32(reader["SoTienNo"].ToString());
                                 //lsObj.Add(obj);
+                                return obj;
                             }
                         }
                     }
@@ -294,7 +295,7 @@ namespace QuanLyNhaSachDAL
                     {
                         conn.Close();
                         //' lấy that bai!!!
-                        Console.WriteLine("Tìm khách hàng thất bại\n" + ex.Message + "\n" + ex.StackTrace)s;
+                        Console.WriteLine("Tìm khách hàng thất bại\n" + ex.Message + "\n" + ex.StackTrace);
                     }
                 }
             }

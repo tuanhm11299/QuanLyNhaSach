@@ -16,9 +16,10 @@ namespace QuanLyNhaSach
     {
         frmQuanLyKhachHang frmQLKH;
         int noToiDa, noKhachHang, tonSauBan, luongTon, luongTonMoi, tongThanhTien, SoTienNo, SoLuongBan, DonGiaBan;
-        private HoaDonBUS bus;
+        private HoaDonBUS bus = new HoaDonBUS();
         private ThamSoBUS busThamSo = new ThamSoBUS();
         private QuanLyKhachHangBUS busKH = new QuanLyKhachHangBUS();
+        private QuanLySachBUS busSach = new QuanLySachBUS();
 
         public frmHoaDonBanSach()
         {
@@ -32,28 +33,52 @@ namespace QuanLyNhaSach
 
         private void frmHoaDonBanSach_Load(object sender, EventArgs e)
         {
-           bus = new HoaDonBUS();
+            buildDanhSach();
         }
 
         private void btnLapPhieu_Click(object sender, EventArgs e)
         {
             HoaDonDTO obj = new HoaDonDTO();
+            ThamSoDTO ThamSo = new ThamSoDTO();
+            ThamSo = busThamSo.QuyDinh();
+            noToiDa = ThamSo.SoTienNoToiDa;
+            QuanLyKhachHangDTO KH = new QuanLyKhachHangDTO();
+            string result;
+
+            if (this.txtMaKH.Text == String.Empty)
+            {
+                MessageBox.Show("Mã khách hàng không được để trống", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return;
+            }
             obj.MaHD = this.txtMaHD.Text;
-            //obj.NgayNhap = this.dtpNgayNhap.Text; //xem cách get ngày nhập trong c# .net nha bây
             obj.MaKH = this.txtMaKH.Text;
             obj.NgayLap = this.dtpNgayLap.Text;
             obj.TongThanhTien = Convert.ToInt32(this.txtTongTien.Text);
-            string result = this.bus.insert(obj);
-            if (result == "0")
+            KH.MaKH = this.txtMaKH.Text;
+            KH = this.busKH.searchKH(KH.MaKH, KH);
+            noKhachHang = KH.SoTienNo;
+            if (noKhachHang > noToiDa)
             {
-                MessageBox.Show("Lập hóa đơn thành công");
-                return;
+                MessageBox.Show(string.Format("Số tiền nợ đã vượt quá số tiền nợ tối đa ({0} vnđ)", noToiDa), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                
             }
             else
             {
-                MessageBox.Show("Lập hóa đơn thất bại.\n" + result);
-                return;
+                
+                result = this.bus.insert(obj);
+                if (result == "0")
+                {
+                    MessageBox.Show("Lập hóa đơn thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    buildDanhSach();
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Lập hóa đơn thất bại.\n" + result, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
             }
+            
         }
 
         private void btnXemHD_Click(object sender, EventArgs e)
@@ -152,23 +177,39 @@ namespace QuanLyNhaSach
         private void btnThemCT_Click(object sender, EventArgs e)
         {
             ChiTietHDDTO obj = new ChiTietHDDTO();
+            ThamSoDTO ThamSo = new ThamSoDTO();
+            ThamSo = busThamSo.QuyDinh();
+            tonSauBan = ThamSo.SoLuongTonSauToiThieu;
+            QuanLySachDTO Sach = new QuanLySachDTO();
+            string result;
 
             obj.MaCTHD = this.txtMaCTHD.Text;
             obj.MaHD = this.txtMaHD.Text;
             obj.MaSach = this.txtMaSach.Text;
             obj.DonGia = Convert.ToInt32(this.txtĐonGia.Text);
             obj.SLB = Convert.ToInt32(this.txtSoLuong.Text);
-            string result = this.bus.insertChiTiet(obj);
-            if (result == "0")
+            Sach.MaSach = this.txtMaSach.Text;
+            Sach = this.busSach.laySach(Sach.MaSach, Sach);
+            luongTon = Sach.SoLuongTon;
+            luongTonMoi = luongTon - obj.SLB;
+            if((luongTon -obj.SLB) < tonSauBan)
             {
-                MessageBox.Show("Thêm mới chi tiết hóa đơn thành công");
-                return;
+                MessageBox.Show(string.Format("Số lượng tồn của sách này sau khi bán đã nhỏ hơn quy định ({0} quyển)", tonSauBan), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             else
             {
-                MessageBox.Show("Thêm mới chi tiết hóa đơn thất bại.\n" + result);
-                return;
-            }
+                result = this.bus.insertChiTiet(obj);
+                if (result == "0")
+                {
+                    MessageBox.Show("Thêm mới chi tiết hóa đơn thành công");
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show("Thêm mới chi tiết hóa đơn thất bại.\n" + result);
+                    return;
+                }
+            }        
         }
 
         
