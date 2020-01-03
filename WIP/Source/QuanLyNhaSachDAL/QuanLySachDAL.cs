@@ -54,6 +54,125 @@ namespace QuanLyNhaSachDAL
             return "0";
         }
 
+        public string selectAll(List<QuanLySachDTO> lsObj)
+        {
+            string query = string.Empty;
+            query += "SELECT *";
+            query += "FROM [SACH]";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = conn;
+                    comm.CommandType = CommandType.Text;
+                    comm.CommandText = query;
+
+                    try
+                    {
+                        conn.Open();
+                        SqlDataReader reader = comm.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            lsObj.Clear();
+                            while (reader.Read())
+                            {
+                                QuanLySachDTO obj = new QuanLySachDTO();
+                                obj.MaSach = reader["MaSach"].ToString();
+                                obj.TenSach = reader["TenSach"].ToString();
+                                obj.TheLoai = reader["TheLoai"].ToString();
+                                obj.TacGia = reader["TacGia"].ToString();
+                                obj.SoLuongTon = Convert.ToInt32(reader["SoLuongTon"].ToString());
+                                obj.DonGiaNhap = Convert.ToInt32(reader["DonGiaNhap"].ToString());
+                                lsObj.Add(obj);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        //' lấy that bai!!!
+                        return "Lấy danh sách Sách thất bại\n" + ex.Message + "\n" + ex.StackTrace;
+                    }
+                }
+            }
+            return "0";
+        }
+
+        public string delete(QuanLySachDTO obj)
+        {
+            string query = string.Empty;
+            query += "DELETE FROM [SACH]";
+            query += "WHERE";
+            query += "[MaSach] = @MaSach";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = conn;
+                    comm.CommandType = CommandType.Text;
+                    comm.CommandText = query;
+                    comm.Parameters.AddWithValue("@MaSach", obj.MaSach);
+
+                    try
+                    {
+                        conn.Open();
+                        comm.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        //' xóa that bai!!!
+                        return "Xóa phiếu nhập thất bại\n" + ex.Message + "\n" + ex.StackTrace;
+                    }
+                }
+            }
+            return "0";
+        }
+
+        public string update(QuanLySachDTO obj)
+        {
+            string query = string.Empty;
+            query += " UPDATE [SACH] SET";
+            query += " [MaSach] = @MaSach,  ";
+            query += " [TenSach] = @TenSach, ";
+            query += " [TheLoai] = @TheLoai, ";
+            query += " [TacGia] = @TacGia, ";
+            query += " [SoLuongTon] = @SoLuongTon, ";
+            query += "[DonGiaNhap] = @DonGiaNhap ";
+            query += " WHERE ";
+            query += " [MaSach] = @MaSach ";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = conn;
+                    comm.CommandType = CommandType.Text;
+                    comm.CommandText = query;
+                    comm.Parameters.AddWithValue("@MaSach", obj.MaSach);
+                    comm.Parameters.AddWithValue("@TenSach", obj.TenSach);
+                    comm.Parameters.AddWithValue("@TheLoai", obj.TheLoai);
+                    comm.Parameters.AddWithValue("@TacGia", obj.TacGia);
+                    comm.Parameters.AddWithValue("@SoLuongTon", obj.SoLuongTon);
+                    comm.Parameters.AddWithValue("@DonGiaNhap", obj.DonGiaNhap);
+                    try
+                    {
+                        conn.Open();
+                        comm.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        //' Cập nhật that bai!!!
+                        return "Sửa thông tin thất bại\n" + ex.Message + "\n" + ex.StackTrace;
+                    }
+                }
+            }
+            return "0";
+        }
+
         public string searchMaSach(string kw, List<QuanLySachDTO> lsObj)
         {
 
@@ -87,6 +206,7 @@ namespace QuanLyNhaSachDAL
                                 obj.TheLoai = reader["TheLoai"].ToString();
                                 obj.TacGia = reader["TacGia"].ToString();
                                 obj.SoLuongTon = Convert.ToInt32(reader["SoLuongTon"].ToString());
+                                obj.DonGiaNhap = Convert.ToInt32(reader["DonGiaNhap"].ToString());
                                 lsObj.Add(obj);
                             }
                         }
@@ -182,6 +302,7 @@ namespace QuanLyNhaSachDAL
                                 obj.TheLoai = reader["TheLoai"].ToString();
                                 obj.TacGia = reader["TacGia"].ToString();
                                 obj.SoLuongTon = Convert.ToInt32(reader["SoLuongTon"].ToString());
+                                obj.DonGiaNhap = Convert.ToInt32(reader["DonGiaNhap"].ToString());
                                 lsObj.Add(obj);
                             }
                         }
@@ -230,6 +351,7 @@ namespace QuanLyNhaSachDAL
                                 obj.TheLoai = reader["TheLoai"].ToString();
                                 obj.TacGia = reader["TacGia"].ToString();
                                 obj.SoLuongTon = Convert.ToInt32(reader["SoLuongTon"].ToString());
+                                obj.DonGiaNhap = Convert.ToInt32(reader["DonGiaNhap"].ToString());
                                 lsObj.Add(obj);
                             }
                         }
@@ -279,6 +401,7 @@ namespace QuanLyNhaSachDAL
                                 obj.TheLoai = reader["TheLoai"].ToString();
                                 obj.TacGia = reader["TacGia"].ToString();
                                 obj.SoLuongTon = Convert.ToInt32(reader["SoLuongTon"].ToString());
+                                obj.DonGiaNhap = Convert.ToInt32(reader["DonGiaNhap"].ToString());
                                 lsObj.Add(obj);
                             }
                         }

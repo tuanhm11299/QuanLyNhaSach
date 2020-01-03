@@ -116,23 +116,21 @@ namespace QuanLyNhaSach
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            QuanLyKhachHangDTO obj = new QuanLyKhachHangDTO();
-            obj.MaKH = this.textBoxMaKH.Text;
-            obj.HoTen = this.textBoxHoTenKH.Text;
-            obj.DiaChi = this.textBoxDiaChi.Text;
-            obj.SDT = this.textBoxSDT.Text;
-            obj.Email = this.textBoxEmail.Text;
-            obj.SoTienNo = Convert.ToInt32(this.textBoxSoTienNo.Text);
-            string result = this.bus.update(obj);
-            if (result == "0")
+            int currentRowIndex = this.dgvDanhSachKH.CurrentCellAddress.Y; //'current row selected
+            //Verify that indexing OK
+            if (-1 < currentRowIndex && currentRowIndex < dgvDanhSachKH.RowCount)
             {
-                MessageBox.Show("Sửa thông tin thành công");
-                return;
+                QuanLyKhachHangDTO obj = (QuanLyKhachHangDTO)dgvDanhSachKH.Rows[currentRowIndex].DataBoundItem;
+                this.textBoxMaKH.Text = obj.MaKH;
+                this.textBoxHoTenKH.Text = obj.HoTen;
+                this.textBoxDiaChi.Text = obj.DiaChi;
+                this.textBoxSDT.Text = obj.SDT;
+                this.textBoxEmail.Text = obj.Email;
+                this.textBoxSoTienNo.Text = obj.SoTienNo.ToString();
             }
             else
             {
-                MessageBox.Show("Sửa thông tin thất bại.\n" + result);
-                return;
+                MessageBox.Show("Chưa chọn khách hàng trên lưới.");
             }
         }
 
@@ -166,6 +164,119 @@ namespace QuanLyNhaSach
             {
                 MessageBox.Show("Chưa chọn khách hàng trên lưới.");
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            QuanLyKhachHangDTO obj = new QuanLyKhachHangDTO();
+            obj.MaKH = this.textBoxMaKH.Text;
+            obj.HoTen = this.textBoxHoTenKH.Text;
+            obj.DiaChi = this.textBoxDiaChi.Text;
+            obj.SDT = this.textBoxSDT.Text;
+            obj.Email = this.textBoxEmail.Text;
+            obj.SoTienNo = Convert.ToInt32(this.textBoxSoTienNo.Text);
+
+            string result = this.bus.update(obj);
+            if (result == "0")
+            {
+                MessageBox.Show("Cập nhật thông tin thành công");
+                //this.isThemMoi = 0;
+                //this.tcQLNH.SelectedIndex = 0;
+                this.buildDanhSach();
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật thông tin thất bại.\n" + result);
+
+                return;
+            }
+        }
+
+        private void btnTraCuuKH_Click(object sender, EventArgs e)
+        {
+            buildDanhSachKH();
+        }
+
+        private void buildDanhSachKH()
+        {
+            List<QuanLyKhachHangDTO> lsObj = new List<QuanLyKhachHangDTO>();
+            string result = this.bus.searchTenKH(this.textBoxTraCuuTenKH.Text, lsObj);
+            if (result != "0")
+            {
+                MessageBox.Show("Lỗi khi lấy danh sách phiếu nhập.\n" + result);
+                return;
+            }
+            dgvDanhSachKH.Columns.Clear();
+            dgvDanhSachKH.DataSource = null;
+
+            dgvDanhSachKH.AutoGenerateColumns = false;
+            dgvDanhSachKH.AllowUserToAddRows = false;
+            dgvDanhSachKH.DataSource = lsObj;
+
+            DataGridViewTextBoxColumn clMaKH = new DataGridViewTextBoxColumn();
+            clMaKH.Name = "MaKH";
+            clMaKH.HeaderText = "Mã Khách Hàng";
+            clMaKH.DataPropertyName = "MaKH";
+            dgvDanhSachKH.Columns.Add(clMaKH);
+
+            DataGridViewTextBoxColumn clHoTen = new DataGridViewTextBoxColumn();
+            clHoTen.Name = "HoTen";
+            clHoTen.HeaderText = "Họ Tên Khách Hàng";
+            clHoTen.DataPropertyName = "HoTen";
+            dgvDanhSachKH.Columns.Add(clHoTen);
+
+            DataGridViewTextBoxColumn clDiaChi = new DataGridViewTextBoxColumn();
+            clDiaChi.Name = "DiaChi";
+            clDiaChi.HeaderText = "Địa Chỉ";
+            clDiaChi.DataPropertyName = "DiaChi";
+            dgvDanhSachKH.Columns.Add(clDiaChi);
+
+            DataGridViewTextBoxColumn clSDT = new DataGridViewTextBoxColumn();
+            clSDT.Name = "SDT";
+            clSDT.HeaderText = "Số Điện Thoại";
+            clSDT.DataPropertyName = "SDT";
+            dgvDanhSachKH.Columns.Add(clSDT);
+
+            DataGridViewTextBoxColumn clEmail = new DataGridViewTextBoxColumn();
+            clEmail.Name = "Email";
+            clEmail.HeaderText = "Email";
+            clEmail.DataPropertyName = "Email";
+            dgvDanhSachKH.Columns.Add(clEmail);
+
+            DataGridViewTextBoxColumn clSoTienNo = new DataGridViewTextBoxColumn();
+            clSoTienNo.Name = "SoTienNo";
+            clSoTienNo.HeaderText = "Số Tiền Nợ";
+            clSoTienNo.DataPropertyName = "SoTienNo";
+            dgvDanhSachKH.Columns.Add(clSoTienNo);
+
+            CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachKH.DataSource];
+            myCurrencyManager.Refresh();
+        }
+
+        private void btnXoaTrang_Click(object sender, EventArgs e)
+        {
+            //int currentRowIndex = this.dgvDanhSachKH.CurrentCellAddress.Y; //'current row selected
+            ////Verify that indexing OK
+            //    List<QuanLyKhachHangDTO> obj = (QuanLyKhachHangDTO)dgvDanhSachKH.Rows[currentRowIndex].DataBoundItem;
+            //    this.textBoxMaKH.Text = obj.MaKH;
+            //    this.textBoxHoTenKH.Text = obj.HoTen;
+            //    this.textBoxDiaChi.Text = obj.DiaChi;
+            //    this.textBoxSDT.Text = obj.SDT;
+            //    this.textBoxEmail.Text = obj.Email;
+            //    this.textBoxSoTienNo.Text = obj.SoTienNo.ToString();
+            //    string result = this.bus.deleteAll(obj);
+            //    if (result == "0")
+            //    {
+            //        MessageBox.Show("Xóa tất cả khách hàng nhập thành công");
+            //        this.buildDanhSach();
+            //        return;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Xóa tất cả khách hàng thất bại.\n" + result);
+            //        return;
+            //    }
         }
     }
 }

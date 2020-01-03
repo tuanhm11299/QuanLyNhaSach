@@ -54,6 +54,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnHienThi = new System.Windows.Forms.Button();
             this.btnXoaTrang = new System.Windows.Forms.Button();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -62,7 +63,6 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnChon = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.btnHienThi = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachKH)).BeginInit();
@@ -218,6 +218,7 @@
             this.btnTraCuuKH.TabIndex = 13;
             this.btnTraCuuKH.Text = "Tra Cứu";
             this.btnTraCuuKH.UseVisualStyleBackColor = true;
+            this.btnTraCuuKH.Click += new System.EventHandler(this.btnTraCuuKH_Click);
             // 
             // textBoxTraCuuTenKH
             // 
@@ -302,6 +303,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Chức Năng";
             // 
+            // btnHienThi
+            // 
+            this.btnHienThi.Location = new System.Drawing.Point(33, 189);
+            this.btnHienThi.Name = "btnHienThi";
+            this.btnHienThi.Size = new System.Drawing.Size(118, 32);
+            this.btnHienThi.TabIndex = 4;
+            this.btnHienThi.Text = "Hiển Thị";
+            this.btnHienThi.UseVisualStyleBackColor = true;
+            this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click);
+            // 
             // btnXoaTrang
             // 
             this.btnXoaTrang.Location = new System.Drawing.Point(33, 317);
@@ -310,6 +321,7 @@
             this.btnXoaTrang.TabIndex = 2;
             this.btnXoaTrang.Text = "Xóa trắng";
             this.btnXoaTrang.UseVisualStyleBackColor = true;
+            this.btnXoaTrang.Click += new System.EventHandler(this.btnXoaTrang_Click);
             // 
             // btnShowAll
             // 
@@ -359,6 +371,7 @@
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnChon
             // 
@@ -379,16 +392,6 @@
             this.btnThoat.TabIndex = 7;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
-            // 
-            // btnHienThi
-            // 
-            this.btnHienThi.Location = new System.Drawing.Point(33, 189);
-            this.btnHienThi.Name = "btnHienThi";
-            this.btnHienThi.Size = new System.Drawing.Size(118, 32);
-            this.btnHienThi.TabIndex = 4;
-            this.btnHienThi.Text = "Hiển Thị";
-            this.btnHienThi.UseVisualStyleBackColor = true;
-            this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click);
             // 
             // frmQuanLyKhachHang
             // 

@@ -49,7 +49,7 @@
     <Compile Include="HoaDonDTO.cs" />
     <Compile Include="PhieuNhapSachDTO.cs" />
     <Compile Include="CTPhieuNhapSachDTO.cs" />
-    <Compile Include="PhieuThuTienDTOcs.cs" />
+    <Compile Include="PhieuThuTienDTO.cs" />
     <Compile Include="QuanLyKhachHangDTO.cs" />
     <Compile Include="QuanLyNhanVienDTO.cs" />
     <Compile Include="QuanLySachDTO.cs" />

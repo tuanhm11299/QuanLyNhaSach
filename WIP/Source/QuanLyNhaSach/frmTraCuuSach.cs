@@ -125,9 +125,9 @@ namespace QuanLyNhaSach
             dgvDanhSachSach.Columns.Add(clTacGia);
 
             DataGridViewTextBoxColumn clSoLuong = new DataGridViewTextBoxColumn();
-            clSoLuong.Name = "SoLuong";
+            clSoLuong.Name = "SoLuongTon";
             clSoLuong.HeaderText = "Số Lượng Tồn";
-            clSoLuong.DataPropertyName = "SoLuong";
+            clSoLuong.DataPropertyName = "SoLuongTon";
             dgvDanhSachSach.Columns.Add(clSoLuong);
 
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
@@ -180,6 +180,12 @@ namespace QuanLyNhaSach
             clSoLuong.DataPropertyName = "SoLuong";
             dgvDanhSachSach.Columns.Add(clSoLuong);
 
+            DataGridViewTextBoxColumn clDonGiaNhap = new DataGridViewTextBoxColumn();
+            clDonGiaNhap.Name = "DonGiaNhap";
+            clDonGiaNhap.HeaderText = "DonGiaNhap";
+            clDonGiaNhap.DataPropertyName = "DonGiaNhap";
+            dgvDanhSachSach.Columns.Add(clDonGiaNhap);
+
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
             myCurrencyManager.Refresh();
         }
@@ -230,6 +236,12 @@ namespace QuanLyNhaSach
             clSoLuong.DataPropertyName = "SoLuong";
             dgvDanhSachSach.Columns.Add(clSoLuong);
 
+            DataGridViewTextBoxColumn clDonGiaNhap = new DataGridViewTextBoxColumn();
+            clDonGiaNhap.Name = "DonGiaNhap";
+            clDonGiaNhap.HeaderText = "DonGiaNhap";
+            clDonGiaNhap.DataPropertyName = "DonGiaNhap";
+            dgvDanhSachSach.Columns.Add(clDonGiaNhap);
+
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
             myCurrencyManager.Refresh();
         }
@@ -279,6 +291,12 @@ namespace QuanLyNhaSach
             clSoLuong.HeaderText = "Số Lượng Tồn";
             clSoLuong.DataPropertyName = "SoLuong";
             dgvDanhSachSach.Columns.Add(clSoLuong);
+
+            DataGridViewTextBoxColumn clDonGiaNhap = new DataGridViewTextBoxColumn();
+            clDonGiaNhap.Name = "DonGiaNhap";
+            clDonGiaNhap.HeaderText = "DonGiaNhap";
+            clDonGiaNhap.DataPropertyName = "DonGiaNhap";
+            dgvDanhSachSach.Columns.Add(clDonGiaNhap);
 
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
             myCurrencyManager.Refresh();
@@ -838,6 +856,12 @@ namespace QuanLyNhaSach
             clSoLuong.HeaderText = "Số Lượng Tồn";
             clSoLuong.DataPropertyName = "SoLuong";
             dgvDanhSachSach.Columns.Add(clSoLuong);
+
+            DataGridViewTextBoxColumn clDonGiaNhap = new DataGridViewTextBoxColumn();
+            clDonGiaNhap.Name = "DonGiaNhap";
+            clDonGiaNhap.HeaderText = "DonGiaNhap";
+            clDonGiaNhap.DataPropertyName = "DonGiaNhap";
+            dgvDanhSachSach.Columns.Add(clDonGiaNhap);
 
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
             myCurrencyManager.Refresh();

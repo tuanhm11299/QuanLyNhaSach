@@ -16,11 +16,28 @@ namespace QuanLyNhaSachBUS
             dal = new QuanLySachDAL();
         }
 
-        public string insert(QuanLySachDTO Obj)
+        public string insert(QuanLySachDTO obj)
         {
-            return dal.insert(Obj);
+            if (obj.MaSach == string.Empty || obj.TenSach == string.Empty || obj.TheLoai == string.Empty || obj.TacGia == string.Empty || obj.SoLuongTon == null || obj.DonGiaNhap == null)
+                return "Thêm Sách thất bại";
+            return dal.insert(obj);
         }
-        
+
+        public string selectAll(List<QuanLySachDTO> lsObj)
+        {
+            return dal.selectAll(lsObj);
+        }
+
+        public string delete(QuanLySachDTO obj)
+        {
+            return dal.delete(obj);
+        }
+
+        public string update(QuanLySachDTO obj)
+        {
+            return dal.update(obj);
+        }
+
         public string searchMaSach(string masach, List<QuanLySachDTO> lsObj)
         {
             return dal.searchMaSach(masach, lsObj);

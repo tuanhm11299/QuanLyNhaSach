@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace QuanLyNhaSachDTO
 {
-    public class PhieuThuTienDTOcs
+    public class PhieuThuTienDTO
     {
         private string maPT;
         private string maKH;
-        private DateTime ngThuTien;
-        private Single stt;
+        private string ngThuTien;
+        private int stt;
 
         public string MaPT
         {
@@ -25,13 +25,13 @@ namespace QuanLyNhaSachDTO
             set => maKH = value;
         }
 
-        public DateTime NgayThuTien
+        public string NgayThuTien
         {
             get => ngThuTien;
             set => ngThuTien = value;
         }
 
-        public Single STT
+        public int STT
         {
             get => stt;
             set => stt = value;

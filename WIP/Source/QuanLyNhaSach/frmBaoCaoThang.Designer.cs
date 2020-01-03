@@ -37,14 +37,6 @@
             this.btnLapBaoCao = new System.Windows.Forms.Button();
             this.textBoxMonth = new System.Windows.Forms.TextBox();
             this.Luoi = new System.Windows.Forms.DataGridView();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Luoi)).BeginInit();
             this.SuspendLayout();
@@ -131,80 +123,12 @@
             this.Luoi.AllowUserToDeleteRows = false;
             this.Luoi.BackgroundColor = System.Drawing.Color.DarkGray;
             this.Luoi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Luoi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column7,
-            this.Column1,
-            this.Column8,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column6,
-            this.Column5});
             this.Luoi.GridColor = System.Drawing.Color.White;
             this.Luoi.Location = new System.Drawing.Point(12, 139);
             this.Luoi.Name = "Luoi";
             this.Luoi.ReadOnly = true;
             this.Luoi.Size = new System.Drawing.Size(776, 277);
             this.Luoi.TabIndex = 6;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "Machitietton";
-            this.Column7.HeaderText = "Mã chi tiết tồn";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Visible = false;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "Masach";
-            this.Column1.HeaderText = "Mã sách";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            // 
-            // Column8
-            // 
-            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column8.DataPropertyName = "Tensach";
-            this.Column8.HeaderText = "Tên sách";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Thang";
-            this.Column2.HeaderText = "Tháng";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Nam";
-            this.Column3.HeaderText = "Năm";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Tondau";
-            this.Column4.HeaderText = "Tồn đầu";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "Tonphatsinh";
-            this.Column6.HeaderText = "Tồn phát sinh";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Toncuoi";
-            this.Column5.HeaderText = "Tồn cuối";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
             // 
             // frmBaoCaoThang
             // 
@@ -235,13 +159,5 @@
         private System.Windows.Forms.Button btnLapBaoCao;
         private System.Windows.Forms.TextBox textBoxMonth;
         internal System.Windows.Forms.DataGridView Luoi;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        internal System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }

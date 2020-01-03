@@ -134,12 +134,12 @@ namespace QuanLyNhaSachDAL
         {
             string query = string.Empty;
             query += " UPDATE [KHACHHANG] SET";
-            query += " [MaKhachHang] = @MaKhachHang, [DienThoai] = @DienThoai ";
-            //query += " [tennamhoc] = @tennamhoc ";
-            //query += " [tennamhoc] = @tennamhoc ";
-            //query += " [tennamhoc] = @tennamhoc ";
-            //query += " [tennamhoc] = @tennamhoc ";
-            //query += " [tennamhoc] = @tennamhoc ";
+            query += " [MaKhachHang] = @MaKhachHang,  ";
+            query += " [HoTenKhachHang] = @HoTenKhachHang, ";
+            query += " [DiaChi] = @DiaChi, ";
+            query += " [DienThoai] = @DienThoai, ";
+            query += " [Email] = @Email, ";
+            query += "[SoTienNo] = @SoTienNo ";
             query += " WHERE ";
             query += " [MaKhachHang] = @MaKhachHang ";
 
@@ -151,7 +151,11 @@ namespace QuanLyNhaSachDAL
                     comm.CommandType = CommandType.Text;
                     comm.CommandText = query;
                     comm.Parameters.AddWithValue("@MaKhachHang", obj.MaKH);
+                    comm.Parameters.AddWithValue("@HoTenKhachHang", obj.HoTen);
+                    comm.Parameters.AddWithValue("@DiaChi", obj.DiaChi);
                     comm.Parameters.AddWithValue("@DienThoai", obj.SDT);
+                    comm.Parameters.AddWithValue("@Email", obj.Email);
+                    comm.Parameters.AddWithValue("@SoTienNo", obj.SoTienNo);
                     try
                     {
                         conn.Open();
@@ -242,6 +246,35 @@ namespace QuanLyNhaSachDAL
                         conn.Close();
                         //' lấy that bai!!!
                         return "Tìm khách hàng thất bại\n" + ex.Message + "\n" + ex.StackTrace;
+                    }
+                }
+            }
+            return "0";
+        }
+
+        public string deleteAll(List<QuanLyKhachHangDTO> lsObj)
+        {
+            string query = string.Empty;
+            query += " DELETE FROM [KHACHHANG] ";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = conn;
+                    comm.CommandType = CommandType.Text;
+                    comm.CommandText = query;
+                    //comm.Parameters.AddWithValue("@MaKhachHang", );
+                    try
+                    {
+                        conn.Open();
+                        comm.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        //' xóa that bai!!!
+                        return "Xóa tất cả khách hàng thất bại\n" + ex.Message + "\n" + ex.StackTrace;
                     }
                 }
             }
