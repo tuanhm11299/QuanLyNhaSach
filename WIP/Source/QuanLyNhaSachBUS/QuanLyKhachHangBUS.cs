@@ -49,6 +49,11 @@ namespace QuanLyNhaSachBUS
             return dal.searchTenKH(tenKH, lsObj);
         }
 
+        public QuanLyKhachHangDTO searchTenKH(string maKH, QuanLyKhachHangDTO obj)
+        {
+            return dal.searchTenKH(maKH, obj);
+        }
+
         public string deleteAll(List<QuanLyKhachHangDTO> lsObj)
         {
             return dal.deleteAll(lsObj);

@@ -252,6 +252,55 @@ namespace QuanLyNhaSachDAL
             return "0";
         }
 
+        public QuanLyKhachHangDTO searchTenKH(string maKH, QuanLyKhachHangDTO obj)
+        {
+
+            string query = string.Empty;
+            query += "SELECT *";
+            query += " FROM [KHACHHANG]";
+            query += " WHERE ";
+            query += " [MaKhachHang] like @MaKhachHang ";
+            obj = new QuanLyKhachHangDTO();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand comm = new SqlCommand())
+                {
+                    comm.Connection = conn;
+                    comm.CommandType = CommandType.Text;
+                    comm.CommandText = query;
+                    comm.Parameters.AddWithValue("@HoTenKhachHang", "%" + maKH.ToString() + "%");
+                    try
+                    {
+                        conn.Open();
+                        SqlDataReader reader = comm.ExecuteReader();
+                        if (reader.HasRows == true)
+                        {
+                            //lsObj.Clear();
+                            while (reader.Read())
+                            {
+                                //QuanLyKhachHangDTO obj = new QuanLyKhachHangDTO();
+                                obj.MaKH = reader["MaKhachHang"].ToString();
+                                obj.HoTen = reader["HoTenKhachHang"].ToString();
+                                obj.DiaChi = reader["DiaChi"].ToString();
+                                obj.SDT = reader["DienThoai"].ToString();
+                                obj.Email = reader["Email"].ToString();
+                                obj.SoTienNo = Convert.ToInt32(reader["SoTienNo"].ToString());
+                                //lsObj.Add(obj);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        //' lấy that bai!!!
+                        Console.WriteLine("Tìm khách hàng thất bại\n" + ex.Message + "\n" + ex.StackTrace)s;
+                    }
+                }
+            }
+            return obj;
+        }
+
         public string deleteAll(List<QuanLyKhachHangDTO> lsObj)
         {
             string query = string.Empty;

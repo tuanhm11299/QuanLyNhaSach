@@ -43,9 +43,9 @@ namespace QuanLyNhaSachBUS
             return dal.searchMaSach(masach, lsObj);
         }
 
-        public QuanLySachDTO laySach()
+        public QuanLySachDTO laySach(string ms, QuanLySachDTO obj)
         {
-            return dal.laySach();
+            return dal.laySach(ms, obj);
         }
 
         public string searchTenSach(string tensach, List<QuanLySachDTO> lsObj)

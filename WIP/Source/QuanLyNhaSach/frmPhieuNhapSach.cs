@@ -142,13 +142,13 @@ namespace QuanLyNhaSach
             ThamSo = busThamSo.QuyDinh();
             string result;
             QuanLySachDTO Sach = new QuanLySachDTO();
-            List<QuanLySachDTO> lsSach = new List<QuanLySachDTO>();
-            
+            //List<QuanLySachDTO> lsSach = new List<QuanLySachDTO>();
+
 
             obj.MaCT = this.txtMaCTPN.Text;
             obj.MaPN = this.txtMaPN.Text;
             obj.MaSach = this.txtMaSach.Text;
-            //obj.SLN = Convert.ToInt32(this.txtSoLuongNhap.Text);
+            obj.SLN = Convert.ToInt32(this.txtSoLuongNhap.Text);
             if (obj.SLN < ThamSo.SoLuongNhapItNhat) // quy định 1.1
             {
                 MessageBox.Show(string.Format("Số lượng nhập phải lớn hơn số lượng quy định ({0} quyển) !", ThamSo.SoLuongNhapItNhat), "THÔNG BÁO", MessageBoxButtons.OK);
@@ -157,20 +157,36 @@ namespace QuanLyNhaSach
             else
             {
                 obj.SLN = Convert.ToInt32(this.txtSoLuongNhap.Text);
-            }
-            Sach.MaSach = this.txtMaSach.Text;
-            //string searchMaSach = this.busSach.searchMaSach(Sach.MaSach, lsSach);
+                Sach.MaSach = this.txtMaSach.Text;
+                Sach = this.busSach.laySach(Sach.MaSach, Sach);
 
-            result = this.bus.insertChiTiet(obj);
-            if (result == "0")
-            {
-                MessageBox.Show("Thêm mới chi tiết phiếu nhập thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                return;
-            }
-            else
-            {
-                MessageBox.Show("Thêm mới chi tiết phiếu nhập thất bại.\n" + result, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                luongton = Sach.SoLuongTon;
+                luongtonTam = luongton;
+                //Tính lượng tồn mới
+                luongtonMoi = luongton + int.Parse(this.txtSoLuongNhap.Text);
+                luongtonMax = ThamSo.SoLuongTonToiDaTruocNhap;
+                //Kiểm tra qui định số lượng tồn tối đa trước nhập
+                if (luongton < luongtonMax)
+                {
+                    result = this.bus.insertChiTiet(obj);
+                    if (result == "0")
+                    {
+                        Sach.SoLuongTon = luongtonMoi;
+                        MessageBox.Show("Thêm mới chi tiết phiếu nhập thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        buildDanhSachCT();
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm mới chi tiết phiếu nhập thất bại.\n" + result, "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Chỉ nhập các đầu sách có lượng tồn ít hơn theo quy định", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+
             }
         }
 

@@ -14,8 +14,11 @@ namespace QuanLyNhaSach
 {
     public partial class frmHoaDonBanSach : Form
     {
-        frmHoaDonBanSach frmHDBS;
+        frmQuanLyKhachHang frmQLKH;
+        int noToiDa, noKhachHang, tonSauBan, luongTon, luongTonMoi, tongThanhTien, SoTienNo, SoLuongBan, DonGiaBan;
         private HoaDonBUS bus;
+        private ThamSoBUS busThamSo = new ThamSoBUS();
+        private QuanLyKhachHangBUS busKH = new QuanLyKhachHangBUS();
 
         public frmHoaDonBanSach()
         {
@@ -260,8 +263,8 @@ namespace QuanLyNhaSach
 
         private void btnChon3_Click(object sender, EventArgs e)
         {
-            frmHDBS = new frmHoaDonBanSach();
-            DialogResult dr = frmHDBS.ShowDialog(this);
+            frmQLKH = new frmQuanLyKhachHang();
+            DialogResult dr = frmQLKH.ShowDialog(this);
         }
     }
 }

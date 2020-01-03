@@ -222,6 +222,61 @@ namespace QuanLyNhaSachDAL
             return "0";
         }
 
+        public QuanLySachDTO laySach(string ms, QuanLySachDTO obj)
+        {
+            //List<QuanLySachDTO> lsObj = new List<QuanLySachDTO>();
+
+            string query = string.Empty;
+            query += "SELECT * FROM [SACH]";
+            query += "WHERE [MaSach] like @MaSach";
+            obj = new QuanLySachDTO();
+            //QuanLySachDTO ls = new QuanLySachDTO();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = conn;
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    cmd.CommandText = query;
+                    cmd.Parameters.AddWithValue("@MaSach", "%" + ms.ToString() + "%");
+
+                    try
+                    {
+                        conn.Open();
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+
+                                obj.MaSach = reader["MaSach"].ToString();
+                                obj.TenSach = reader["TenSach"].ToString();
+                                obj.TheLoai = reader["TheLoai"].ToString();
+                                obj.TacGia = reader["TacGia"].ToString();
+                                obj.SoLuongTon = Convert.ToInt32(reader["SoLuongTon"].ToString());
+                                obj.DonGiaNhap = Convert.ToInt32(reader["DonGiaNhap"].ToString());
+                                //lsObj.Add(obj);
+                            }
+                            conn.Close();
+                            conn.Dispose();
+                            //return ls;
+                            return obj;
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        conn.Close();
+                        Console.WriteLine("Lấy sách thất bại\n" + ex.Message + "\n" + ex.StackTrace);
+                        //return null;
+                    }
+
+                }
+            }
+            return obj;
+        }
+
         public QuanLySachDTO laySach()
         {
             string query = string.Empty;
