@@ -134,7 +134,7 @@ namespace QuanLyNhaSachDAL
             //query += "VALUES (@MaChiTietPhieuNHap,@MaPhieuNhap,@MaSach,@SoLuongNhap)";
 
             query += "INSERT INTO [CHITIETHOADON] ([MaChiTietHoaDon], [MaHoaDon], [MaSach] , [SoLuongBan] , [DonGiaBan])";
-            query += "VALUES (@MaChiTietPhieuNHap,@MaPhieuNhap,@SoLuongNhap)";
+            query += "VALUES (@MaChiTietHoaDon,@MaHoaDon,@MaSach,@SoLuongBan,@DonGiaBan)";
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 using (SqlCommand comm = new SqlCommand())

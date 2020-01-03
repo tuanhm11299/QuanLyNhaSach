@@ -14,12 +14,14 @@ namespace QuanLyNhaSach
 {
     public partial class frmPhieuNhapSach : Form
     {
-        int nhapItNhat, luongtonMax, luongtonTam, luongton, luongtonMoi;
+        int luongtonMax, luongtonTam, luongton, luongtonMoi;
         frmQuanLySach frmQLS; 
         //private int isThemMoi = 0;
         private PhieuNhapSachBUS bus;
-        private ThamSoBUS busThamSo;
-        //private CTPhieuNhapSachBUS busCTPN;
+        private ThamSoBUS busThamSo = new ThamSoBUS();
+        private QuanLySachBUS busSach = new QuanLySachBUS();
+
+        
         
         public frmPhieuNhapSach()
         {
@@ -136,22 +138,30 @@ namespace QuanLyNhaSach
         private void btnThemCT_Click(object sender, EventArgs e)
         {
             CTPhieuNhapSachDTO obj = new CTPhieuNhapSachDTO();
-            //List<ThamSoDTO> lsObjThamSo = new List<ThamSoDTO>();
-            ThamSoDTO ThamSo = busThamSo.QuyDinh();
-            nhapItNhat = ThamSo.SoLuongNhapItNhat; //quy định số lượng nhập ít nhất
-            luongtonMax = ThamSo.SoLuongTonToiDaTruocNhap; // quy định số lượng tồn tối đa trước khi nhập
+            ThamSoDTO ThamSo = new ThamSoDTO();
+            ThamSo = busThamSo.QuyDinh();
+            string result;
+            QuanLySachDTO Sach = new QuanLySachDTO();
+            List<QuanLySachDTO> lsSach = new List<QuanLySachDTO>();
+            
 
             obj.MaCT = this.txtMaCTPN.Text;
             obj.MaPN = this.txtMaPN.Text;
             obj.MaSach = this.txtMaSach.Text;
-            obj.SLN = Convert.ToInt32(this.txtSoLuongNhap.Text);
-            
-            string result = this.bus.insertChiTiet(obj);
-            
-            ////string loadThamSo = this.busThamSo.loadThamSo(lsObjThamSo); fix later
-            ////int nhapItNhat = int.Parse(loadThamSo.Rows(0).Item(1).ToString()); fix later
-            //int nhapItNhat;
-            //bool isItNhat = int.TryParse(txtSoLuongNhap.Text.Trim(), out nhapItNhat);
+            //obj.SLN = Convert.ToInt32(this.txtSoLuongNhap.Text);
+            if (obj.SLN < ThamSo.SoLuongNhapItNhat) // quy định 1.1
+            {
+                MessageBox.Show(string.Format("Số lượng nhập phải lớn hơn số lượng quy định ({0} quyển) !", ThamSo.SoLuongNhapItNhat), "THÔNG BÁO", MessageBoxButtons.OK);
+
+            }
+            else
+            {
+                obj.SLN = Convert.ToInt32(this.txtSoLuongNhap.Text);
+            }
+            Sach.MaSach = this.txtMaSach.Text;
+            //string searchMaSach = this.busSach.searchMaSach(Sach.MaSach, lsSach);
+
+            result = this.bus.insertChiTiet(obj);
             if (result == "0")
             {
                 MessageBox.Show("Thêm mới chi tiết phiếu nhập thành công", "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -247,6 +257,7 @@ namespace QuanLyNhaSach
         private void btnChon_Click(object sender, EventArgs e)
         {
             frmQLS = new frmQuanLySach();
+            //frmQLS.ShowDialog();
             DialogResult dr = frmQLS.ShowDialog(this);
             if (frmQLS.DialogResult == DialogResult.OK)
             {

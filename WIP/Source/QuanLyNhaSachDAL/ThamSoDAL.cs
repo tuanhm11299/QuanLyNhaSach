@@ -21,50 +21,7 @@ namespace QuanLyNhaSachDAL
             connectionString = ConfigurationManager.AppSettings["ConnectionString"];
         }
 
-        /*public DataTable loadThamSo(List<ThamSoDTO> lsObj) // fix data table
-        {
-            string query = string.Empty;
-            query += "SELECT [MaThamSo], [SoLuongNhapItNhat], [SoLuongTonToiDaTruocNhap], [SoLuongTonSauToiThieu], [SoTienNoToiDa], [SuDungQuyDinh4] FROM [THAMSO]";
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                using (SqlCommand comm = new SqlCommand())
-                {
-                    comm.Connection = conn;
-                    comm.CommandType = CommandType.Text;
-                    comm.CommandText = query;
-
-                    try
-                    {
-                        conn.Open();
-                        SqlDataReader reader = comm.ExecuteReader();
-                        if (reader.HasRows == true)
-                        {
-                            lsObj.Clear();
-                            while (reader.Read())
-                            {
-                                ThamSoDTO obj = new ThamSoDTO();
-                                obj.Mathamso = Convert.ToInt32(reader["MaThamSo"].ToString());
-                                obj.SoLuongNhapItNhat = Convert.ToInt32(reader["SoLuongNhapItNhat"].ToString());
-                                obj.SoLuongTonToiDaTruocNhap = Convert.ToInt32(reader["SoLuongTonToiDaTruocNhap"].ToString());
-                                obj.SoLuongTonSauToiThieu = Convert.ToInt32(reader["SoLuongTonSauToiThieu"].ToString());
-                                obj.SoTienNoToiDa = Convert.ToInt32(reader["SoTienNoToiDa"].ToString());
-                                obj.SuDungQuyDinh4 = Convert.ToInt32(reader["SuDungQuyDinh4"].ToString());
-                                lsObj.Add(obj);
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        conn.Close();
-                        //' lấy that bai!!!
-                        //return "Lấy tham số quy định thất bại\n" + ex.Message + "\n" + ex.StackTrace;
-                    }
-                }
-            }
-            //return "0";
-        }*/
-
-        public ThamSoDTO QuyDinh()
+        public ThamSoDTO QuyDinh()//laysach
         {
             string query = string.Empty;
             query = "SELECT * FROM THAMSO";
@@ -87,12 +44,12 @@ namespace QuanLyNhaSachDAL
                         {
                             while (reader.Read())
                             {
-                                qd.Mathamso= reader.GetInt32(0);
-                                qd.SoLuongNhapItNhat = reader.GetInt32(1);
-                                qd.SoLuongTonToiDaTruocNhap = reader.GetInt32(2);
-                                qd.SoLuongTonSauToiThieu = reader.GetInt32(3);
-                                qd.SoTienNoToiDa = reader.GetInt32(4);
-                                qd.SuDungQuyDinh4 = reader.GetInt32(5);
+                                qd.Mathamso = Convert.ToInt32(reader["MaThamSo"]);
+                                qd.SoLuongNhapItNhat = Convert.ToInt32(reader["SoLuongNhapItNhat"]);
+                                qd.SoLuongTonToiDaTruocNhap = Convert.ToInt32(reader["SoLuongTonToiDaTruocNhap"]);
+                                qd.SoLuongTonSauToiThieu = Convert.ToInt32(reader["SoLuongTonSauToiThieu"]);
+                                qd.SoTienNoToiDa = Convert.ToInt32(reader["SoTienNoToiDa"]);
+                                qd.SuDungQuyDinh4 = Convert.ToInt32(reader["SuDungQuyDinh4"]);
                             }
                             conn.Close();
                             conn.Dispose();
@@ -115,7 +72,7 @@ namespace QuanLyNhaSachDAL
         {
             string query = string.Empty;
             query += "UPDATE [THAMSO] ";
-            query += "SET [MaThamSo] = @MaThamSo , [SoLuongNhapItNhat] = @SoLuongNhapItNhat, [SoLuongTonToiDaTruocNhap] = @SoLuongTonToiDaTruocNhap, [SoLuongTonSauToiThieu] = @SoLuongTonSauToiThieu, [SoTienNoToiDa] = @SoTienNoToiDa, [SuDungQuyDinh4] = @SuDungQuyDinh4";
+            query += "SET [SoLuongNhapItNhat] = @SoLuongNhapItNhat, [SoLuongTonToiDaTruocNhap] = @SoLuongTonToiDaTruocNhap, [SoLuongTonSauToiThieu] = @SoLuongTonSauToiThieu, [SoTienNoToiDa] = @SoTienNoToiDa, [SuDungQuyDinh4] = @SuDungQuyDinh4";
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -125,7 +82,7 @@ namespace QuanLyNhaSachDAL
                     cmd.CommandType = System.Data.CommandType.Text;
                     cmd.CommandText = query;
 
-                    cmd.Parameters.AddWithValue("@MaThamSo", qd.Mathamso);
+                    //cmd.Parameters.AddWithValue("@MaThamSo", qd.Mathamso);
                     cmd.Parameters.AddWithValue("@SoLuongNhapItNhat", qd.SoLuongNhapItNhat);
                     cmd.Parameters.AddWithValue("@SoLuongTonToiDaTruocNhap", qd.SoLuongTonToiDaTruocNhap);
                     cmd.Parameters.AddWithValue("@SoLuongTonSauToiThieu", qd.SoLuongTonSauToiThieu);
@@ -152,5 +109,6 @@ namespace QuanLyNhaSachDAL
 
             return true;
         }
+
     }
 }
