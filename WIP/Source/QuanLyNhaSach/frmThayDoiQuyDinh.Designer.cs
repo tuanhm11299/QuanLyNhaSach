@@ -269,7 +269,7 @@
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmThayDoiQuyDinh";
-            this.Text = "ThayDoiQuyDinh";
+            this.Text = "Thay Đổi Quy Định";
             this.Load += new System.EventHandler(this.frmThayDoiQuyDinh_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -190,11 +190,11 @@ namespace QuanLyNhaSachDAL
                             while (reader.Read())
                             {
                                 ChiTietHDDTO obj = new ChiTietHDDTO();
-                                obj.MaCTHD = reader["MaChiTietPhieuNHap"].ToString();
-                                obj.MaHD = reader["MaPhieuNhap"].ToString();
+                                obj.MaCTHD = reader["MaChiTietHoaDon"].ToString();
+                                obj.MaHD = reader["MaHoaDon"].ToString();
                                 obj.MaSach = reader["MaSach"].ToString();
-                                obj.SLB = Convert.ToInt32(reader["SoLuongNhap"].ToString());
-                                obj.DonGia = Convert.ToInt32(reader["DonGia"].ToString());
+                                obj.SLB = Convert.ToInt32(reader["SoLuongBan"].ToString());
+                                obj.DonGia = Convert.ToInt32(reader["DonGiaBan"].ToString());
                                 lsObj.Add(obj);
                             }
                         }

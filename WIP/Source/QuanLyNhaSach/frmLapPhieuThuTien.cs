@@ -14,7 +14,10 @@ namespace QuanLyNhaSach
 {
     public partial class frmLapPhieuThuTien : Form
     {
+        int soTienNo, tienThu, tienNoMoi, tienThuCu, tienThuMoi, ktquydinh4;
         private PhieuThuTienBUS bus;
+        private ThamSoBUS busThamSo = new ThamSoBUS();
+        private QuanLyKhachHangBUS busKH = new QuanLyKhachHangBUS();
         public frmLapPhieuThuTien()
         {
             InitializeComponent();
@@ -23,19 +26,28 @@ namespace QuanLyNhaSach
         private void frmLapPhieuThuTien_Load(object sender, EventArgs e)
         {
             bus = new PhieuThuTienBUS();
+            buildDanhSach();
         }
 
         private void btnLapPhieuThuTien_Click(object sender, EventArgs e)
         {
             PhieuThuTienDTO obj = new PhieuThuTienDTO();
             obj.MaKH = this.textBoxMaKH.Text;
-            
+            ThamSoDTO ThamSo = new ThamSoDTO();
+            ThamSo = busThamSo.QuyDinh();
+            QuanLyKhachHangDTO KH = new QuanLyKhachHangDTO();
+            ktquydinh4 = ThamSo.SuDungQuyDinh4;
+            // sẽ viết sau
+            string result;
+            KH.MaKH = this.textBoxMaKH.Text;
             obj.NgayThuTien = this.dtpNgayThuTien.Text;
             obj.MaPT = this.textBoxMaPhieuThu.Text;
             obj.STT = Convert.ToInt32(this.textBoxSoTienThu.Text);
+
             //obj.Email = this.textBoxEmail.Text;
             //obj.SoTienNo = Convert.ToInt32(this.textBoxSoTienNo.Text);
-            string result = this.bus.insert(obj);
+
+            result = this.bus.insert(obj);
             if (result == "0")
             {
                 MessageBox.Show("Thêm khách hàng thành công");

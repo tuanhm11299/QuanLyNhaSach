@@ -252,5 +252,10 @@ namespace QuanLyNhaSach
             CurrencyManager myCurrencyManager = (CurrencyManager)this.BindingContext[dgvDanhSachSach.DataSource];
             myCurrencyManager.Refresh();
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

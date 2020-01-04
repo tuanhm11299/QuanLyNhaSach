@@ -24,12 +24,12 @@ namespace QuanLyNhaSach
             frm.Show();
         }
 
-        private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDangNhap frm = new frmDangNhap();
-            frm.MdiParent = this;
-            frm.Show();
-        }
+        //private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    frmDangNhap frm = new frmDangNhap();
+        //    frm.MdiParent = this;
+        //    frm.Show();
+        //}
 
         private void quảnLíNhàSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -45,12 +45,12 @@ namespace QuanLyNhaSach
             frm.Show();
         }
 
-        private void quảnLíNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLyNhanVien frm = new frmQuanLyNhanVien();
-            frm.MdiParent = this;
-            frm.Show();
-        }
+        //private void quảnLíNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    frmQuanLyNhanVien frm = new frmQuanLyNhanVien();
+        //    frm.MdiParent = this;
+        //    frm.Show();
+        //}
 
         private void phiếuNhậpSáchToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -80,19 +80,19 @@ namespace QuanLyNhaSach
             frm.Show();
         }
 
-        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLyKhachHang frm = new frmQuanLyKhachHang();
-            frm.MdiParent = this;
-            frm.Show();
-        }
+        //private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    frmQuanLyKhachHang frm = new frmQuanLyKhachHang();
+        //    frm.MdiParent = this;
+        //    frm.Show();
+        //}
 
-        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLyNhanVien frm = new frmQuanLyNhanVien();
-            frm.MdiParent = this;
-            frm.Show();
-        }
+        //private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    frmQuanLyNhanVien frm = new frmQuanLyNhanVien();
+        //    frm.MdiParent = this;
+        //    frm.Show();
+        //}
 
         private void báoCáoTồnToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -111,6 +111,11 @@ namespace QuanLyNhaSach
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

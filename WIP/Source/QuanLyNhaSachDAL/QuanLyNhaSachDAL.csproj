@@ -45,15 +45,11 @@
   <ItemGroup>
     <Compile Include="BaoCaoCongNoDAL.cs" />
     <Compile Include="BaoCaoTonDAL.cs" />
-    <Compile Include="ChiTietHDDAL.cs" />
-    <Compile Include="CTPhieuNhapSachDAL.cs" />
-    <Compile Include="DangNhapDAL.cs" />
     <Compile Include="HoaDonDAL.cs" />
     <Compile Include="PhieuNhapSachDAL.cs" />
     <Compile Include="PhieuThuTienDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuanLyKhachHangDAL.cs" />
-    <Compile Include="QuanLyNhanVienDAL.cs" />
     <Compile Include="QuanLySachDAL.cs" />
     <Compile Include="ThamSoDAL.cs" />
   </ItemGroup>

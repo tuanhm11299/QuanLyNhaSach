@@ -10,17 +10,13 @@ E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\bin\Debug\QuanLyNhaSachDA
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSachGUI.csprojAssemblyReference.cache
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmBaoCaoCongNo.resources
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmBaoCaoThang.resources
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmDangNhap.resources
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmHoaDonBanSach.resources
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmLapPhieuThuTien.resources
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmPhieuNhapSach.resources
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.Properties.Resources.resources
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmQuanLyKhachHang.resources
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmQuanLyNhanVien.resources
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmQuanLySach.resources
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmThayDoiQuyDinh.resources
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmTraCuuKhachHang.resources
-E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmTraCuuNhanVien.resources
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSach.frmTraCuuSach.resources
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSachGUI.csproj.GenerateResource.cache
 E:\GitHub\Sites\QuanLyNhaSach\WIP\Source\QuanLyNhaSach\obj\Debug\QuanLyNhaSachGUI.csproj.CoreCompileInputs.cache

@@ -277,7 +277,7 @@
             this.btnChon3.Location = new System.Drawing.Point(633, 31);
             this.btnChon3.Margin = new System.Windows.Forms.Padding(4);
             this.btnChon3.Name = "btnChon3";
-            this.btnChon3.Size = new System.Drawing.Size(73, 31);
+            this.btnChon3.Size = new System.Drawing.Size(58, 31);
             this.btnChon3.TabIndex = 8;
             this.btnChon3.Text = ">";
             this.btnChon3.UseVisualStyleBackColor = true;
@@ -370,7 +370,7 @@
             this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(787, 641);
+            this.tabPage1.Size = new System.Drawing.Size(794, 641);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hóa Đơn";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -485,6 +485,7 @@
             this.btnChon.TabIndex = 10;
             this.btnChon.Text = ">";
             this.btnChon.UseVisualStyleBackColor = true;
+            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
             // txtMaKH
             // 
@@ -577,7 +578,7 @@
             this.Controls.Add(this.tcHoaDon);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHoaDonBanSach";
-            this.Text = "HoaDonBanSach";
+            this.Text = "Hóa Đơn Bán Sách";
             this.Load += new System.EventHandler(this.frmHoaDonBanSach_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachChiTietHoaDon)).EndInit();
             this.groupBox4.ResumeLayout(false);

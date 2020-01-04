@@ -15,6 +15,7 @@ namespace QuanLyNhaSach
     public partial class frmHoaDonBanSach : Form
     {
         frmQuanLyKhachHang frmQLKH;
+        frmQuanLySach frmQLS;
         int noToiDa, noKhachHang, tonSauBan, luongTon, luongTonMoi, tongThanhTien, SoTienNo, SoLuongBan, DonGiaBan;
         private HoaDonBUS bus = new HoaDonBUS();
         private ThamSoBUS busThamSo = new ThamSoBUS();
@@ -84,6 +85,12 @@ namespace QuanLyNhaSach
         private void btnXemHD_Click(object sender, EventArgs e)
         {
             buildDanhSach();
+        }
+
+        private void btnChon_Click(object sender, EventArgs e)
+        {
+            frmQLKH = new frmQuanLyKhachHang();
+            DialogResult dr = frmQLKH.ShowDialog(this);
         }
 
         private void buildDanhSach()
@@ -164,7 +171,7 @@ namespace QuanLyNhaSach
             if (-1 < currentRowIndex && currentRowIndex < dgvDanhSachHoaDon.RowCount)
             {
                 HoaDonDTO obj = (HoaDonDTO)dgvDanhSachHoaDon.Rows[currentRowIndex].DataBoundItem;
-                this.txtMaHD.Text = obj.MaHD;
+                this.txtMaHD1.Text = obj.MaHD;
                 //this.isThemMoi = 1;
                 this.tcHoaDon.SelectedIndex = 1;
             }
@@ -184,7 +191,7 @@ namespace QuanLyNhaSach
             string result;
 
             obj.MaCTHD = this.txtMaCTHD.Text;
-            obj.MaHD = this.txtMaHD.Text;
+            obj.MaHD = this.txtMaHD1.Text;
             obj.MaSach = this.txtMaSach.Text;
             obj.DonGia = Convert.ToInt32(this.txtĐonGia.Text);
             obj.SLB = Convert.ToInt32(this.txtSoLuong.Text);
@@ -192,7 +199,7 @@ namespace QuanLyNhaSach
             Sach = this.busSach.laySach(Sach.MaSach, Sach);
             luongTon = Sach.SoLuongTon;
             luongTonMoi = luongTon - obj.SLB;
-            if((luongTon -obj.SLB) < tonSauBan)
+            if((luongTon - obj.SLB) < tonSauBan)
             {
                 MessageBox.Show(string.Format("Số lượng tồn của sách này sau khi bán đã nhỏ hơn quy định ({0} quyển)", tonSauBan), "THÔNG BÁO", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
@@ -202,6 +209,7 @@ namespace QuanLyNhaSach
                 if (result == "0")
                 {
                     MessageBox.Show("Thêm mới chi tiết hóa đơn thành công");
+                    buildDanhSachCT();
                     return;
                 }
                 else
@@ -304,8 +312,8 @@ namespace QuanLyNhaSach
 
         private void btnChon3_Click(object sender, EventArgs e)
         {
-            frmQLKH = new frmQuanLyKhachHang();
-            DialogResult dr = frmQLKH.ShowDialog(this);
+            frmQLS = new frmQuanLySach();
+            DialogResult dr = frmQLS.ShowDialog(this);
         }
     }
 }
